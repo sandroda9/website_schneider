@@ -17,9 +17,9 @@
 
 /* Dark theme variables (applied via [data-theme="dark"]) */
 :root[data-theme="dark"]{
-  --bordeaux: 56 50 61;            /* dark navbar */
-  --gold: 225 214 189;             /* keep gold */
-  --bg: 44 50 57;                  /* UPDATED: gewünschter Darkmode-Hintergrund */
+  --bordeaux: 56 50 61;
+  --gold: 225 214 189;
+  --bg: 44 50 57;                  /* Darkmode Hintergrund */
   --card-bg: 28 26 30;
   --text: 215 215 215;
   --muted: 165 165 170;
@@ -37,8 +37,13 @@ html,body{
   -moz-osx-font-smoothing:grayscale;
 }
 
-a { color: rgb(var(--bordeaux)); }
-a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
+a {
+  color: rgb(var(--bordeaux));
+}
+a:hover {
+  color: rgb(var(--bordeaux));
+  text-decoration: none;
+}
 
 /* Navbar */
 .navbar {
@@ -47,9 +52,19 @@ a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
   color: rgb(var(--gold));
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
-.navbar .navbar-brand { color: rgb(var(--gold)); text-decoration: none; }
-.navbar .nav-link { color: rgb(var(--gold)); opacity: .95; margin-left: .5rem; }
-.navbar .nav-link:hover { color: rgb(var(--btn)); opacity: 1; }
+.navbar .navbar-brand {
+  color: rgb(var(--gold));
+  text-decoration: none;
+}
+.navbar .nav-link {
+  color: rgb(var(--gold));
+  opacity: .95;
+  margin-left: .5rem;
+}
+.navbar .nav-link:hover {
+  color: rgb(var(--btn));
+  opacity: 1;
+}
 .navbar .btn-ghost {
   background: transparent;
   color: rgb(var(--gold));
@@ -94,13 +109,16 @@ a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
   background-color: rgb(var(--card-bg));
 }
 
-/* Dark mode → Titel & gold-in-dark */
+/* DARKMODE → Gold für Titel & ausgewählte Texte */
 :root[data-theme="dark"] .section-title{
   color: rgb(var(--gold));
 }
 
-:root[data-theme="dark"] .gold-in-dark{
-  color: rgb(var(--gold));
+:root[data-theme="dark"] .headline,
+:root[data-theme="dark"] .card-text,
+:root[data-theme="dark"] .card-title,
+:root[data-theme="dark"] .gold-in-dark {
+  color: rgb(var(--gold)) !important;
 }
 
 /* Cards */
