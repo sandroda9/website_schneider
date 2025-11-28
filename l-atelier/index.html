@@ -5,273 +5,237 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>L' Atelier — Schneideratelier Flawil</title>
 
-  <!-- Bootstrap CSS (CDN) -->
+  <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <!-- Google Fonts -->
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
-
-  <meta name="theme-color" content="#4C4552">
 </head>
+
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top" id="mainNavbar" data-bs-theme="light">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="#hero">
-        <div class="logo-placeholder me-2">LOGO</div>
-        <span class="brand-text">L' Atelier</span>
-      </a>
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#hero">
+      <img src="img/LAtelier Logo4_48px.png" height="42" class="me-2" alt="Logo">
+      L' Atelier
+    </a>
 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navCollapse">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">Über uns</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-          <li class="nav-item ms-3">
-            <button class="btn btn-ghost" id="themeToggle" aria-label="Darkmode umschalten">🌙</button>
-          </li>
-        </ul>
-      </div>
+    <div class="collapse navbar-collapse" id="navCollapse">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">Über uns</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
+        <li class="nav-item ms-3">
+          <button class="btn btn-ghost" id="themeToggle">🌙</button>
+        </li>
+      </ul>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <header id="hero" class="py-6">
-    <div class="container">
-      <div class="row align-items-center min-vh-60">
-        <div class="col-lg-6">
-          <h1 class="display-4 headline">Handwerk, das dem Stoff seine Seele zurückgibt</h1>
-          <p class="lead mb-4">
-            L' Atelier bringt Tessiner Sorgfalt nach Flawil: Massgenaue Herrenmode, fachmännische Änderungen und
-            professionelle Reinigung — jedes Stück mit Liebe gepflegt.
-          </p>
-          <a class="btn btn-primary btn-lg me-3" href="#contact">Kontakt & Termin</a>
-          <a class="btn btn-outline-secondary btn-lg" href="#gallery">Galerie ansehen</a>
-        </div>
-        <div class="col-lg-6 text-center">
-          <!-- hero image placeholder -->
-          <img src="https://via.placeholder.com/640x420?text=Hero+Bild+Platzhalter" alt="Atelier Hero" class="img-fluid rounded shadow-sm mt-4 mt-lg-0">
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- SERVICES -->
-  <section id="services" class="py-5">
-    <div class="container">
-      <div class="section-header text-center mb-5">
-        <h2 class="section-title">Unsere Leistungen</h2>
-        <p class="section-sub">Traditionelles Schneiderhandwerk trifft modernen Service</p>
+<!-- HERO -->
+<header id="hero" class="py-6">
+  <div class="container">
+    <div class="row align-items-center min-vh-60">
+      <div class="col-lg-6">
+        <h1 class="display-4 headline">
+          Handwerk, das dem Stoff seine Seele zurückgibt
+        </h1>
+        <p class="lead mb-4">
+          L' Atelier bringt Tessiner Sorgfalt nach Flawil: Massgenaue Herrenmode,
+          fachmännische Änderungen und professionelle Reinigung — jedes Stück mit Liebe gepflegt.
+        </p>
+        <a class="btn btn-primary btn-lg me-3" href="#contact">Kontakt & Termin</a>
+        <a class="btn btn-outline-secondary btn-lg" href="#gallery">Galerie ansehen</a>
       </div>
 
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="https://via.placeholder.com/800x600?text=Herrenmode+Platzhalter" class="card-img-top" alt="Herrenmode">
-            <div class="card-body">
-              <h5 class="card-title">Schneider für Herrenmode</h5>
-              <p class="card-text">Perfekt sitzende Anzüge, Massanfertigungen und präzise Anpassungen — mit handwerklicher Präzision und feinem Gespür für Stil.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="https://via.placeholder.com/800x600?text=N%C3%A4hmaschine+Platzhalter" class="card-img-top" alt="Handwerk">
-            <div class="card-body">
-              <h5 class="card-title">Änderungen & Reparaturen</h5>
-              <p class="card-text">Schonend, nachhaltig und sorgfältig — wir geben Lieblingsteilen ihre Form und Funktion zurück.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="card h-100">
-            <img src="https://via.placeholder.com/800x600?text=W%C3%A4scherei+Platzhalter" class="card-img-top" alt="Wäscherei">
-            <div class="card-body">
-              <h5 class="card-title">Reinigung & Pflege</h5>
-              <p class="card-text">Professionelle Textilreinigung und Pflege – damit edle Stoffe ihren Glanz behalten und lange Freude machen.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="py-5 bg-light-section">
-    <div class="container">
-      <div class="section-header text-center mb-4">
-        <h2 class="section-title">Galerie</h2>
-        <p class="section-sub">Einblicke ins Atelier — Handwerk, Material und fertige Arbeiten</p>
-      </div>
-
-      <div class="row g-3 gallery-grid">
-        <!-- 8 placeholder images; clicking opens modal (lightbox) -->
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=Aussen+1">
-            <img src="https://via.placeholder.com/600x450?text=Aussen+1" class="img-fluid rounded" alt="Aussen 1">
-          </a>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=Aussen+2">
-            <img src="https://via.placeholder.com/600x450?text=Aussen+2" class="img-fluid rounded" alt="Aussen 2">
-          </a>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=F%C3%A4den+Braun">
-            <img src="https://via.placeholder.com/600x450?text=F%C3%A4den+Braun" class="img-fluid rounded" alt="Fäden">
-          </a>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=N%C3%A4hmaschine+1">
-            <img src="https://via.placeholder.com/600x450?text=N%C3%A4hmaschine+1" class="img-fluid rounded" alt="Nähmaschine 1">
-          </a>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=N%C3%A4hmaschine+2">
-            <img src="https://via.placeholder.com/600x450?text=N%C3%A4hmaschine+2" class="img-fluid rounded" alt="Nähmaschine 2">
-          </a>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=Gr%C3%BCnder">
-            <img src="https://via.placeholder.com/600x450?text=Gr%C3%BCnder" class="img-fluid rounded" alt="Gründer">
-          </a>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=Herrenanzug">
-            <img src="https://via.placeholder.com/600x450?text=Herrenanzug" class="img-fluid rounded" alt="Herrenanzug">
-          </a>
-        </div>
-
-        <div class="col-6 col-md-3">
-          <a href="#" class="gallery-item" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-src="https://via.placeholder.com/1200x900?text=Wand+Braun">
-            <img src="https://via.placeholder.com/600x450?text=Wand+Braun" class="img-fluid rounded" alt="Wand Braun">
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LIGHTBOX MODAL -->
-  <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-fullscreen-sm-down modal-xl">
-      <div class="modal-content bg-transparent border-0">
-        <div class="modal-body p-0 position-relative">
-          <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Schliessen"></button>
-          <img src="" id="lightboxImage" class="img-fluid w-100 rounded" alt="Lightbox">
-        </div>
+      <div class="col-lg-6 text-center">
+        <img src="img/Atelier-Flawil-Schneider14.jpeg" class="img-fluid rounded shadow-sm" alt="Hero Bild">
       </div>
     </div>
   </div>
+</header>
 
-  <!-- ABOUT -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-md-6">
-          <h2 class="section-title">Über L' Atelier</h2>
-          <p>
-            L' Atelier ist ein kleines Schneideratelier in Flawil, geführt von Levi und Militya Hobil.
-            Mit Tessiner Handwerkstradition und feinem Gespür für Stoffe repariert und verändert das Team
-            persönliche Lieblingsstücke und schafft Masskleider mit perfekter Passform.
-            Die Philosophie: nachhaltige Pflege, ehrliche Handarbeit und individuelle Beratung.
-          </p>
-          <p class="mb-0"><strong>Willkommensrabatt:</strong> Neukundinnen und Neukunden profitieren noch bis Januar von 15% Rabatt.</p>
-        </div>
-        <div class="col-md-6 text-center">
-          <img src="https://via.placeholder.com/600x420?text=Atelier+Innen+Platzhalter" alt="Atelier Innen" class="img-fluid rounded shadow-sm">
-        </div>
-      </div>
+<!-- SERVICES -->
+<section id="services" class="py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <h2 class="section-title">Unsere Leistungen</h2>
+      <p class="section-sub">Traditionelles Schneiderhandwerk trifft modernen Service</p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="py-5 bg-light-section">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-lg-6">
-          <h3 class="section-title">Kontakt & Öffnungszeiten</h3>
-          <p class="mb-1"><strong>Adresse:</strong> Wilerstrasse 14, 9230 Flawil</p>
-          <p class="mb-1"><strong>Telefon:</strong> <a href="tel:+41712320222">071 232 02 22</a></p>
-          <p class="mb-3"><strong>E-Mail:</strong> <a href="mailto:latelierhobil@hotmail.com">latelierhobil@hotmail.com</a></p>
+    <div class="row g-4">
 
-          <div class="hours mt-3">
-            <h5 class="mb-2">Öffnungszeiten</h5>
-            <ul class="list-unstyled">
-              <li>Freitag: 09:00–12:00, 13:30–18:30</li>
-              <li>Samstag: 09:00–14:00</li>
-              <li>Sonntag: Geschlossen</li>
-              <li>Montag: Geschlossen</li>
-              <li>Dienstag: Geschlossen</li>
-              <li>Mittwoch: 09:00–12:00, 13:30–18:30</li>
-              <li>Donnerstag: 09:00–12:00, 13:30–18:30</li>
-            </ul>
-          </div>
-
-          <div class="mt-4">
-            <a class="btn btn-primary me-2" href="mailto:latelierhobil@hotmail.com?subject=Terminvereinbarung">Termin per E-Mail</a>
-            <a class="btn btn-outline-secondary" href="tel:+41712320222">Anrufen</a>
+      <!-- Herrenmode 1 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="img/Atelier-Flawil-Schneider16.jpeg" class="card-img-top" alt="Herrenmode">
+          <div class="card-body">
+            <h5 class="card-title">Herrenmode – Modern & Klassisch</h5>
+            <p class="card-text">Anzüge, Jacken und edle Stoffe — stilvoll abgestimmt und perfekt angepasst.</p>
           </div>
         </div>
+      </div>
 
-        <div class="col-lg-6">
-          <h5 class="mb-3">Nachricht schicken</h5>
-          <!-- Einfaches Formular: öffnet Mailto mit Feldern (keine Server-Logik) -->
-          <form id="contactForm" action="#" onsubmit="return sendMail(event);">
-            <div class="mb-3">
-              <label for="name" class="form-label">Name</label>
-              <input id="name" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="email" class="form-label">E-Mail</label>
-              <input id="email" type="email" class="form-control" required>
-            </div>
-
-            <div class="mb-3">
-              <label for="message" class="form-label">Nachricht</label>
-              <textarea id="message" rows="5" class="form-control" required></textarea>
-            </div>
-
-            <button class="btn btn-primary" type="submit">Nachricht senden</button>
-          </form>
+      <!-- Herrenmode 2 -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="img/Atelier-Flawil-Schneider15.jpeg" class="card-img-top" alt="Herrenmode">
+          <div class="card-body">
+            <h5 class="card-title">Massarbeit & Beratung</h5>
+            <p class="card-text">Individuelle Beratung und Massanfertigung — für Outfits, die sitzen.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="py-4">
-    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
-      <div class="text-muted small">© <span id="year"></span> L' Atelier — Wilerstrasse 14, 9230 Flawil</div>
-      <div class="social-links">
-        <a href="#" class="me-2">Instagram</a>
-        <a href="#" class="me-2">Facebook</a>
+      <!-- Schneiderhandwerk -->
+      <div class="col-md-4">
+        <div class="card h-100">
+          <img src="img/Atelier-Flawil-Schneider8.jpeg" class="card-img-top" alt="Schneider">
+          <div class="card-body">
+            <h5 class="card-title">Schneiderarbeiten</h5>
+            <p class="card-text">Präzision, Erfahrung und Sorgfalt — vom Kürzen bis zur komplexen Änderung.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="py-5 bg-light-section">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Galerie</h2>
+      <p class="section-sub">Einblicke ins Atelier</p>
+    </div>
+
+    <div class="row g-3 gallery-grid">
+
+      <div class="col-6 col-md-3">
+        <img src="img/Atelier-Flawil-Schneider1.jpeg" class="img-fluid rounded gallery-item"
+             data-src="img/Atelier-Flawil-Schneider1.jpeg" alt="">
+      </div>
+
+      <div class="col-6 col-md-3">
+        <img src="img/Atelier-Flawil-Schneider3.jpeg" class="img-fluid rounded gallery-item"
+             data-src="img/Atelier-Flawil-Schneider3.jpeg" alt="">
+      </div>
+
+      <div class="col-6 col-md-3">
+        <img src="img/Atelier-Flawil-Schneider6.JPG" class="img-fluid rounded gallery-item"
+             data-src="img/Atelier-Flawil-Schneider6.JPG" alt="">
+      </div>
+
+      <div class="col-6 col-md-3">
+        <img src="img/Atelier-Flawil-Schneider7.jpg" class="img-fluid rounded gallery-item"
+             data-src="img/Atelier-Flawil-Schneider7.jpg" alt="">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-fullscreen-sm-down modal-xl">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                data-bs-dismiss="modal" aria-label="Schliessen"></button>
+        <img src="" id="lightboxImage" class="img-fluid w-100 rounded" alt="">
       </div>
     </div>
-  </footer>
+  </div>
+</div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- ABOUT -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
 
-  <!-- Custom JS -->
-  <script src="js/scripts.js"></script>
+      <div class="col-md-6">
+        <h2 class="section-title">Über L' Atelier</h2>
+        <p>
+          L' Atelier ist ein Schneideratelier in Flawil, geführt von Levi und Militya Hobil.
+          Mit Tessiner Handwerkstradition repariert, verändert und pflegt das Atelier Ihre Lieblingskleider
+          mit Hingabe und Fachkompetenz.
+        </p>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="img/IMG_Levi + Militya.JPG" class="img-fluid rounded shadow-sm" alt="Über uns">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5 bg-light-section">
+  <div class="container">
+    <div class="row g-4">
+
+      <div class="col-lg-6">
+        <h3 class="section-title">Kontakt & Öffnungszeiten</h3>
+
+        <ul class="list-unstyled mt-3">
+          <li>Montag: 09:00–12:00, 13:30–18:00</li>
+          <li>Dienstag: 09:00–12:00, 13:30–18:00</li>
+          <li>Mittwoch: 09:00–12:00, 13:30–18:00</li>
+          <li>Donnerstag: 09:00–12:00, 13:30–18:00</li>
+          <li>Freitag: 09:00–18:30</li>
+          <li>Samstag: 09:00–16:00</li>
+          <li>Sonntag: Geschlossen</li>
+        </ul>
+
+        <div class="mt-4">
+          <a class="btn btn-primary me-2" href="mailto:latelierhobil@hotmail.com">E-Mail</a>
+          <a class="btn btn-outline-secondary" href="tel:+41712320222">Anrufen</a>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <h5 class="mb-3">Nachricht senden</h5>
+        <form id="contactForm" onsubmit="return sendMail(event);">
+          <div class="mb-3">
+            <input id="name" class="form-control" placeholder="Name" required>
+          </div>
+          <div class="mb-3">
+            <input id="email" type="email" class="form-control" placeholder="E-Mail" required>
+          </div>
+          <div class="mb-3">
+            <textarea id="message" rows="4" class="form-control" placeholder="Nachricht" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Senden</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="py-4 text-center">
+  © <span id="year"></span> L' Atelier — Flawil
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- External Script -->
+<script src="js/scripts.js"></script>
+
 </body>
 </html>
