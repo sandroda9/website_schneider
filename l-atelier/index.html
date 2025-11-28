@@ -17,22 +17,22 @@
 
 <body>
 
-<!-- GLOBAL DARKMODE BUTTON (NEU, immer sichtbar) -->
+<!-- GLOBAL DARKMODE BUTTON (IMMER SICHTBAR) -->
 <button id="themeToggle" class="theme-toggle-fixed">🌙</button>
 
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
+
     <a class="navbar-brand d-flex align-items-center" href="#hero">
       <img src="img/logo2_150px.png" height="42" class="me-2" alt="Logo">
     </a>
 
-    <!-- Hamburger -->
+    <!-- HAMBURGER -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Menu -->
     <div class="collapse navbar-collapse" id="navCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
@@ -41,6 +41,7 @@
         <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
       </ul>
     </div>
+
   </div>
 </nav>
 
@@ -51,15 +52,16 @@
       <div class="col-lg-6">
         <h1 class="display-4 headline">Handwerk, das dem Stoff seine Seele zurückgibt</h1>
         <p class="lead mb-4">
-          L' Atelier bringt Tessiner Sorgfalt nach Flawil: Massgenaue Herrenmode,
-          fachmännische Änderungen und professionelle Reinigung — jedes Stück mit Liebe gepflegt.
+          L'Atelier bringt Tessiner Sorgfalt nach Flawil: Massgenaue Herrenmode,
+          Änderungen und professionelle Reinigung — jedes Stück mit Liebe gepflegt.
         </p>
         <a class="btn btn-primary btn-lg me-3" href="#contact">Kontakt & Termin</a>
         <a class="btn btn-outline-secondary btn-lg" href="#gallery">Galerie ansehen</a>
       </div>
 
       <div class="col-lg-6 text-center">
-        <img src="img/Atelier-Flawil-Schneider14-min.jpeg" class="img-fluid rounded shadow-sm" alt="Hero Bild">
+        <img src="img/Atelier-Flawil-Schneider14-min.jpeg"
+             class="img-fluid rounded shadow-sm" alt="Hero Bild">
       </div>
     </div>
   </div>
@@ -74,19 +76,20 @@
     </div>
 
     <div class="row g-4">
+
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="img/Atelier-Flawil-Schneider16-min.jpeg" class="card-img-top" alt="Herrenmode">
+          <img src="img/Atelier-Flawil-Schneider16-min.jpeg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Herrenmode – Modern & Klassisch</h5>
-            <p class="card-text">Anzüge, Jacken und edle Stoffe — stilvoll abgestimmt.</p>
+            <p class="card-text">Anzüge & Jacken — präzise abgestimmt.</p>
           </div>
         </div>
       </div>
 
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="img/Atelier-Flawil-Schneider15-min.jpeg" class="card-img-top" alt="Herrenmode">
+          <img src="img/Atelier-Flawil-Schneider15-min.jpeg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Massarbeit & Beratung</h5>
             <p class="card-text">Individuelle Beratung und Massanfertigung.</p>
@@ -96,7 +99,7 @@
 
       <div class="col-md-4">
         <div class="card h-100">
-          <img src="img/Atelier-Flawil-Schneider8-min.jpeg" class="card-img-top" alt="Schneiderarbeiten">
+          <img src="img/Atelier-Flawil-Schneider8-min.jpeg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Schneiderarbeiten</h5>
             <p class="card-text">Präzision, Erfahrung und Sorgfalt.</p>
@@ -119,28 +122,45 @@
     <div class="row g-3 gallery-grid">
 
       <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider1-min.jpeg" class="img-fluid rounded gallery-item"
+        <img src="img/Atelier-Flawil-Schneider1-min.jpeg"
+             class="img-fluid rounded gallery-item"
              data-src="img/Atelier-Flawil-Schneider1.jpeg">
       </div>
 
       <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider3-min.jpeg" class="img-fluid rounded gallery-item"
+        <img src="img/Atelier-Flawil-Schneider3-min.jpeg"
+             class="img-fluid rounded gallery-item"
              data-src="img/Atelier-Flawil-Schneider3.jpeg">
       </div>
 
       <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider6-min.JPG" class="img-fluid rounded gallery-item"
+        <img src="img/Atelier-Flawil-Schneider6-min.JPG"
+             class="img-fluid rounded gallery-item"
              data-src="img/Atelier-Flawil-Schneider6.JPG">
       </div>
 
       <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider7-min.jpg" class="img-fluid rounded gallery-item"
+        <img src="img/Atelier-Flawil-Schneider7-min.jpg"
+             class="img-fluid rounded gallery-item"
              data-src="img/Atelier-Flawil-Schneider7.jpg">
       </div>
 
     </div>
   </div>
 </section>
+
+<!-- LIGHTBOX -->
+<div class="modal fade" id="lightboxModal" tabindex="-1">
+  <div class="modal-dialog modal-fullscreen-sm-down modal-xl">
+    <div class="modal-content bg-transparent border-0">
+      <div class="modal-body p-0 position-relative">
+        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
+                data-bs-dismiss="modal"></button>
+        <img src="" id="lightboxImage" class="img-fluid w-100 rounded">
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ABOUT -->
 <section id="about" class="py-5">
@@ -150,12 +170,16 @@
       <div class="col-md-6">
         <h2 class="section-title">Über L' Atelier</h2>
         <p>
-          L' Atelier ist ein Schneideratelier in Flawil, geführt von Levi und Militya Hobil.
+          L'Atelier wird geführt von Levi und Militya Hobil.
+          Mit traditionellem Tessiner Handwerk werden Kleidungsstücke sorgfältig repariert,
+          verändert und gepflegt.
         </p>
       </div>
 
       <div class="col-md-6 text-center">
-        <img src="img/IMG_Levi + Militya-min.JPG" class="img-fluid rounded shadow-sm" alt="Über uns">
+        <img src="img/IMG_Levi + Militya-min.JPG"
+             class="img-fluid rounded shadow-sm"
+             alt="Über uns">
       </div>
 
     </div>
@@ -208,7 +232,7 @@
 
 <!-- FOOTER -->
 <footer class="py-4 text-center">
-  © <span id="year"></span> L' Atelier — Flawil
+  © <span id="year"></span> L'Atelier — Flawil
 </footer>
 
 <!-- Bootstrap JS -->
