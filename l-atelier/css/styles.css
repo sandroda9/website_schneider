@@ -94,13 +94,14 @@ a:hover {
    MOBILE NAVBAR BACKGROUND (OPEN)
 ------------------------------------ */
 .navbar-collapse.show {
-  background-color: rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(8px);
+  background-color: rgba(76, 69, 82, 0.75); /* Lightmode Bordeaux */
+  backdrop-filter: blur(10px);
   padding: 0.75rem 1rem;
 }
 
 :root[data-theme="dark"] .navbar-collapse.show {
-  background-color: rgba(255, 255, 255, 0.08);
+  background-color: rgba(56, 50, 61, 0.75); /* Darkmode Bordeaux */
+  backdrop-filter: blur(10px);
 }
 
 /* Mobile nav link styles */
