@@ -19,7 +19,7 @@
 :root[data-theme="dark"]{
   --bordeaux: 56 50 61;            /* dark navbar */
   --gold: 225 214 189;             /* keep gold */
-  --bg: 44 50 57;                  /* global background */
+  --bg: 44 50 57;                  /* UPDATED: gewünschter Darkmode-Hintergrund */
   --card-bg: 28 26 30;
   --text: 215 215 215;
   --muted: 165 165 170;
@@ -85,10 +85,22 @@ a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
   font-size: 1.75rem;
   color: rgb(var(--bordeaux));
 }
-.section-sub { color: rgb(var(--muted)); }
+
+.section-sub {
+  color: rgb(var(--muted));
+}
 
 .bg-light-section{
   background-color: rgb(var(--card-bg));
+}
+
+/* Dark mode → Titel & gold-in-dark */
+:root[data-theme="dark"] .section-title{
+  color: rgb(var(--gold));
+}
+
+:root[data-theme="dark"] .gold-in-dark{
+  color: rgb(var(--gold));
 }
 
 /* Cards */
@@ -125,23 +137,34 @@ footer{
 }
 
 /* Gallery */
-.gallery-grid img{ display:block; width:100%; height:auto; object-fit:cover; }
+.gallery-grid img{
+  display:block;
+  width:100%;
+  height:auto;
+  object-fit:cover;
+}
 
 /* Utilities */
 .min-vh-60 { min-height: 60vh; }
 
 /* Contact form */
-#contactForm .form-control{ background: transparent; border: 1px solid rgba(var(--muted),0.12); color: inherit; }
+#contactForm .form-control{
+  background: transparent;
+  border: 1px solid rgba(var(--muted),0.12);
+  color: inherit;
+}
 
 @media (max-width: 767px){
   .headline{ font-size: 1.6rem; }
 }
 
 /* subtle border for sections in dark theme */
-:root[data-theme="dark"] .card, :root[data-theme="dark"] .modal-content{
+:root[data-theme="dark"] .card,
+:root[data-theme="dark"] .modal-content{
   border-color: rgba(85,80,90,0.25);
 }
 
 /* smooth transitions */
-*{ transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
-
+*{
+  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+}
