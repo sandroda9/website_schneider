@@ -19,10 +19,10 @@
 :root[data-theme="dark"]{
   --bordeaux: 56 50 61;            /* dark navbar */
   --gold: 225 214 189;             /* keep gold */
-  --bg: 44 50 57;                  /* schwarzer Bereich wie gewünscht */
-  --card-bg: 54 60 67;
+  --bg: 17 16 18;                  /* global background */
+  --card-bg: 28 26 30;
   --text: 215 215 215;
-  --muted: 190 190 195;
+  --muted: 165 165 170;
   --btn: 210 195 165;
   --hover: 225 210 180;
 }
@@ -35,11 +35,6 @@ html,body{
   color: rgb(var(--text));
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-}
-
-/* Abstand nach unten, damit Navbar nichts verdeckt */
-body{
-  padding-top: var(--navbar-height);
 }
 
 a { color: rgb(var(--bordeaux)); }
@@ -62,7 +57,7 @@ a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
   font-size: 1.05rem;
 }
 
-/* Logo placeholder (falls benötigt) */
+/* Logo placeholder */
 .logo-placeholder{
   width:48px;
   height:48px;
@@ -84,28 +79,6 @@ a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
   letter-spacing: -0.02em;
 }
 
-/* Hero mit Hintergrundbild Nr. 14 */
-.hero-section{
-  background-image: url("img/Atelier-Flawil-Schneider14.jpeg");
-  background-size: cover;
-  background-position: center;
-  position: relative;
-}
-.hero-section::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0.15));
-}
-.hero-section > .container{
-  position:relative;
-  z-index:1;
-}
-.hero-section .headline,
-.hero-section .section-sub{
-  color: rgb(var(--gold));
-}
-
 /* Sections */
 .section-title{
   font-family: "Playfair Display", serif;
@@ -116,14 +89,6 @@ a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
 
 .bg-light-section{
   background-color: rgb(var(--card-bg));
-}
-
-/* Gold-Varianten für gewünschte Bereiche */
-.gold-title{
-  color: rgb(var(--gold));
-}
-.gold-sub{
-  color: rgb(var(--gold));
 }
 
 /* Cards */
@@ -145,16 +110,6 @@ a:hover { color: rgb(var(--bordeaux)); text-decoration: none; }
   color: rgb(17,16,18);
 }
 
-/* Galerie-Button in Gold */
-.btn-gallery{
-  color: rgb(var(--gold));
-  border-color: rgba(var(--gold),0.7);
-}
-.btn-gallery:hover{
-  background-color: rgba(var(--gold),0.12);
-  color: rgb(var(--gold));
-}
-
 .btn-outline-secondary{
   color: rgb(var(--bordeaux));
   border-color: rgba(var(--muted),0.16);
@@ -170,39 +125,22 @@ footer{
 }
 
 /* Gallery */
-.gallery-grid img{
-  display:block;
-  width:100%;
-  height:auto;
-  object-fit:cover;
-}
+.gallery-grid img{ display:block; width:100%; height:auto; object-fit:cover; }
 
 /* Utilities */
 .min-vh-60 { min-height: 60vh; }
 
 /* Contact form */
-#contactForm .form-control{
-  background: transparent;
-  border: 1px solid rgba(var(--muted),0.12);
-  color: inherit;
-}
-
-/* Section-Scroll-Abstand: Titel wird nicht von Navbar überdeckt */
-section[id]{
-  scroll-margin-top: calc(var(--navbar-height) + 16px);
-}
+#contactForm .form-control{ background: transparent; border: 1px solid rgba(var(--muted),0.12); color: inherit; }
 
 @media (max-width: 767px){
   .headline{ font-size: 1.6rem; }
 }
 
 /* subtle border for sections in dark theme */
-:root[data-theme="dark"] .card,
-:root[data-theme="dark"] .modal-content{
+:root[data-theme="dark"] .card, :root[data-theme="dark"] .modal-content{
   border-color: rgba(85,80,90,0.25);
 }
 
 /* smooth transitions */
-*{
-  transition: background-color .18s ease, color .18s ease, border-color .18s ease;
-}
+*{ transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
