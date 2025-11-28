@@ -17,6 +17,9 @@
 
 <body>
 
+<!-- GLOBAL DARKMODE BUTTON (NEU, immer sichtbar) -->
+<button id="themeToggle" class="theme-toggle-fixed">🌙</button>
+
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg fixed-top">
   <div class="container">
@@ -24,19 +27,18 @@
       <img src="img/logo2_150px.png" height="42" class="me-2" alt="Logo">
     </a>
 
+    <!-- Hamburger -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <!-- Menu -->
     <div class="collapse navbar-collapse" id="navCollapse">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
         <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
         <li class="nav-item"><a class="nav-link" href="#about">Über uns</a></li>
         <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-        <li class="nav-item ms-3">
-          <button class="btn btn-ghost" id="themeToggle">🌙</button>
-        </li>
       </ul>
     </div>
   </div>
@@ -47,9 +49,7 @@
   <div class="container">
     <div class="row align-items-center min-vh-60">
       <div class="col-lg-6">
-        <h1 class="display-4 headline">
-          Handwerk, das dem Stoff seine Seele zurückgibt
-        </h1>
+        <h1 class="display-4 headline">Handwerk, das dem Stoff seine Seele zurückgibt</h1>
         <p class="lead mb-4">
           L' Atelier bringt Tessiner Sorgfalt nach Flawil: Massgenaue Herrenmode,
           fachmännische Änderungen und professionelle Reinigung — jedes Stück mit Liebe gepflegt.
@@ -74,36 +74,32 @@
     </div>
 
     <div class="row g-4">
-
-      <!-- Herrenmode 1 -->
       <div class="col-md-4">
         <div class="card h-100">
           <img src="img/Atelier-Flawil-Schneider16-min.jpeg" class="card-img-top" alt="Herrenmode">
           <div class="card-body">
             <h5 class="card-title">Herrenmode – Modern & Klassisch</h5>
-            <p class="card-text">Anzüge, Jacken und edle Stoffe — stilvoll abgestimmt und perfekt angepasst.</p>
+            <p class="card-text">Anzüge, Jacken und edle Stoffe — stilvoll abgestimmt.</p>
           </div>
         </div>
       </div>
 
-      <!-- Herrenmode 2 -->
       <div class="col-md-4">
         <div class="card h-100">
           <img src="img/Atelier-Flawil-Schneider15-min.jpeg" class="card-img-top" alt="Herrenmode">
           <div class="card-body">
             <h5 class="card-title">Massarbeit & Beratung</h5>
-            <p class="card-text">Individuelle Beratung und Massanfertigung — für Outfits, die sitzen.</p>
+            <p class="card-text">Individuelle Beratung und Massanfertigung.</p>
           </div>
         </div>
       </div>
 
-      <!-- Schneiderhandwerk -->
       <div class="col-md-4">
         <div class="card h-100">
           <img src="img/Atelier-Flawil-Schneider8-min.jpeg" class="card-img-top" alt="Schneiderarbeiten">
           <div class="card-body">
             <h5 class="card-title">Schneiderarbeiten</h5>
-            <p class="card-text">Präzision, Erfahrung und Sorgfalt — vom Kürzen bis zur komplexen Änderung.</p>
+            <p class="card-text">Präzision, Erfahrung und Sorgfalt.</p>
           </div>
         </div>
       </div>
@@ -124,40 +120,27 @@
 
       <div class="col-6 col-md-3">
         <img src="img/Atelier-Flawil-Schneider1-min.jpeg" class="img-fluid rounded gallery-item"
-             data-src="img/Atelier-Flawil-Schneider1.jpeg" alt="">
+             data-src="img/Atelier-Flawil-Schneider1.jpeg">
       </div>
 
       <div class="col-6 col-md-3">
         <img src="img/Atelier-Flawil-Schneider3-min.jpeg" class="img-fluid rounded gallery-item"
-             data-src="img/Atelier-Flawil-Schneider3.jpeg" alt="">
+             data-src="img/Atelier-Flawil-Schneider3.jpeg">
       </div>
 
       <div class="col-6 col-md-3">
         <img src="img/Atelier-Flawil-Schneider6-min.JPG" class="img-fluid rounded gallery-item"
-             data-src="img/Atelier-Flawil-Schneider6.JPG" alt="">
+             data-src="img/Atelier-Flawil-Schneider6.JPG">
       </div>
 
       <div class="col-6 col-md-3">
         <img src="img/Atelier-Flawil-Schneider7-min.jpg" class="img-fluid rounded gallery-item"
-             data-src="img/Atelier-Flawil-Schneider7.jpg" alt="">
+             data-src="img/Atelier-Flawil-Schneider7.jpg">
       </div>
 
     </div>
   </div>
 </section>
-
-<!-- LIGHTBOX -->
-<div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-fullscreen-sm-down modal-xl">
-    <div class="modal-content bg-transparent border-0">
-      <div class="modal-body p-0 position-relative">
-        <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-3"
-                data-bs-dismiss="modal" aria-label="Schliessen"></button>
-        <img src="" id="lightboxImage" class="img-fluid w-100 rounded" alt="">
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ABOUT -->
 <section id="about" class="py-5">
@@ -168,8 +151,6 @@
         <h2 class="section-title">Über L' Atelier</h2>
         <p>
           L' Atelier ist ein Schneideratelier in Flawil, geführt von Levi und Militya Hobil.
-          Mit Tessiner Handwerkstradition repariert, verändert und pflegt das Atelier Ihre Lieblingskleider
-          mit Hingabe und Fachkompetenz.
         </p>
       </div>
 
