@@ -19,7 +19,7 @@
 :root[data-theme="dark"]{
   --bordeaux: 56 50 61;            /* dark navbar */
   --gold: 225 214 189;             /* keep gold */
-  --bg: 17 16 18;                  /* global background */
+  --bg: 44 50 57;                  /* global background */
   --card-bg: 28 26 30;
   --text: 215 215 215;
   --muted: 165 165 170;
@@ -144,3 +144,4 @@ footer{
 
 /* smooth transitions */
 *{ transition: background-color .18s ease, color .18s ease, border-color .18s ease; }
+
