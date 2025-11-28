@@ -52,9 +52,9 @@ a:hover {
   background: rgba(76, 69, 82, 0.35);
   border: 1px solid rgb(var(--gold));
   color: rgb(var(--gold));
-  padding: 6px 10px;
-  border-radius: 6px;
-  font-size: 1.2rem;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.9rem;
   backdrop-filter: blur(6px);
 }
 
