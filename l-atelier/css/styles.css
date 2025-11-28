@@ -46,7 +46,7 @@ a:hover {
 /* ----- GLOBAL DARKMODE TOGGLE ----- */
 .theme-toggle-fixed {
   position: fixed;
-  top: 12px;
+  top: 14px;
   right: 14px;
   z-index: 9999;
   background: rgba(76, 69, 82, 0.35);
@@ -202,4 +202,13 @@ footer {
 
 * {
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+#hero {
+  padding-top: 140px; /* Desktop */
+}
+
+@media (max-width: 992px) {
+  #hero {
+    padding-top: 180px; /* Mobile */
+  }
 }
