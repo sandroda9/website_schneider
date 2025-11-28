@@ -17,7 +17,7 @@
 :root[data-theme="dark"] {
   --bordeaux: 56 50 61;
   --gold: 225 214 189;
-  --bg: 44 50 57;      /* gewünschter Darkmode Hintergrund */
+  --bg: 44 50 57;
   --card-bg: 28 26 30;
   --text: 215 215 215;
   --muted: 165 165 170;
@@ -46,12 +46,33 @@ a:hover {
   color: rgb(var(--gold));
 }
 
+/* ------------------------------------
+   THEME TOGGLE – ALWAYS FIXED ON TOP RIGHT
+------------------------------------ */
+.theme-fixed-toggle {
+  position: fixed;
+  top: 12px;
+  right: 14px;
+  z-index: 2000;
+  background: rgba(76,69,82,0.3);
+  border: 1px solid rgb(var(--gold));
+  color: rgb(var(--gold));
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  backdrop-filter: blur(6px);
+}
+.theme-fixed-toggle:hover {
+  background-color: rgba(var(--gold), 0.15);
+}
+
 /* Navbar */
 .navbar {
   height: var(--navbar-height);
   background-color: rgb(var(--bordeaux));
   color: rgb(var(--gold));
   transition: background-color .25s ease;
+  z-index: 1200;
 }
 .navbar .navbar-brand,
 .navbar .nav-link {
@@ -59,12 +80,6 @@ a:hover {
 }
 .navbar .nav-link:hover {
   color: rgb(var(--btn));
-}
-.navbar .btn-ghost {
-  background: transparent;
-  color: rgb(var(--gold));
-  border: none;
-  font-size: 1.2rem;
 }
 
 /* ------------------------------------
@@ -94,25 +109,25 @@ a:hover {
    MOBILE NAVBAR BACKGROUND (OPEN)
 ------------------------------------ */
 .navbar-collapse.show {
-  background-color: rgba(76, 69, 82, 0.75); /* Lightmode Bordeaux */
+  background-color: rgba(76, 69, 82, 0.75); /* Lightmode */
   backdrop-filter: blur(10px);
   padding: 0.75rem 1rem;
 }
 
 :root[data-theme="dark"] .navbar-collapse.show {
-  background-color: rgba(56, 50, 61, 0.75); /* Darkmode Bordeaux */
-  backdrop-filter: blur(10px);
+  background-color: rgba(56, 50, 61, 0.75); /* Darkmode */
 }
 
-/* Mobile nav link styles */
+/* Mobile nav links */
 .navbar-collapse.show .nav-link {
   color: rgb(var(--gold)) !important;
   padding: 0.6rem 0;
   font-size: 1.1rem;
-  transition: color .2s ease;
 }
-.navbar-collapse.show .nav-link:hover {
-  color: rgb(var(--btn)) !important;
+
+/* Fix: Anchors not hidden behind navbar */
+[id] {
+  scroll-margin-top: 90px;
 }
 
 /* Headline */
@@ -137,7 +152,7 @@ a:hover {
   background-color: rgb(var(--card-bg));
 }
 
-/* ---- GOLD TEXT IN DARKMODE ---- */
+/* DARKMODE: GOLD TITLES */
 :root[data-theme="dark"] .headline,
 :root[data-theme="dark"] .card-title,
 :root[data-theme="dark"] .card-text,
@@ -178,7 +193,7 @@ a:hover {
   background-color: rgba(var(--bordeaux), 0.1);
 }
 
-/* DARKMODE: Buttons Gold */
+/* DARKMODE Buttons */
 :root[data-theme="dark"] .btn,
 :root[data-theme="dark"] .btn-primary,
 :root[data-theme="dark"] .btn-outline-secondary {
@@ -205,7 +220,7 @@ footer {
   color: rgb(var(--gold));
 }
 
-/* Transitions */
+/* Smooth transitions */
 * {
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
