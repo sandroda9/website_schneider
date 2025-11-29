@@ -193,7 +193,6 @@ a:hover {
 /* Hero Bild */
 .hero-image {
   width: 100%;
-  max-height: 420px;
   object-fit: cover;
   border-radius: .5rem;
 }
