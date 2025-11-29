@@ -109,7 +109,6 @@ a:hover {
   }
 }
 
-
 /* Dark Mode Variante mobil */
 @media (max-width: 992px) and (prefers-color-scheme: dark) {
   .navbar-collapse.show {
