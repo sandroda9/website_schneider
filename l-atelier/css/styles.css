@@ -36,6 +36,25 @@ body {
   overflow-x: hidden;
 }
 
+/* Offset für fixe Navbar bei Ankern – nur auf den Sektionen */
+#hero,
+#services,
+#gallery,
+#about,
+#contact {
+  scroll-margin-top: 80px;
+}
+
+@media (max-width: 992px) {
+  #hero,
+  #services,
+  #gallery,
+  #about,
+  #contact {
+    scroll-margin-top: 120px;
+  }
+}
+
 a {
   color: rgb(var(--bordeaux));
 }
@@ -352,4 +371,3 @@ footer {
     transform: translateY(0);
   }
 }
-
