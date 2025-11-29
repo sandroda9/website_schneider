@@ -11,7 +11,7 @@
   --navbar-height: 64px;
   --radius: .5rem;
 }
-@media
+
 /* Dark Mode automatisch per System-/Browser-Einstellung */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -77,9 +77,9 @@ a:hover {
   padding: 0.8rem 1rem;
 }
 
-/* Mobile Navbar – volle Breite, nicht transparent, gleiche Farbe */
+/* Mobile Navbar – volle Breite, stabiler Hamburger-Button */
 @media (max-width: 992px) {
-  /* Navbar immer gleich gepaddet – nichts verschiebt sich */
+
   .navbar {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -90,7 +90,6 @@ a:hover {
     padding-right: 0;
   }
 
-  /* Collapse bleibt im normalen Flow (keine absolute-Position mehr) */
   .navbar-collapse {
     position: static;
     width: 100%;
@@ -144,7 +143,7 @@ a:hover {
   color: rgb(var(--muted));
 }
 
-/* Kontakt-Bereich: gleiche Schrift wie übrige Seite */
+/* Kontakt-Bereich */
 #contact .section-title {
   font-family: "Inter", system-ui;
 }
@@ -208,8 +207,7 @@ a:hover {
   }
 }
 
-/* Hover-Effekt für Desktop (Maus):
-   Hintergrund gold, Schrift bordeaux für alle .btn-primary */
+/* Hover-Effekt für Desktop */
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover,
   .btn-primary:focus {
@@ -219,11 +217,7 @@ a:hover {
   }
 }
 
-/* ===========================
-   BILDER VERKLEINERT
-=========================== */
-
-/* Galerie */
+/* Bilder */
 .gallery-grid img {
   width: 100%;
   object-fit: cover;
@@ -231,14 +225,12 @@ a:hover {
   border-radius: .5rem;
 }
 
-/* Card-Bilder */
 .card-img-top {
   width: 100%;
   max-height: 220px;
   object-fit: cover;
 }
 
-/* Hero Bild */
 .hero-image {
   width: 60%;
   max-width: 100%;
@@ -246,7 +238,6 @@ a:hover {
   border-radius: .5rem;
 }
 
-/* Über uns */
 .about-image {
   width: 100%;
   max-height: 380px;
@@ -279,21 +270,17 @@ footer {
   background-color: rgb(var(--bg));
 }
 
-/* ===========================
-   RESPONSIVE ANPASSUNGEN
-=========================== */
-
+/* Responsive */
 @media (max-width: 992px) {
+
   #hero {
     padding-top: 200px;
   }
 
-  /* Hero-Bild auf Mobile ausblenden */
   .hero-image {
     display: none;
   }
 
-  /* Hero-Buttons auf Mobile: zentriert, untereinander */
   .hero-buttons {
     text-align: center;
     margin-top: 1.5rem;
@@ -309,7 +296,6 @@ footer {
     margin-bottom: 0;
   }
 
-  /* ========= Scroll-Effekte für Services ========= */
   .service-card {
     opacity: 0;
     transform: translateX(40px);
@@ -329,7 +315,6 @@ footer {
     transform: translateX(0);
   }
 
-  /* ========= Scroll-Effekt für Galerie ========= */
   .gallery-item {
     opacity: 0;
     transform: translateY(40px);
