@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var galleryItems = document.querySelectorAll(".gallery-item");
   var lightboxImage = document.getElementById("lightboxImage");
 
-  // Kein NodeList.forEach, sondern klassische for-Schleife
   for (var i = 0; i < galleryItems.length; i++) {
     (function (item) {
       item.addEventListener("click", function () {
@@ -25,15 +24,44 @@ document.addEventListener("DOMContentLoaded", function () {
     })(galleryItems[i]);
   }
 
-  /* NAVBAR AUTO-CLOSE (Mobile) */
+  /* NAVBAR SMOOTH SCROLL + AUTO-CLOSE (Mobile) */
   var navCollapse = document.getElementById("navCollapse");
-  var navLinks = document.querySelectorAll(".nav-link");
+  // Alle Links, die auf einen Anker zeigen (inkl. Logo)
+  var navLinks = document.querySelectorAll('.nav-link[href^="#"], .navbar-brand[href^="#"]');
 
   for (var j = 0; j < navLinks.length; j++) {
     (function (link) {
-      link.addEventListener("click", function () {
+      link.addEventListener("click", function (e) {
+        var href = link.getAttribute("href");
+        if (href && href.charAt(0) === "#") {
+          var targetId = href.substring(1);
+          var target = document.getElementById(targetId);
+
+          if (target) {
+            // Standard-Anchor-Verhalten verhindern
+            if (e && e.preventDefault) {
+              e.preventDefault();
+            }
+
+            // Offset je nach Bildschirmhöhe (Navbar grösser auf Mobile)
+            var offset = window.innerWidth <= 992 ? 100 : 80;
+            var rect = target.getBoundingClientRect();
+            var targetPosition = rect.top + window.pageYOffset - offset;
+
+            // Smooth Scroll, mit Fallback für ältere Browser
+            try {
+              window.scrollTo({
+                top: targetPosition,
+                behavior: "smooth"
+              });
+            } catch (err) {
+              window.scrollTo(0, targetPosition);
+            }
+          }
+        }
+
+        // Navbar-Collapse schliessen, wenn offen (nur auf Mobile relevant)
         if (navCollapse && navCollapse.classList.contains("show")) {
-          // Bootstrap Collapse-Instanz holen oder neu erstellen
           var instance = bootstrap.Collapse.getInstance(navCollapse);
           if (!instance) {
             instance = new bootstrap.Collapse(navCollapse, { toggle: false });
@@ -62,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
       observer.observe(animatedElements[l]);
     }
   } else {
-    // Fallback für sehr alte Browser
     for (var m = 0; m < animatedElements.length; m++) {
       animatedElements[m].classList.add("in-view");
     }
@@ -87,7 +114,7 @@ function sendMail(e) {
 
   var subject = encodeURIComponent("Anfrage von " + name);
   var body = encodeURIComponent(
-    message + "\n\nVon: " + name + "\n-E-Mail: " + email
+    message + "\n\nVon: " + name + "\nE-Mail: " + email
   );
 
   window.location.href =
