@@ -22,32 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* NAVBAR SMOOTH SCROLL + AUTO-CLOSE (Mobile) */
+  /* NAVBAR AUTO-CLOSE (Mobile) – Scroll bleibt Standard */
   var navCollapse = document.getElementById("navCollapse");
-  var navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  var navLinks = document.querySelectorAll(".nav-link");
 
   navLinks.forEach(function (link) {
-    link.addEventListener("click", function (e) {
-      var href = link.getAttribute("href");
-      if (!href || href.charAt(0) !== "#") return;
-
-      e.preventDefault();
-
-      var targetId = href.substring(1);
-      var target = document.getElementById(targetId);
-      if (!target) return;
-
-      // Offset: Navbar-Höhe (mobil etwas grösser)
-      var offset = window.innerWidth <= 992 ? 90 : 80;
-      var rect = target.getBoundingClientRect();
-      var targetPosition = rect.top + window.pageYOffset - offset;
-
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "smooth"
-      });
-
-      // Collapse schliessen, falls offen
+    link.addEventListener("click", function () {
       if (navCollapse && navCollapse.classList.contains("show")) {
         var instance = bootstrap.Collapse.getInstance(navCollapse) ||
           new bootstrap.Collapse(navCollapse, { toggle: false });
