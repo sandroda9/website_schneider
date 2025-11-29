@@ -4,30 +4,52 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   /* YEAR AUTO-UPDATE */
-  const year = document.getElementById("year");
+  var year = document.getElementById("year");
   if (year) {
     year.textContent = new Date().getFullYear();
   }
 
   /* LIGHTBOX IMAGE VIEWER */
-  const galleryItems = document.querySelectorAll(".gallery-item");
-  const lightboxImage = document.getElementById("lightboxImage");
+  var galleryItems = document.querySelectorAll(".gallery-item");
+  var lightboxImage = document.getElementById("lightboxImage");
 
-  galleryItems.forEach(item => {
-    item.addEventListener("click", () => {
-      const src = item.getAttribute("data-src");
+  galleryItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      var src = item.getAttribute("data-src");
       if (lightboxImage && src) {
         lightboxImage.src = src;
       }
     });
   });
 
-  /* NAVBAR AUTO-CLOSE (Mobile) */
-  const navCollapse = document.getElementById("navCollapse");
-  document.querySelectorAll(".nav-link").forEach(link => {
-    link.addEventListener("click", () => {
+  /* NAVBAR SMOOTH SCROLL + AUTO-CLOSE (Mobile) */
+  var navCollapse = document.getElementById("navCollapse");
+  var navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+
+  navLinks.forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var href = link.getAttribute("href");
+      if (!href || href.charAt(0) !== "#") return;
+
+      e.preventDefault();
+
+      var targetId = href.substring(1);
+      var target = document.getElementById(targetId);
+      if (!target) return;
+
+      // Offset: Navbar-Höhe (mobil etwas grösser)
+      var offset = window.innerWidth <= 992 ? 90 : 80;
+      var rect = target.getBoundingClientRect();
+      var targetPosition = rect.top + window.pageYOffset - offset;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+
+      // Collapse schliessen, falls offen
       if (navCollapse && navCollapse.classList.contains("show")) {
-        const instance = bootstrap.Collapse.getInstance(navCollapse) ||
+        var instance = bootstrap.Collapse.getInstance(navCollapse) ||
           new bootstrap.Collapse(navCollapse, { toggle: false });
         instance.hide();
       }
@@ -35,14 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   /* SCROLL-EFFEKTE (Services & Galerie) */
-  const animatedElements = document.querySelectorAll(
+  var animatedElements = document.querySelectorAll(
     ".service-card, .gallery-item"
   );
 
   if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach(entry => {
+    var observer = new IntersectionObserver(
+      function (entries, obs) {
+        entries.forEach(function (entry) {
           if (entry.isIntersecting) {
             entry.target.classList.add("in-view");
             obs.unobserve(entry.target);
@@ -52,29 +74,35 @@ document.addEventListener("DOMContentLoaded", function () {
       { threshold: 0.2 }
     );
 
-    animatedElements.forEach(el => observer.observe(el));
+    animatedElements.forEach(function (el) { observer.observe(el); });
   } else {
-    animatedElements.forEach(el => el.classList.add("in-view"));
+    animatedElements.forEach(function (el) { el.classList.add("in-view"); });
   }
 });
 
 /* MAILTO FORM HANDLER */
 function sendMail(e) {
-  e.preventDefault();
+  if (e && e.preventDefault) {
+    e.preventDefault();
+  }
 
-  const name = document.getElementById("name")?.value.trim();
-  const email = document.getElementById("email")?.value.trim();
-  const message = document.getElementById("message")?.value.trim();
+  var nameField = document.getElementById("name");
+  var emailField = document.getElementById("email");
+  var messageField = document.getElementById("message");
+
+  var name = nameField ? nameField.value.trim() : "";
+  var email = emailField ? emailField.value.trim() : "";
+  var message = messageField ? messageField.value.trim() : "";
 
   if (!name || !email || !message) return false;
 
-  const subject = encodeURIComponent("Anfrage von " + name);
-  const body = encodeURIComponent(
-    `${message}\n\nVon: ${name}\nE-Mail: ${email}`
+  var subject = encodeURIComponent("Anfrage von " + name);
+  var body = encodeURIComponent(
+    message + "\n\nVon: " + name + "\nE-Mail: " + email
   );
 
   window.location.href =
-    `mailto:latelierhobil@hotmail.com?subject=${subject}&body=${body}`;
+    "mailto:latelierhobil@hotmail.com?subject=" + subject + "&body=" + body;
 
   return false;
 }
