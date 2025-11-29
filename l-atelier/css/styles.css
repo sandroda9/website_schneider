@@ -36,7 +36,10 @@ body {
   overflow-x: hidden;
 }
 
-/* KEIN scroll-margin-top mehr – Offset macht jetzt das JS */
+/* Anker-Ziele: nicht von fixer Navbar überdecken */
+section[id] {
+  scroll-margin-top: calc(var(--navbar-height) + 16px);
+}
 
 a {
   color: rgb(var(--bordeaux));
