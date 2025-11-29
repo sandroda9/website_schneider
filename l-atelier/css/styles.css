@@ -198,7 +198,6 @@ a:hover {
   border-radius: .5rem;
 }
 
-
 /* Über uns */
 .about-image {
   width: 100%;
@@ -227,16 +226,38 @@ footer {
   padding-top: 140px;
 }
 
-@media (max-width: 992px) {
-  #hero {
-    padding-top: 140px;
-  }
-    .hero-image {
-    display: none;
-  }
-}
-
 /* Hintergrund für helle Sektionen */
 .bg-light-section {
   background-color: rgb(var(--bg));
+}
+
+/* ===========================
+   RESPONSIVE ANPASSUNGEN
+=========================== */
+
+@media (max-width: 992px) {
+  #hero {
+    padding-top: 200px;
+  }
+
+  /* Hero-Bild auf Mobile ausblenden */
+  .hero-image {
+    display: none;
+  }
+
+  /* Hero-Buttons auf Mobile: zentriert, untereinander, mit Abstand */
+  .hero-buttons {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-buttons .btn:last-child {
+    margin-bottom: 0;
+  }
 }
