@@ -12,16 +12,18 @@
   --radius: .5rem;
 }
 
-/* Dark Mode */
-:root[data-theme="dark"] {
-  --bordeaux: 56 50 61;
-  --gold: 225 214 189;
-  --bg: 44 50 57;
-  --card-bg: 28 26 30;
-  --text: 215 215 215;
-  --muted: 165 165 170;
-  --btn: 210 195 165;
-  --hover: 225 210 180;
+/* Dark Mode automatisch per System-/Browser-Einstellung */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bordeaux: 56 50 61;
+    --gold: 225 214 189;
+    --bg: 44 50 57;
+    --card-bg: 28 26 30;
+    --text: 215 215 215;
+    --muted: 165 165 170;
+    --btn: 210 195 165;
+    --hover: 225 210 180;
+  }
 }
 
 html, body {
@@ -39,33 +41,9 @@ a:hover {
   text-decoration: none;
 }
 
-:root[data-theme="dark"] a {
-  color: rgb(var(--gold));
-}
-
-/* ----- GLOBAL DARKMODE TOGGLE ----- */
-.theme-toggle-fixed {
-  position: fixed;
-  top: 14px;
-  right: 14px;
-  z-index: 9999;
-  background: rgba(76, 69, 82, 0.35);
-  border: 1px solid rgb(var(--gold));
-  color: rgb(var(--gold));
-  padding: 3px 6px;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  backdrop-filter: blur(6px);
-}
-
-.theme-toggle-fixed:hover {
-  background-color: rgba(var(--gold), 0.15);
-}
-
-/* In Mobile: Button links vom Hamburger */
-@media (max-width: 992px) {
-  .theme-toggle-fixed {
-    right: 70px;
+@media (prefers-color-scheme: dark) {
+  a {
+    color: rgb(var(--gold));
   }
 }
 
@@ -74,7 +52,6 @@ a:hover {
   height: var(--navbar-height);
   background-color: rgb(var(--bordeaux));
   color: rgb(var(--gold));
-  z-index: 1200;
 }
 
 .navbar .nav-link,
@@ -82,7 +59,6 @@ a:hover {
   color: rgb(var(--gold));
 }
 
-/* Hamburger */
 .navbar-toggler {
   border: 1px solid rgb(var(--gold)) !important;
   color: rgb(var(--gold)) !important;
@@ -96,24 +72,25 @@ a:hover {
   box-shadow: 0 6px 0 rgb(var(--gold)), 0 -6px 0 rgb(var(--gold));
 }
 
-/* Mobile Open Background */
+/* Mobile Navbar background */
 .navbar-collapse.show {
   background-color: rgba(76,69,82,0.75);
   backdrop-filter: blur(10px);
   padding: 0.8rem 1rem;
 }
 
-:root[data-theme="dark"] .navbar-collapse.show {
-  background-color: rgba(56,50,61,0.75);
+@media (prefers-color-scheme: dark) {
+  .navbar-collapse.show {
+    background-color: rgba(56,50,61,0.75);
+  }
 }
 
-/* Nav links mobile */
 .navbar-collapse.show .nav-link {
   color: rgb(var(--gold)) !important;
   padding: 0.6rem 0;
 }
 
-/* Fix for hidden titles behind navbar */
+/* Scroll anchor offset */
 [id] {
   scroll-margin-top: 9px;
 }
@@ -141,13 +118,15 @@ a:hover {
   color: rgb(var(--muted));
 }
 
-/* Darkmode gold text */
-:root[data-theme="dark"] .headline,
-:root[data-theme="dark"] .card-title,
-:root[data-theme="dark"] .card-text,
-:root[data-theme="dark"] .section-title,
-:root[data-theme="dark"] footer {
-  color: rgb(var(--gold)) !important;
+/* Darkmode heading style */
+@media (prefers-color-scheme: dark) {
+  .headline,
+  .card-title,
+  .card-text,
+  .section-title,
+  footer {
+    color: rgb(var(--gold)) !important;
+  }
 }
 
 /* Cards */
@@ -157,8 +136,10 @@ a:hover {
   border: 1px solid rgba(var(--muted), 0.1);
 }
 
-:root[data-theme="dark"] .card {
-  border-color: rgba(85,80,90,0.25);
+@media (prefers-color-scheme: dark) {
+  .card {
+    border-color: rgba(85,80,90,0.25);
+  }
 }
 
 /* Buttons */
@@ -173,22 +154,62 @@ a:hover {
   border-color: rgb(var(--bordeaux));
 }
 
-/* Darkmode buttons */
-:root[data-theme="dark"] .btn,
-:root[data-theme="dark"] .btn-primary,
-:root[data-theme="dark"] .btn-outline-secondary {
-  border-color: rgb(var(--gold)) !important;
-  color: rgb(var(--gold)) !important;
+@media (prefers-color-scheme: dark) {
+  .btn,
+  .btn-primary,
+  .btn-outline-secondary {
+    border-color: rgb(var(--gold)) !important;
+    color: rgb(var(--gold)) !important;
+  }
+
+  .btn-primary {
+    background-color: transparent;
+  }
+
+  .btn:hover {
+    background-color: rgba(var(--gold), 0.15) !important;
+  }
 }
 
-:root[data-theme="dark"] .btn:hover {
-  background-color: rgba(var(--gold), 0.15) !important;
-}
+/* ===========================
+   BILDER VERKLEINERT
+=========================== */
 
-/* Gallery */
+/* Galerie */
 .gallery-grid img {
   width: 100%;
   object-fit: cover;
+  max-height: 200px;
+  border-radius: .5rem;
+}
+
+/* Card-Bilder */
+.card-img-top {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
+}
+
+/* Hero Bild */
+.hero-image {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+@media (max-width: 992px) {
+  .hero-image {
+    max-height: 280px;
+  }
+}
+
+/* Über uns */
+.about-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: .5rem;
 }
 
 /* Footer */
@@ -196,19 +217,28 @@ footer {
   color: rgb(var(--muted));
 }
 
-:root[data-theme="dark"] footer {
-  color: rgb(var(--gold));
+@media (prefers-color-scheme: dark) {
+  footer {
+    color: rgb(var(--gold));
+  }
 }
 
 * {
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 }
+
+/* HERO Abstand wegen Navbar */
 #hero {
-  padding-top: 140px; /* Desktop */
+  padding-top: 140px;
 }
 
 @media (max-width: 992px) {
   #hero {
-    padding-top: 180px; /* Mobile */
+    padding-top: 180px;
   }
+}
+
+/* Hintergrund für helle Sektionen */
+.bg-light-section {
+  background-color: rgb(var(--bg));
 }

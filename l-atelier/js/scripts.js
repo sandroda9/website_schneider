@@ -13,36 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   /* -------------------------
-     THEME TOGGLE (Dark/Light)
-  ------------------------- */
-  const themeToggle = document.getElementById("themeToggle");
-  const root = document.documentElement;
-
-  // Load saved theme
-  const savedTheme = localStorage.getItem("site-theme") || "light";
-  if (savedTheme === "dark") {
-    root.setAttribute("data-theme", "dark");
-    if (themeToggle) themeToggle.textContent = "☀️";
-  }
-
-  // Toggle theme
-  if (themeToggle) {
-    themeToggle.addEventListener("click", () => {
-      const isDark = root.getAttribute("data-theme") === "dark";
-
-      if (isDark) {
-        root.removeAttribute("data-theme");
-        localStorage.setItem("site-theme", "light");
-        themeToggle.textContent = "🌙";
-      } else {
-        root.setAttribute("data-theme", "dark");
-        localStorage.setItem("site-theme", "dark");
-        themeToggle.textContent = "☀️";
-      }
-    });
-  }
-
-  /* -------------------------
      LIGHTBOX IMAGE VIEWER
   ------------------------- */
   const galleryItems = document.querySelectorAll(".gallery-item");
