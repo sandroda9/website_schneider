@@ -297,6 +297,16 @@ footer {
   padding-top: 140px;
 }
 
+/* Utility-Klassen, die im HTML benutzt werden */
+.py-6 {
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+
+.min-vh-60 {
+  min-height: 60vh;
+}
+
 /* Hintergrund für helle Sektionen */
 .bg-light-section {
   background-color: rgb(var(--bg));
