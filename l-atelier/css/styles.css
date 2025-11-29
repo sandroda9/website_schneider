@@ -33,17 +33,7 @@ body {
   color: rgb(var(--text));
   font-family: "Inter", system-ui;
   scroll-behavior: smooth;
-  /* WICHTIG: Platz für fixe Navbar beim Scrollen zu Ankern */
-  scroll-padding-top: 80px;
   overflow-x: hidden;
-}
-
-/* auf kleineren Screens ist die Navbar höher */
-@media (max-width: 992px) {
-  html,
-  body {
-    scroll-padding-top: 110px;
-  }
 }
 
 a {
@@ -362,3 +352,4 @@ footer {
     transform: translateY(0);
   }
 }
+
