@@ -52,6 +52,32 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   });
+
+  /* -------------------------
+     SCROLL-EFFEKTE (Services & Galerie)
+  ------------------------- */
+  const animatedElements = document.querySelectorAll(".service-card, .gallery-item");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in-view");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    animatedElements.forEach((el) => observer.observe(el));
+  } else {
+    // Fallback: falls kein IntersectionObserver, alles direkt sichtbar
+    animatedElements.forEach((el) => el.classList.add("in-view"));
+  }
 });
 
 /* -------------------------

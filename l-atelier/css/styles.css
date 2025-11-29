@@ -298,4 +298,36 @@ footer {
   .hero-buttons .btn:last-child {
     margin-bottom: 0;
   }
+
+  /* ========= Scroll-Effekte für Services ========= */
+  .service-card {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .service-card.from-left {
+    transform: translateX(-40px);
+  }
+
+  .service-card.from-right {
+    transform: translateX(40px);
+  }
+
+  .service-card.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ========= Scroll-Effekt für Galerie ========= */
+  .gallery-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .gallery-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
