@@ -232,7 +232,7 @@ footer {
     padding-top: 180px;
   }
     .hero-image {
-    width: 100%;
+    display: none;
   }
 }
 
