@@ -72,22 +72,49 @@ a:hover {
   box-shadow: 0 6px 0 rgb(var(--gold)), 0 -6px 0 rgb(var(--gold));
 }
 
-/* Mobile Navbar background */
+/* Entferne alte Transparenz → wird unten überschrieben */
 .navbar-collapse.show {
-  background-color: rgba(76,69,82,0.75);
-  backdrop-filter: blur(10px);
   padding: 0.8rem 1rem;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Mobile Navbar – volle Breite, nicht transparent, gleiche Farbe */
+@media (max-width: 992px) {
+  .navbar {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .navbar .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+
   .navbar-collapse.show {
-    background-color: rgba(56,50,61,0.75);
+    background-color: rgb(var(--bordeaux));
+    backdrop-filter: none;
+    padding: 1rem 1.25rem;
+  }
+
+  .navbar-collapse.show .nav-link {
+    color: rgb(var(--gold)) !important;
+    padding: 0.75rem 0;
+    font-size: 1.1rem;
   }
 }
 
-.navbar-collapse.show .nav-link {
-  color: rgb(var(--gold)) !important;
-  padding: 0.6rem 0;
+/* Dark Mode Variante mobil */
+@media (max-width: 992px) and (prefers-color-scheme: dark) {
+  .navbar-collapse.show {
+    background-color: rgb(var(--bordeaux));
+  }
 }
 
 /* Scroll anchor offset */
@@ -245,7 +272,7 @@ footer {
     display: none;
   }
 
-  /* Hero-Buttons auf Mobile: zentriert, untereinander, mit Abstand */
+  /* Hero-Buttons auf Mobile: zentriert, untereinander */
   .hero-buttons {
     text-align: center;
     margin-top: 1.5rem;
