@@ -35,7 +35,6 @@ body {
   scroll-behavior: smooth;
 
   /* verhindert horizontales Scrollen/„Zusammen-zoomen“ */
-  max-width: 100%;
   overflow-x: hidden;
 }
 
@@ -81,6 +80,17 @@ a:hover {
 /* Entferne alte Transparenz → wird unten überschrieben */
 .navbar-collapse.show {
   padding: 0.8rem 1rem;
+}
+
+/* Bootstrap-Collapse-Animation der Navbar deaktivieren,
+   damit das Menü sofort öffnet/schließt */
+.navbar-collapse {
+  transition: none !important;
+}
+
+.collapsing {
+  transition: none !important;
+  height: auto !important;
 }
 
 /* Mobile Navbar – stabiler Hamburger-Button, volle Breite beim Aufklappen */
@@ -260,8 +270,9 @@ footer {
   }
 }
 
+/* Nur noch leichte globale Übergänge (nicht mehr auf alles extrem) */
 * {
-  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  transition: background-color .2s ease, color .2s ease;
 }
 
 /* HERO Abstand wegen Navbar */
