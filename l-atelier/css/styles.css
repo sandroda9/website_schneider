@@ -7,6 +7,7 @@
   --muted: 120 118 122;
   --btn: 196 178 145;
   --hover: 210 195 165;
+
   --navbar-height: 64px;
   --radius: .5rem;
 }
@@ -32,17 +33,26 @@ body {
   color: rgb(var(--text));
   font-family: "Inter", system-ui;
   scroll-behavior: smooth;
+
+  /* verhindert horizontales Scrollen/„Zusammen-zoomen“ */
   overflow-x: hidden;
 }
 
-a { color: rgb(var(--bordeaux)); }
-a:hover { text-decoration: none; }
-
-@media (prefers-color-scheme: dark) {
-  a { color: rgb(var(--gold)); }
+a {
+  color: rgb(var(--bordeaux));
 }
 
-/* ================= NAVBAR ================= */
+a:hover {
+  text-decoration: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  a {
+    color: rgb(var(--gold));
+  }
+}
+
+/* Navbar */
 .navbar {
   height: var(--navbar-height);
   background-color: rgb(var(--bordeaux));
@@ -54,7 +64,10 @@ a:hover { text-decoration: none; }
   color: rgb(var(--gold));
 }
 
-.navbar-brand img { height: 42px; }
+/* Logo */
+.navbar-brand img {
+  height: 42px;
+}
 
 .navbar-toggler {
   border: 1px solid rgb(var(--gold)) !important;
@@ -69,37 +82,69 @@ a:hover { text-decoration: none; }
   box-shadow: 0 6px 0 rgb(var(--gold)), 0 -6px 0 rgb(var(--gold));
 }
 
-.navbar-collapse,
-.collapsing {
+/* Entferne alte Transparenz → wird unten überschrieben */
+.navbar-collapse.show {
+  padding: 0.8rem 1rem;
+}
+
+/* Bootstrap-Collapse-Animation der Navbar deaktivieren */
+.navbar-collapse {
   transition: none !important;
 }
 
-/* Mobile Navbar */
-@media (max-width: 992px) {
-  .navbar-brand { margin-left: .5rem; }
-  .navbar-toggler { margin-right: .5rem; }
+.collapsing {
+  transition: none !important;
+  height: auto !important;
+}
 
+/* Mobile Navbar – volle Breite + Logo/Hamburger korrekt einrücken */
+@media (max-width: 992px) {
+
+  /* Logo leicht nach rechts */
+  .navbar-brand {
+    margin-left: 0.5rem;
+  }
+
+  /* Hamburger etwas nach links */
+  .navbar-toggler {
+    margin-right: 0.5rem;
+  }
+
+  /* Container auf volle Breite */
   .navbar .container {
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
   }
 
+  .navbar-collapse {
+    position: static;
+    width: 100%;
+  }
+
   .navbar-collapse.show {
     background-color: rgb(var(--bordeaux));
+    backdrop-filter: none;
     padding: 1rem 0;
   }
 
   .navbar-collapse.show .nav-link {
     color: rgb(var(--gold)) !important;
-    padding: .75rem 1rem;
+    padding: 0.75rem 1rem;
     font-size: 1.1rem;
   }
 }
 
-/* ================= WICHTIG: SCROLL FIX ================= */
+/* Dark Mode Variante mobil */
+@media (max-width: 992px) and (prefers-color-scheme: dark) {
+  .navbar-collapse.show {
+    background-color: rgb(var(--bordeaux));
+  }
+}
+
+/* Scroll anchor offset */
 [id] {
-  scroll-margin-top: calc(var(--navbar-height) + 16px);
+  scroll-margin-top: 9px;
 }
 
 @media (max-width: 992px) {
@@ -108,15 +153,35 @@ a:hover { text-decoration: none; }
   }
 }
 
-/* ================= TYPO ================= */
-.headline,
-.section-title {
+/* Typography */
+.headline {
   font-family: "Playfair Display", serif;
+  font-weight: 700;
   color: rgb(var(--bordeaux));
 }
 
-.section-sub { color: rgb(var(--muted)); }
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.75rem;
+  color: rgb(var(--bordeaux));
+}
 
+.section-sub {
+  color: rgb(var(--muted));
+}
+
+/* Kontakt-Bereich */
+#contact .section-title {
+  font-family: "Inter", system-ui;
+}
+
+#contact input,
+#contact textarea,
+#contact label {
+  font-family: "Inter", system-ui;
+}
+
+/* Darkmode heading style */
 @media (prefers-color-scheme: dark) {
   .headline,
   .card-title,
@@ -127,7 +192,7 @@ a:hover { text-decoration: none; }
   }
 }
 
-/* ================= CARDS ================= */
+/* Cards */
 .card {
   background: rgb(var(--card-bg));
   border-radius: var(--radius);
@@ -140,13 +205,7 @@ a:hover { text-decoration: none; }
   }
 }
 
-.card-img-top {
-  width: 100%;
-  max-height: 220px;
-  object-fit: cover;
-}
-
-/* ================= BUTTONS ================= */
+/* Buttons */
 .btn-primary {
   background-color: rgb(var(--bordeaux));
   border-color: rgb(var(--bordeaux));
@@ -158,6 +217,7 @@ a:hover { text-decoration: none; }
   border-color: rgb(var(--bordeaux));
 }
 
+/* Dark Mode Buttons */
 @media (prefers-color-scheme: dark) {
   .btn,
   .btn-primary,
@@ -166,25 +226,26 @@ a:hover { text-decoration: none; }
     color: rgb(var(--gold)) !important;
   }
 
-  .btn-primary { background-color: transparent; }
-  .btn:hover { background-color: rgba(var(--gold), .15) !important; }
+  .btn-primary {
+    background-color: transparent;
+  }
+
+  .btn:hover {
+    background-color: rgba(var(--gold), 0.15) !important;
+  }
 }
 
-/* ================= IMAGES ================= */
-.hero-image {
-  width: 60%;
-  max-width: 100%;
-  height: auto;
-  border-radius: .5rem;
+/* Hover-Effekt Desktop */
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: rgb(var(--gold)) !important;
+    border-color: rgb(var(--gold)) !important;
+    color: rgb(var(--bordeaux)) !important;
+  }
 }
 
-.about-image {
-  width: 100%;
-  max-height: 380px;
-  object-fit: cover;
-  border-radius: .5rem;
-}
-
+/* Galerie-Bilder */
 .gallery-grid img {
   width: 100%;
   object-fit: cover;
@@ -192,22 +253,108 @@ a:hover { text-decoration: none; }
   border-radius: .5rem;
 }
 
-/* ================= HERO ================= */
-#hero { padding-top: 140px; }
-
-@media (max-width: 992px) {
-  #hero { padding-top: 200px; }
-  .hero-image { display: none; }
+/* Card-Bilder */
+.card-img-top {
+  width: 100%;
+  max-height: 220px;
+  object-fit: cover;
 }
 
-/* ================= FOOTER ================= */
-footer { color: rgb(var(--muted)); }
+/* Hero Bild */
+.hero-image {
+  width: 60%;
+  max-width: 100%;
+  height: auto;
+  border-radius: .5rem;
+}
+
+/* Über uns */
+.about-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: .5rem;
+}
+
+/* Footer */
+footer {
+  color: rgb(var(--muted));
+}
 
 @media (prefers-color-scheme: dark) {
-  footer { color: rgb(var(--gold)); }
+  footer {
+    color: rgb(var(--gold));
+  }
 }
 
-/* ================= ANIMATION ================= */
+/* sanfte generelle Übergänge */
 * {
   transition: background-color .2s ease, color .2s ease;
+}
+
+/* HERO Abstand wegen Navbar */
+#hero {
+  padding-top: 140px;
+}
+
+/* Hintergrund für helle Sektionen */
+.bg-light-section {
+  background-color: rgb(var(--bg));
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+  #hero {
+    padding-top: 200px;
+  }
+
+  .hero-image {
+    display: none;
+  }
+
+  .hero-buttons {
+    text-align: center;
+    margin-top: 1.5rem;
+  }
+
+  .hero-buttons .btn {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-buttons .btn:last-child {
+    margin-bottom: 0;
+  }
+
+  .service-card {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .service-card.from-left {
+    transform: translateX(-40px);
+  }
+
+  .service-card.from-right {
+    transform: translateX(40px);
+  }
+
+  .service-card.in-view {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .gallery-item {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .gallery-item.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
