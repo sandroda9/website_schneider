@@ -13,50 +13,59 @@ document.addEventListener("DOMContentLoaded", function () {
   var galleryItems = document.querySelectorAll(".gallery-item");
   var lightboxImage = document.getElementById("lightboxImage");
 
-  galleryItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-      var src = item.getAttribute("data-src");
-      if (lightboxImage && src) {
-        lightboxImage.src = src;
-      }
-    });
-  });
+  // Kein NodeList.forEach, sondern klassische for-Schleife
+  for (var i = 0; i < galleryItems.length; i++) {
+    (function (item) {
+      item.addEventListener("click", function () {
+        var src = item.getAttribute("data-src");
+        if (lightboxImage && src) {
+          lightboxImage.src = src;
+        }
+      });
+    })(galleryItems[i]);
+  }
 
-  /* NAVBAR AUTO-CLOSE (Mobile) – Scroll bleibt Standard */
+  /* NAVBAR AUTO-CLOSE (Mobile) */
   var navCollapse = document.getElementById("navCollapse");
   var navLinks = document.querySelectorAll(".nav-link");
 
-  navLinks.forEach(function (link) {
-    link.addEventListener("click", function () {
-      if (navCollapse && navCollapse.classList.contains("show")) {
-        var instance = bootstrap.Collapse.getInstance(navCollapse) ||
-          new bootstrap.Collapse(navCollapse, { toggle: false });
-        instance.hide();
-      }
-    });
-  });
+  for (var j = 0; j < navLinks.length; j++) {
+    (function (link) {
+      link.addEventListener("click", function () {
+        if (navCollapse && navCollapse.classList.contains("show")) {
+          // Bootstrap Collapse-Instanz holen oder neu erstellen
+          var instance = bootstrap.Collapse.getInstance(navCollapse);
+          if (!instance) {
+            instance = new bootstrap.Collapse(navCollapse, { toggle: false });
+          }
+          instance.hide();
+        }
+      });
+    })(navLinks[j]);
+  }
 
   /* SCROLL-EFFEKTE (Services & Galerie) */
-  var animatedElements = document.querySelectorAll(
-    ".service-card, .gallery-item"
-  );
+  var animatedElements = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(
-      function (entries, obs) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("in-view");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.2 }
-    );
+    var observer = new IntersectionObserver(function (entries, obs) {
+      for (var k = 0; k < entries.length; k++) {
+        var entry = entries[k];
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+          obs.unobserve(entry.target);
+        }
+      }
+    }, { threshold: 0.2 });
 
-    animatedElements.forEach(function (el) { observer.observe(el); });
+    for (var l = 0; l < animatedElements.length; l++) {
+      observer.observe(animatedElements[l]);
+    }
   } else {
-    animatedElements.forEach(function (el) { el.classList.add("in-view"); });
+    // Fallback für sehr alte Browser
+    for (var m = 0; m < animatedElements.length; m++) {
+      animatedElements[m].classList.add("in-view");
+    }
   }
 });
 
@@ -78,7 +87,7 @@ function sendMail(e) {
 
   var subject = encodeURIComponent("Anfrage von " + name);
   var body = encodeURIComponent(
-    message + "\n\nVon: " + name + "\nE-Mail: " + email
+    message + "\n\nVon: " + name + "\n-E-Mail: " + email
   );
 
   window.location.href =
