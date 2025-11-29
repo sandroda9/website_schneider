@@ -209,6 +209,17 @@ a:hover {
   }
 }
 
+/* Hover-Effekt für Desktop (Maus):
+   Hintergrund gold, Schrift bordeaux für alle .btn-primary */
+@media (hover: hover) and (pointer: fine) {
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background-color: rgb(var(--gold)) !important;
+    border-color: rgb(var(--gold)) !important;
+    color: rgb(var(--bordeaux)) !important;
+  }
+}
+
 /* ===========================
    BILDER VERKLEINERT
 =========================== */
