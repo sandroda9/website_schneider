@@ -24,43 +24,13 @@ document.addEventListener("DOMContentLoaded", function () {
     })(galleryItems[i]);
   }
 
-  /* NAVBAR SMOOTH SCROLL + AUTO-CLOSE (Mobile) */
+  /* NAVBAR AUTO-CLOSE (Mobile) – Scroll macht der Browser */
   var navCollapse = document.getElementById("navCollapse");
-  // Alle Links, die auf einen Anker zeigen (inkl. Logo)
-  var navLinks = document.querySelectorAll('.nav-link[href^="#"], .navbar-brand[href^="#"]');
+  var navLinks = document.querySelectorAll(".nav-link, .navbar-brand");
 
   for (var j = 0; j < navLinks.length; j++) {
     (function (link) {
-      link.addEventListener("click", function (e) {
-        var href = link.getAttribute("href");
-        if (href && href.charAt(0) === "#") {
-          var targetId = href.substring(1);
-          var target = document.getElementById(targetId);
-
-          if (target) {
-            // Standard-Anchor-Verhalten verhindern
-            if (e && e.preventDefault) {
-              e.preventDefault();
-            }
-
-            // Offset je nach Bildschirmhöhe (Navbar grösser auf Mobile)
-            var offset = window.innerWidth <= 992 ? 100 : 80;
-            var rect = target.getBoundingClientRect();
-            var targetPosition = rect.top + window.pageYOffset - offset;
-
-            // Smooth Scroll, mit Fallback für ältere Browser
-            try {
-              window.scrollTo({
-                top: targetPosition,
-                behavior: "smooth"
-              });
-            } catch (err) {
-              window.scrollTo(0, targetPosition);
-            }
-          }
-        }
-
-        // Navbar-Collapse schliessen, wenn offen (nur auf Mobile relevant)
+      link.addEventListener("click", function () {
         if (navCollapse && navCollapse.classList.contains("show")) {
           var instance = bootstrap.Collapse.getInstance(navCollapse);
           if (!instance) {
