@@ -193,6 +193,8 @@ a:hover {
 /* Hero Bild */
 .hero-image {
   width: 60%;
+  max-width: 100%;
+  height: auto;
   border-radius: .5rem;
 }
 
@@ -228,6 +230,9 @@ footer {
 @media (max-width: 992px) {
   #hero {
     padding-top: 180px;
+  }
+    .hero-image {
+    width: 100%;
   }
 }
 
