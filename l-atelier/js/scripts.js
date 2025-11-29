@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll(".nav-link").forEach(link => {
     link.addEventListener("click", () => {
       if (navCollapse && navCollapse.classList.contains("show")) {
-        bootstrap.Collapse.getInstance(navCollapse).hide();
+        const instance = bootstrap.Collapse.getInstance(navCollapse) ||
+          new bootstrap.Collapse(navCollapse, { toggle: false });
+        instance.hide();
       }
     });
   });
