@@ -11,7 +11,7 @@
   --navbar-height: 64px;
   --radius: .5rem;
 }
-
+@media
 /* Dark Mode automatisch per System-/Browser-Einstellung */
 @media (prefers-color-scheme: dark) {
   :root {
@@ -79,28 +79,27 @@ a:hover {
 
 /* Mobile Navbar – volle Breite, nicht transparent, gleiche Farbe */
 @media (max-width: 992px) {
+  /* Navbar immer gleich gepaddet – nichts verschiebt sich */
   .navbar {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .navbar .container {
     padding-left: 1rem;
     padding-right: 1rem;
   }
 
+  .navbar .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* Collapse bleibt im normalen Flow (keine absolute-Position mehr) */
   .navbar-collapse {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
+    position: static;
     width: 100%;
   }
 
   .navbar-collapse.show {
     background-color: rgb(var(--bordeaux));
     backdrop-filter: none;
-    padding: 1rem 1.25rem;
+    padding: 1rem 0;
   }
 
   .navbar-collapse.show .nav-link {
@@ -109,6 +108,7 @@ a:hover {
     font-size: 1.1rem;
   }
 }
+
 
 /* Dark Mode Variante mobil */
 @media (max-width: 992px) and (prefers-color-scheme: dark) {
