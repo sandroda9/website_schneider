@@ -145,6 +145,17 @@ a:hover {
   color: rgb(var(--muted));
 }
 
+/* Kontakt-Bereich: gleiche Schrift wie übrige Seite */
+#contact .section-title {
+  font-family: "Inter", system-ui;
+}
+
+#contact input,
+#contact textarea,
+#contact label {
+  font-family: "Inter", system-ui;
+}
+
 /* Darkmode heading style */
 @media (prefers-color-scheme: dark) {
   .headline,
