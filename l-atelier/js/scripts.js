@@ -24,20 +24,63 @@ document.addEventListener("DOMContentLoaded", function () {
     })(galleryItems[i]);
   }
 
-  /* NAVBAR AUTO-CLOSE (Mobile) – Scroll macht der Browser */
+  /* NAVBAR – SMOOTH SCROLL MIT OFFSET + AUTO-CLOSE (MOBILE) */
   var navCollapse = document.getElementById("navCollapse");
-  var navLinks = document.querySelectorAll(".nav-link, .navbar-brand");
+  var navbar = document.querySelector(".navbar");
+
+  // Alle Links in der Navbar, die auf Anker zeigen (inkl. Logo)
+  var navLinks = document.querySelectorAll('.nav-link[href^="#"], .navbar-brand[href^="#"]');
+
+  function handleNavClick(link, event) {
+    var href = link.getAttribute("href");
+    if (!href || href.charAt(0) !== "#") {
+      return;
+    }
+
+    // Standard-Ankersprung verhindern – wir scrollen selbst
+    if (event && event.preventDefault) {
+      event.preventDefault();
+    }
+
+    var targetId = href.substring(1);
+    var target = document.getElementById(targetId);
+    if (!target) {
+      return;
+    }
+
+    // Höhe der Navbar bestimmen
+    var navbarHeight = navbar ? navbar.offsetHeight : 0;
+    // auf Mobile etwas extra Luft
+    var extra = window.innerWidth <= 992 ? 16 : 0;
+    var offset = navbarHeight + extra;
+
+    var rect = target.getBoundingClientRect();
+    var targetPosition = rect.top + window.pageYOffset - offset;
+
+    try {
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "smooth"
+      });
+    } catch (err) {
+      // Fallback für sehr alte Browser
+      window.scrollTo(0, targetPosition);
+    }
+
+    // Navbar-Collapse schliessen, falls offen (mobil)
+    if (navCollapse && navCollapse.classList.contains("show")) {
+      var instance = bootstrap.Collapse.getInstance(navCollapse);
+      if (!instance) {
+        instance = new bootstrap.Collapse(navCollapse, { toggle: false });
+      }
+      instance.hide();
+    }
+  }
 
   for (var j = 0; j < navLinks.length; j++) {
     (function (link) {
-      link.addEventListener("click", function () {
-        if (navCollapse && navCollapse.classList.contains("show")) {
-          var instance = bootstrap.Collapse.getInstance(navCollapse);
-          if (!instance) {
-            instance = new bootstrap.Collapse(navCollapse, { toggle: false });
-          }
-          instance.hide();
-        }
+      link.addEventListener("click", function (e) {
+        handleNavClick(link, e);
       });
     })(navLinks[j]);
   }
