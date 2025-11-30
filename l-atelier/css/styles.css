@@ -36,11 +36,16 @@ body {
   overflow-x: hidden;
 }
 
-/* ================================
-   Fix: Scroll-Offset für Navbar
-   ================================ */
+/* ============================================================
+   FIX: Scroll-Offset + realer Abstand für alle Sections
+   ============================================================ */
 section[id] {
-  scroll-margin-top: calc(var(--navbar-height) + 16px);
+  scroll-margin-top: calc(var(--navbar-height) + 20px);
+}
+
+/* Damit Safari & Mobile Chrome garantiert scrollen */
+section {
+  padding-top: 60px;
 }
 
 /* Links */
@@ -88,7 +93,7 @@ a:hover {
   box-shadow: 0 6px 0 rgb(var(--gold)), 0 -6px 0 rgb(var(--gold));
 }
 
-/* Keine unnötige Animation */
+/* Collapse ohne Animation */
 .navbar-collapse,
 .collapsing {
   transition: none !important;
@@ -124,7 +129,6 @@ a:hover {
   }
 }
 
-/* Dark Mode Navbar mobil */
 @media (max-width: 992px) and (prefers-color-scheme: dark) {
   .navbar-collapse.show {
     background-color: rgb(var(--bordeaux));
@@ -148,6 +152,7 @@ a:hover {
   color: rgb(var(--muted));
 }
 
+/* Dark Mode Text */
 @media (prefers-color-scheme: dark) {
   .headline,
   .card-title,
@@ -249,7 +254,7 @@ a:hover {
   padding-top: 140px;
 }
 
-/* About section image */
+/* About image */
 .about-image {
   width: 100%;
   max-height: 380px;
@@ -273,7 +278,7 @@ footer {
   transition: background-color .2s ease, color .2s ease;
 }
 
-/* General spacing */
+/* General spacing & utilities */
 .py-6 {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
@@ -283,7 +288,6 @@ footer {
   min-height: 60vh;
 }
 
-/* Light sections */
 .bg-light-section {
   background-color: rgb(var(--bg));
 }
@@ -308,10 +312,6 @@ footer {
     display: block;
     width: 100%;
     margin-bottom: 0.75rem;
-  }
-
-  .hero-buttons .btn:last-child {
-    margin-bottom: 0;
   }
 
   .service-card {
