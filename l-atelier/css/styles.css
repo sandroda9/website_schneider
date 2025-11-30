@@ -36,11 +36,14 @@ body {
   overflow-x: hidden;
 }
 
-/* Anker-Ziele: nicht von fixer Navbar überdecken */
+/* ================================
+   Fix: Scroll-Offset für Navbar
+   ================================ */
 section[id] {
   scroll-margin-top: calc(var(--navbar-height) + 16px);
 }
 
+/* Links */
 a {
   color: rgb(var(--bordeaux));
 }
@@ -85,22 +88,14 @@ a:hover {
   box-shadow: 0 6px 0 rgb(var(--gold)), 0 -6px 0 rgb(var(--gold));
 }
 
-/* Entferne alte Transparenz → wird unten überschrieben */
-.navbar-collapse.show {
-  padding: 0.8rem 1rem;
-}
-
-/* Bootstrap-Collapse-Animation der Navbar deaktivieren */
-.navbar-collapse {
-  transition: none !important;
-}
-
+/* Keine unnötige Animation */
+.navbar-collapse,
 .collapsing {
   transition: none !important;
   height: auto !important;
 }
 
-/* Mobile Navbar – volle Breite + Logo/Hamburger korrekt einrücken */
+/* Mobile Navbar */
 @media (max-width: 992px) {
 
   .navbar-brand {
@@ -117,14 +112,8 @@ a:hover {
     padding-right: 0;
   }
 
-  .navbar-collapse {
-    position: static;
-    width: 100%;
-  }
-
   .navbar-collapse.show {
     background-color: rgb(var(--bordeaux));
-    backdrop-filter: none;
     padding: 1rem 0;
   }
 
@@ -135,7 +124,7 @@ a:hover {
   }
 }
 
-/* Dark Mode Variante mobil */
+/* Dark Mode Navbar mobil */
 @media (max-width: 992px) and (prefers-color-scheme: dark) {
   .navbar-collapse.show {
     background-color: rgb(var(--bordeaux));
@@ -159,18 +148,6 @@ a:hover {
   color: rgb(var(--muted));
 }
 
-/* Kontakt-Bereich */
-#contact .section-title {
-  font-family: "Inter", system-ui;
-}
-
-#contact input,
-#contact textarea,
-#contact label {
-  font-family: "Inter", system-ui;
-}
-
-/* Darkmode heading style */
 @media (prefers-color-scheme: dark) {
   .headline,
   .card-title,
@@ -224,7 +201,7 @@ a:hover {
   }
 }
 
-/* Hover-Effekt Desktop */
+/* Desktop Hover */
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover,
   .btn-primary:focus {
@@ -234,7 +211,7 @@ a:hover {
   }
 }
 
-/* Galerie-Bilder */
+/* Gallery */
 .gallery-grid img {
   width: 100%;
   object-fit: cover;
@@ -242,14 +219,25 @@ a:hover {
   border-radius: .5rem;
 }
 
-/* Card-Bilder */
+.gallery-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.gallery-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Card Images */
 .card-img-top {
   width: 100%;
   max-height: 220px;
   object-fit: cover;
 }
 
-/* Hero Bild */
+/* Hero */
 .hero-image {
   width: 60%;
   max-width: 100%;
@@ -257,7 +245,11 @@ a:hover {
   border-radius: .5rem;
 }
 
-/* Über uns */
+#hero {
+  padding-top: 140px;
+}
+
+/* About section image */
 .about-image {
   width: 100%;
   max-height: 380px;
@@ -276,17 +268,12 @@ footer {
   }
 }
 
-/* sanfte generelle Übergänge */
+/* Transitions */
 * {
   transition: background-color .2s ease, color .2s ease;
 }
 
-/* HERO Abstand wegen Navbar */
-#hero {
-  padding-top: 140px;
-}
-
-/* Utility-Klassen */
+/* General spacing */
 .py-6 {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
@@ -296,7 +283,7 @@ footer {
   min-height: 60vh;
 }
 
-/* Hintergrund für helle Sektionen */
+/* Light sections */
 .bg-light-section {
   background-color: rgb(var(--bg));
 }
@@ -344,16 +331,5 @@ footer {
   .service-card.in-view {
     opacity: 1;
     transform: translateX(0);
-  }
-
-  .gallery-item {
-    opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-
-  .gallery-item.in-view {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
