@@ -13,16 +13,14 @@ document.addEventListener("DOMContentLoaded", function () {
   var galleryItems = document.querySelectorAll(".gallery-item");
   var lightboxImage = document.getElementById("lightboxImage");
 
-  for (var i = 0; i < galleryItems.length; i++) {
-    (function (item) {
-      item.addEventListener("click", function () {
-        var src = item.getAttribute("data-src");
-        if (lightboxImage && src) {
-          lightboxImage.src = src;
-        }
-      });
-    })(galleryItems[i]);
-  }
+  galleryItems.forEach(function (item) {
+    item.addEventListener("click", function () {
+      var src = item.getAttribute("data-src");
+      if (lightboxImage && src) {
+        lightboxImage.src = src;
+      }
+    });
+  });
 
   /* NAVBAR – Mobile-Collapse schliessen, Scroll übernimmt der Browser */
   var navCollapse = document.getElementById("navCollapse");
@@ -33,6 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach(function (link) {
       link.addEventListener("click", function () {
+
         // Nur im mobilen Zustand schliessen
         if (toggler && window.getComputedStyle(toggler).display !== "none") {
           if (typeof bootstrap !== "undefined") {
@@ -43,7 +42,8 @@ document.addEventListener("DOMContentLoaded", function () {
             instance.hide();
           }
         }
-        // kein preventDefault → Browser scrollt ganz normal zum Anker
+
+        // kein preventDefault → Browser scrollt selbst!
       });
     });
   }
@@ -53,38 +53,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if ("IntersectionObserver" in window) {
     var observer = new IntersectionObserver(function (entries, obs) {
-      for (var k = 0; k < entries.length; k++) {
-        var entry = entries[k];
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
           obs.unobserve(entry.target);
         }
-      }
+      });
     }, { threshold: 0.2 });
 
-    for (var l = 0; l < animatedElements.length; l++) {
-      observer.observe(animatedElements[l]);
-    }
+    animatedElements.forEach(function (el) {
+      observer.observe(el);
+    });
+
   } else {
-    for (var m = 0; m < animatedElements.length; m++) {
-      animatedElements[m].classList.add("in-view");
-    }
+    animatedElements.forEach(function (el) {
+      el.classList.add("in-view");
+    });
   }
 });
 
 /* MAILTO FORM HANDLER */
 function sendMail(e) {
-  if (e && e.preventDefault) {
-    e.preventDefault();
-  }
+  e.preventDefault();
 
-  var nameField = document.getElementById("name");
-  var emailField = document.getElementById("email");
-  var messageField = document.getElementById("message");
-
-  var name = nameField ? nameField.value.trim() : "";
-  var email = emailField ? emailField.value.trim() : "";
-  var message = messageField ? messageField.value.trim() : "";
+  var name = document.getElementById("name").value.trim();
+  var email = document.getElementById("email").value.trim();
+  var message = document.getElementById("message").value.trim();
 
   if (!name || !email || !message) return false;
 
