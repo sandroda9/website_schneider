@@ -333,3 +333,11 @@ footer {
     transform: translateX(0);
   }
 }
+/* ===========================================
+   FIX: Kontakt scrollt auf Mobile nicht
+   =========================================== */
+#contact {
+  scroll-margin-top: calc(var(--navbar-height) + 10px);
+  padding-bottom: 100px;
+}
+
