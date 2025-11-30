@@ -37,15 +37,15 @@ body {
 }
 
 /* ============================================================
-   FIX: Scroll-Offset + realer Abstand für alle Sections
+   FIX: Perfekter Mobile Scroll Offset
    ============================================================ */
 section[id] {
-  scroll-margin-top: calc(var(--navbar-height) + 20px);
+  scroll-margin-top: calc(var(--navbar-height) + 60px);
 }
 
-/* Damit Safari & Mobile Chrome garantiert scrollen */
+/* etablierter realer Abstand für Mobile Safari */
 section {
-  padding-top: 60px;
+  padding-top: 30px;
 }
 
 /* Links */
