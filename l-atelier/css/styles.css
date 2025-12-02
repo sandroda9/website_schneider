@@ -42,8 +42,9 @@ section {
   padding-top: 10px;
 }
 
-/* Robuster Fix für fixe Navbar + Anker:
-   unsichtbarer Block vor jeder Section mit ID */
+/*
+ Robuster Fix für fixe Navbar + Anker:
+   unsichtbarer Block vor jeder Section mit ID 
 section[id]::before {
   content: "";
   display: block;
@@ -52,6 +53,7 @@ section[id]::before {
   visibility: hidden;
   pointer-events: none;
 }
+*/
 
 a {
   color: rgb(var(--bordeaux));
@@ -352,3 +354,4 @@ footer {
   padding-top: 20px;
   padding-bottom: 80px;
 }
+
