@@ -1,6 +1,3 @@
-// ===============================
-// L' Atelier – Main Script File
-// ===============================
 document.addEventListener("DOMContentLoaded", function () {
 
   /* YEAR AUTO-UPDATE */
@@ -9,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     year.textContent = new Date().getFullYear();
   }
 
-  /* LIGHTBOX IMAGE VIEWER */
+  /* LIGHTBOX */
   var galleryItems = document.querySelectorAll(".gallery-item");
   var lightboxImage = document.getElementById("lightboxImage");
 
@@ -22,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  /* NAVBAR – Mobile-Collapse schliessen, Scroll übernimmt der Browser */
+  /* NAVBAR Mobile Auto-Close */
   var navCollapse = document.getElementById("navCollapse");
   var toggler = document.querySelector(".navbar-toggler");
 
@@ -31,8 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     navLinks.forEach(function (link) {
       link.addEventListener("click", function () {
-
-        // Nur im mobilen Zustand schliessen
         if (toggler && window.getComputedStyle(toggler).display !== "none") {
           if (typeof bootstrap !== "undefined") {
             var instance = bootstrap.Collapse.getInstance(navCollapse);
@@ -42,13 +37,11 @@ document.addEventListener("DOMContentLoaded", function () {
             instance.hide();
           }
         }
-
-        // kein preventDefault → Browser scrollt selbst!
       });
     });
   }
 
-  /* SCROLL-EFFEKTE (Services & Galerie) */
+  /* SCROLL-EFFEKTE */
   var animatedElements = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {
