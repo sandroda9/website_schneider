@@ -214,6 +214,12 @@ a:hover {
   border-radius: .5rem;
 }
 
+/* Galerie – Bild 2 & 4 Ausschnitt etwas nach oben verschieben */
+.gallery-grid .col-6:nth-child(2) img,
+.gallery-grid .col-6:nth-child(4) img {
+  object-position: center 25%;
+}
+
 .gallery-item {
   opacity: 0;
   transform: translateY(40px);
@@ -223,6 +229,12 @@ a:hover {
 .gallery-item.in-view {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Leichter Zoom-Effekt bei Hover (nur wenn in Sicht) */
+.gallery-item.in-view:hover {
+  transform: translateY(0) scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
 }
 
 .card-img-top {
@@ -243,6 +255,19 @@ a:hover {
   height: auto;
   border-radius: .5rem;
   margin: 1.5rem auto;
+
+  /* Fade-In Effekt */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroFadeIn 1.1s ease-out forwards;
+}
+
+/* Keyframes für Hero Fade-In */
+@keyframes heroFadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* About image */
@@ -330,4 +355,3 @@ footer {
   scroll-margin-top: calc(var(--navbar-height) + 10px);
   padding-bottom: 100px;
 }
-
