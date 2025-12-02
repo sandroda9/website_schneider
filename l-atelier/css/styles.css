@@ -12,7 +12,7 @@
   --radius: .5rem;
 }
 
-/* Dark Mode automatisch per System-/Browser-Einstellung */
+/* Dark Mode */
 @media (prefers-color-scheme: dark) {
   :root {
     --bordeaux: 56 50 61;
@@ -36,19 +36,14 @@ body {
   overflow-x: hidden;
 }
 
-/* ============================================================
-   FIX: Perfekter Mobile Scroll Offset
-   ============================================================ */
 section[id] {
   scroll-margin-top: calc(var(--navbar-height) + 60px);
 }
 
-/* etablierter realer Abstand für Mobile Safari */
 section {
   padding-top: 30px;
 }
 
-/* Links */
 a {
   color: rgb(var(--bordeaux));
 }
@@ -63,7 +58,6 @@ a:hover {
   }
 }
 
-/* Navbar */
 .navbar {
   height: var(--navbar-height);
   background-color: rgb(var(--bordeaux));
@@ -75,7 +69,6 @@ a:hover {
   color: rgb(var(--gold));
 }
 
-/* Logo */
 .navbar-brand img {
   height: 42px;
 }
@@ -93,7 +86,6 @@ a:hover {
   box-shadow: 0 6px 0 rgb(var(--gold)), 0 -6px 0 rgb(var(--gold));
 }
 
-/* Collapse ohne Animation */
 .navbar-collapse,
 .collapsing {
   transition: none !important;
@@ -140,6 +132,7 @@ a:hover {
   font-family: "Playfair Display", serif;
   font-weight: 700;
   color: rgb(var(--bordeaux));
+  text-align: center;
 }
 
 .section-title {
@@ -152,7 +145,6 @@ a:hover {
   color: rgb(var(--muted));
 }
 
-/* Dark Mode Text */
 @media (prefers-color-scheme: dark) {
   .headline,
   .card-title,
@@ -188,7 +180,6 @@ a:hover {
   border-color: rgb(var(--bordeaux));
 }
 
-/* Dark Mode Buttons */
 @media (prefers-color-scheme: dark) {
   .btn,
   .btn-primary,
@@ -206,7 +197,6 @@ a:hover {
   }
 }
 
-/* Desktop Hover */
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover,
   .btn-primary:focus {
@@ -235,7 +225,6 @@ a:hover {
   transform: translateY(0);
 }
 
-/* Card Images */
 .card-img-top {
   width: 100%;
   max-height: 220px;
@@ -243,15 +232,17 @@ a:hover {
 }
 
 /* Hero */
-.hero-image {
-  width: 60%;
-  max-width: 100%;
-  height: auto;
-  border-radius: .5rem;
-}
-
 #hero {
   padding-top: 140px;
+  text-align: center;
+}
+
+.hero-image {
+  width: 60%;
+  max-width: 420px;
+  height: auto;
+  border-radius: .5rem;
+  margin: 1.5rem auto;
 }
 
 /* About image */
@@ -262,7 +253,6 @@ a:hover {
   border-radius: .5rem;
 }
 
-/* Footer */
 footer {
   color: rgb(var(--muted));
 }
@@ -273,12 +263,10 @@ footer {
   }
 }
 
-/* Transitions */
 * {
   transition: background-color .2s ease, color .2s ease;
 }
 
-/* General spacing & utilities */
 .py-6 {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
@@ -300,7 +288,10 @@ footer {
   }
 
   .hero-image {
-    display: none;
+    display: block;
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 1.5rem;
   }
 
   .hero-buttons {
@@ -333,11 +324,9 @@ footer {
     transform: translateX(0);
   }
 }
-/* ===========================================
-   FIX: Kontakt scrollt auf Mobile nicht
-   =========================================== */
+
+/* Kontakt scroll fix */
 #contact {
   scroll-margin-top: calc(var(--navbar-height) + 10px);
   padding-bottom: 100px;
 }
-
