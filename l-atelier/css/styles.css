@@ -154,11 +154,11 @@ a:hover {
 
 /* --------------------------- */
 /*   Dienstleistungs-Bilder    */
-/*   jetzt 3:4 Verhältnis      */
+/*        4:3 Format           */
 /* --------------------------- */
 .card-img-top {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 4 / 3;   /* ← gewünschtes Format */
   object-fit: cover;
   object-position: center;
   border-radius: .5rem .5rem 0 0;
