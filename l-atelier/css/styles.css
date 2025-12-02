@@ -238,8 +238,8 @@ a:hover {
 }
 
 .hero-image {
-  width: 60%;
-  max-width: 420px;
+  width: 80%;
+  max-width: 700px;
   height: auto;
   border-radius: .5rem;
   margin: 1.5rem auto;
@@ -284,7 +284,7 @@ footer {
 @media (max-width: 992px) {
 
   #hero {
-    padding-top: 200px;
+    padding-top: 100px;
   }
 
   .hero-image {
@@ -330,3 +330,4 @@ footer {
   scroll-margin-top: calc(var(--navbar-height) + 10px);
   padding-bottom: 100px;
 }
+
