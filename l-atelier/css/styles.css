@@ -5,9 +5,11 @@
   --card-bg: 255 252 248;
   --text: 42 42 42;
   --muted: 120 118 122;
+  --btn: 196 178 145;
+  --hover: 210 195 165;
 
   --navbar-height: 64px;
-  --anchor-offset: calc(var(--navbar-height) + 20px); /* Abstand für Scroll-Anker */
+  --anchor-offset: calc(var(--navbar-height) + 10px); /* Abstand für Anker */
   --radius: .5rem;
 }
 
@@ -20,29 +22,31 @@
     --card-bg: 56 50 61;
     --text: 215 215 215;
     --muted: 165 165 170;
+    --btn: 210 195 165;
+    --hover: 225 210 180;
   }
 }
 
-/* --- Modernster & robuster Fix gegen abgeschnittene Titel --- */
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: var(--anchor-offset);
-}
-
-html, body {
+html,
+body {
+  height: 100%;
   background-color: rgb(var(--bg));
   color: rgb(var(--text));
   font-family: "Inter", system-ui;
+  scroll-behavior: smooth;
   overflow-x: hidden;
-  height: 100%;
 }
 
-/* Basisabstand */
+/* Alle Sections mit ID: Anker-Offset gegen Navbar */
+section[id] {
+  scroll-margin-top: var(--anchor-offset);
+}
+
+/* Genereller Abstand in Sections */
 section {
   padding-top: 20px;
 }
 
-/* Links */
 a {
   color: rgb(var(--bordeaux));
 }
@@ -90,6 +94,7 @@ a:hover {
 /* Mobile Navbar */
 @media (max-width: 992px) {
   :root {
+    /* auf Mobile leicht anderer Offset möglich */
     --anchor-offset: calc(var(--navbar-height) + 10px);
   }
 
@@ -162,6 +167,7 @@ a:hover {
   object-fit: cover;
   object-position: center;
   border-radius: .5rem .5rem 0 0;
+  display: block;
 }
 
 /* Buttons */
@@ -199,14 +205,17 @@ a:hover {
   }
 }
 
-/* GALLERY 4:5 */
+/* GALLERY – 4:5 */
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center;
   border-radius: .5rem;
+  display: block;
 }
 
+/* Fade + Zoom */
 .gallery-item {
   opacity: 0;
   transform: translateY(40px);
@@ -217,7 +226,7 @@ a:hover {
   transform: translateY(0);
 }
 .gallery-item.in-view:hover {
-  transform: scale(1.03);
+  transform: translateY(0) scale(1.03);
   box-shadow: 0 8px 20px rgba(0,0,0,0.16);
 }
 
@@ -264,7 +273,7 @@ footer {
   }
 }
 
-/* Transitions */
+/* Global transitions */
 * {
   transition: background-color .2s ease, color .2s ease;
 }
@@ -274,9 +283,11 @@ footer {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
 }
+
 .min-vh-60 {
   min-height: 60vh;
 }
+
 .bg-light-section {
   background-color: rgb(var(--bg));
 }
@@ -288,6 +299,7 @@ footer {
   }
 
   .hero-image {
+    display: block;
     width: 100%;
     max-width: 360px;
     margin: 0 auto 1.5rem;
@@ -307,10 +319,13 @@ footer {
   .service-card {
     opacity: 0;
     transform: translateX(40px);
-    transition: opacity .6s ease, transform .6s ease;
+    transition: opacity 0.6s ease, transform 0.6s ease;
   }
   .service-card.from-left {
     transform: translateX(-40px);
+  }
+  .service-card.from-right {
+    transform: translateX(40px);
   }
   .service-card.in-view {
     opacity: 1;
@@ -318,7 +333,7 @@ footer {
   }
 }
 
-/* --- Kontakt nach unten verschieben (Überlappungs-Fix) --- */
+/* Kontakt – etwas Luft nach Galerie */
 #contact {
   margin-top: 200px;
 }
