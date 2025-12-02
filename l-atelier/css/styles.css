@@ -217,7 +217,7 @@ a:hover {
 /* Galerie – Bild 2 & 4 Ausschnitt etwas nach oben verschieben */
 .gallery-grid .col-6:nth-child(2) img,
 .gallery-grid .col-6:nth-child(4) img {
-  object-position: center 25%;
+  object-position: center -25%;
 }
 
 .gallery-item {
@@ -355,3 +355,4 @@ footer {
   scroll-margin-top: calc(var(--navbar-height) + 10px);
   padding-bottom: 100px;
 }
+
