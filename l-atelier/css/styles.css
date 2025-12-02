@@ -47,11 +47,9 @@ section {
 a {
   color: rgb(var(--bordeaux));
 }
-
 a:hover {
   text-decoration: none;
 }
-
 @media (prefers-color-scheme: dark) {
   a {
     color: rgb(var(--gold));
@@ -64,12 +62,10 @@ a:hover {
   background-color: rgb(var(--bordeaux));
   color: rgb(var(--gold));
 }
-
 .navbar .nav-link,
 .navbar .navbar-brand {
   color: rgb(var(--gold));
 }
-
 .navbar-brand img {
   height: 42px;
 }
@@ -78,7 +74,6 @@ a:hover {
   border: 1px solid rgb(var(--gold)) !important;
   color: rgb(var(--gold)) !important;
 }
-
 .navbar-toggler-icon {
   background-image: none !important;
   width: 26px;
@@ -98,22 +93,18 @@ a:hover {
   .navbar-brand {
     margin-left: 0.5rem;
   }
-
   .navbar-toggler {
     margin-right: 0.5rem;
   }
-
   .navbar .container {
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
   }
-
   .navbar-collapse.show {
     background-color: rgb(var(--bordeaux));
     padding: 1rem 0;
   }
-
   .navbar-collapse.show .nav-link {
     color: rgb(var(--gold)) !important;
     padding: 0.75rem 1rem;
@@ -155,7 +146,6 @@ a:hover {
   border-radius: var(--radius);
   border: 1px solid rgba(var(--muted), 0.1);
 }
-
 @media (prefers-color-scheme: dark) {
   .card {
     border-color: rgba(85, 80, 90, 0.25);
@@ -168,7 +158,6 @@ a:hover {
   border-color: rgb(var(--bordeaux));
   color: rgb(var(--gold));
 }
-
 .btn-outline-secondary {
   color: rgb(var(--bordeaux));
   border-color: rgb(var(--bordeaux));
@@ -181,11 +170,9 @@ a:hover {
     border-color: rgb(var(--gold)) !important;
     color: rgb(var(--gold)) !important;
   }
-
   .btn-primary {
     background-color: transparent;
   }
-
   .btn:hover {
     background-color: rgba(var(--gold), 0.15) !important;
   }
@@ -201,38 +188,31 @@ a:hover {
 }
 
 /* --------------------------- */
-/*       GALLERY               */
+/*       GALLERY – 4:5         */
 /* --------------------------- */
 
 .gallery-grid img {
   width: 100%;
-  height: 200px;            /* GARANTIERT gleiche Höhe */
+  aspect-ratio: 4 / 5;  /* ← HOCHKANT (4:5) */
   object-fit: cover;
   object-position: center;
   border-radius: .5rem;
-}
-
-/* Bild 2 & 4 Ausschnitt weiter oben */
-.gallery-grid .col-6:nth-child(2) img,
-.gallery-grid .col-6:nth-child(4) img {
-  object-position: center 30%;
+  display: block;
 }
 
 /* Fade + Zoom */
 .gallery-item {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity .6s ease, transform .6s ease;
+  transition: opacity .6s ease, transform .6s ease, box-shadow .3s ease;
 }
-
 .gallery-item.in-view {
   opacity: 1;
   transform: translateY(0);
 }
-
 .gallery-item.in-view:hover {
   transform: translateY(0) scale(1.03);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.16);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
 }
 
 /* Card images */
@@ -257,7 +237,6 @@ a:hover {
   border-radius: .5rem;
   margin: 1.5rem auto;
 
-  /* Fade-In Effekt beim Laden */
   opacity: 0;
   transform: translateY(20px);
   animation: heroFadeIn 1.1s ease-out forwards;
@@ -282,7 +261,6 @@ a:hover {
 footer {
   color: rgb(var(--muted));
 }
-
 @media (prefers-color-scheme: dark) {
   footer {
     color: rgb(var(--gold));
@@ -310,7 +288,6 @@ footer {
 
 /* Responsive */
 @media (max-width: 992px) {
-
   #hero {
     padding-top: 100px;
   }
@@ -338,15 +315,12 @@ footer {
     transform: translateX(40px);
     transition: opacity 0.6s ease, transform 0.6s ease;
   }
-
   .service-card.from-left {
     transform: translateX(-40px);
   }
-
   .service-card.from-right {
     transform: translateX(40px);
   }
-
   .service-card.in-view {
     opacity: 1;
     transform: translateX(0);
