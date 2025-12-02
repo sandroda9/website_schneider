@@ -6,19 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
     year.textContent = new Date().getFullYear();
   }
 
-  /* LIGHTBOX */
-  var galleryItems = document.querySelectorAll(".gallery-item");
-  var lightboxImage = document.getElementById("lightboxImage");
-
-  galleryItems.forEach(function (item) {
-    item.addEventListener("click", function () {
-      var src = item.getAttribute("data-src");
-      if (lightboxImage && src) {
-        lightboxImage.src = src;
-      }
-    });
-  });
-
   /* NAVBAR Mobile Auto-Close */
   var navCollapse = document.getElementById("navCollapse");
   var toggler = document.querySelector(".navbar-toggler");
