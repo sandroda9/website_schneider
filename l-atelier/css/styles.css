@@ -339,8 +339,18 @@ footer {
   }
 }
 
+
+/* globaler Spacer am Seitenende, damit zu letzte Sektion sauber scrollt */
+body::after {
+  content: "";
+  display: block;
+  height: 150px; /* bei Bedarf 200px für noch mehr Scroll-Reserve */
+}
+
 /* Kontakt scroll fix */
 #contact {
   scroll-margin-top: calc(var(--navbar-height) + 10px);
   padding-bottom: 100px;
 }
+
+
