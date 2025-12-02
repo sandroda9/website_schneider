@@ -9,7 +9,7 @@
   --hover: 210 195 165;
 
   --navbar-height: 64px;
-  --anchor-offset: calc(var(--navbar-height) + 10px); /* Offset für Anker */
+  --anchor-offset: calc(var(--navbar-height) + 20px); /* Abstand für Scroll-Anker */
   --radius: .5rem;
 }
 
@@ -27,33 +27,24 @@
   }
 }
 
-html,
-body {
+/* Scroll fix – moderner Ersatz für ::before-Hack */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--anchor-offset);
+}
+
+html, body {
   height: 100%;
   background-color: rgb(var(--bg));
   color: rgb(var(--text));
   font-family: "Inter", system-ui;
-  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
-/* Abstand oben, aber OHNE scroll-margin-top-Tricks */
+/* Section spacing */
 section {
-  padding-top: 10px;
+  padding-top: 20px;
 }
-
-/*
- Robuster Fix für fixe Navbar + Anker:
-   unsichtbarer Block vor jeder Section mit ID 
-section[id]::before {
-  content: "";
-  display: block;
-  height: var(--anchor-offset);
-  margin-top: calc(-1 * var(--anchor-offset));
-  visibility: hidden;
-  pointer-events: none;
-}
-*/
 
 a {
   color: rgb(var(--bordeaux));
@@ -102,8 +93,7 @@ a:hover {
 /* Mobile Navbar */
 @media (max-width: 992px) {
   :root {
-    /* auf Mobile etwas enger, falls du magst */
-    --anchor-offset: var(--navbar-height);
+    --anchor-offset: calc(var(--navbar-height) + 10px);
   }
 
   .navbar-brand {
@@ -168,17 +158,13 @@ a:hover {
   }
 }
 
-/* --------------------------- */
-/*   Dienstleistungs-Bilder    */
-/*        4:3 Format           */
-/* --------------------------- */
+/* Dienstleistungs-Bilder */
 .card-img-top {
   width: 100%;
-  aspect-ratio: 4 / 3;   /* ← gewünschtes Format */
+  aspect-ratio: 4 / 3;
   object-fit: cover;
   object-position: center;
   border-radius: .5rem .5rem 0 0;
-  display: block;
 }
 
 /* Buttons */
@@ -216,20 +202,15 @@ a:hover {
   }
 }
 
-/* --------------------------- */
-/*       GALLERY – 4:5         */
-/* --------------------------- */
-
+/* GALLERY */
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
   object-position: center;
   border-radius: .5rem;
-  display: block;
 }
 
-/* Fade + Zoom */
 .gallery-item {
   opacity: 0;
   transform: translateY(40px);
@@ -244,9 +225,7 @@ a:hover {
   box-shadow: 0 8px 20px rgba(0,0,0,0.16);
 }
 
-/* --------------------------- */
-/*          HERO               */
-/* --------------------------- */
+/* HERO */
 #hero {
   padding-top: 140px;
   text-align: center;
@@ -289,7 +268,7 @@ footer {
   }
 }
 
-/* Global transitions */
+/* Transitions */
 * {
   transition: background-color .2s ease, color .2s ease;
 }
@@ -311,11 +290,10 @@ footer {
 /* Responsive */
 @media (max-width: 992px) {
   #hero {
-    padding-top: 80px; /* vorher 100px – macht mehr Platz fürs Scrollen zu den Sektionen */
+    padding-top: 80px;
   }
 
   .hero-image {
-    display: block;
     width: 100%;
     max-width: 360px;
     margin: 0 auto 1.5rem;
@@ -349,9 +327,7 @@ footer {
   }
 }
 
-/* Kontakt – nur etwas Luft */
+/* Kontakt – Kontakt nach Galerie nach unten schieben */
 #contact {
- margin-top: 200px;
+  margin-top: 200px;
 }
-
-
