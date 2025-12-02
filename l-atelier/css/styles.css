@@ -9,6 +9,7 @@
   --hover: 210 195 165;
 
   --navbar-height: 64px;
+  --anchor-offset: calc(var(--navbar-height) + 10px); /* Offset für Anker */
   --radius: .5rem;
 }
 
@@ -36,13 +37,20 @@ body {
   overflow-x: hidden;
 }
 
-/* weniger Abstand beim Scrollen zu Anker-Sektionen */
-section[id] {
-  scroll-margin-top: calc(var(--navbar-height) + 10px);
-}
-
+/* Abstand oben, aber OHNE scroll-margin-top-Tricks */
 section {
   padding-top: 10px;
+}
+
+/* Robuster Fix für fixe Navbar + Anker:
+   unsichtbarer Block vor jeder Section mit ID */
+section[id]::before {
+  content: "";
+  display: block;
+  height: var(--anchor-offset);
+  margin-top: calc(-1 * var(--anchor-offset));
+  visibility: hidden;
+  pointer-events: none;
 }
 
 a {
@@ -91,6 +99,11 @@ a:hover {
 
 /* Mobile Navbar */
 @media (max-width: 992px) {
+  :root {
+    /* auf Mobile etwas enger, falls du magst */
+    --anchor-offset: var(--navbar-height);
+  }
+
   .navbar-brand {
     margin-left: 0.5rem;
   }
@@ -110,11 +123,6 @@ a:hover {
     color: rgb(var(--gold)) !important;
     padding: 0.75rem 1rem;
     font-size: 1.1rem;
-  }
-
-  /* auf Mobile noch näher an die Navbar scrollen */
-  section[id] {
-    scroll-margin-top: var(--navbar-height);
   }
 }
 
@@ -339,10 +347,8 @@ footer {
   }
 }
 
-/* Kontakt scroll fix – eigene Mindesthöhe, damit man auch als letzte Sektion sauber scrollen kann */
+/* Kontakt – nur etwas Luft */
 #contact {
-  min-height: calc(100vh - var(--navbar-height)); /* immer mindestens eine Viewport-Höhe minus Navbar */
-  scroll-margin-top: var(--navbar-height);
   padding-top: 20px;
   padding-bottom: 80px;
 }
