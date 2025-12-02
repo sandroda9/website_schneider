@@ -5,8 +5,6 @@
   --card-bg: 255 252 248;
   --text: 42 42 42;
   --muted: 120 118 122;
-  --btn: 196 178 145;
-  --hover: 210 195 165;
 
   --navbar-height: 64px;
   --anchor-offset: calc(var(--navbar-height) + 20px); /* Abstand für Scroll-Anker */
@@ -22,30 +20,29 @@
     --card-bg: 56 50 61;
     --text: 215 215 215;
     --muted: 165 165 170;
-    --btn: 210 195 165;
-    --hover: 225 210 180;
   }
 }
 
-/* Scroll fix – moderner Ersatz für ::before-Hack */
+/* --- Modernster & robuster Fix gegen abgeschnittene Titel --- */
 html {
   scroll-behavior: smooth;
   scroll-padding-top: var(--anchor-offset);
 }
 
 html, body {
-  height: 100%;
   background-color: rgb(var(--bg));
   color: rgb(var(--text));
   font-family: "Inter", system-ui;
   overflow-x: hidden;
+  height: 100%;
 }
 
-/* Section spacing */
+/* Basisabstand */
 section {
   padding-top: 20px;
 }
 
+/* Links */
 a {
   color: rgb(var(--bordeaux));
 }
@@ -158,7 +155,7 @@ a:hover {
   }
 }
 
-/* Dienstleistungs-Bilder */
+/* Dienstleistungs-Bilder 4:3 */
 .card-img-top {
   width: 100%;
   aspect-ratio: 4 / 3;
@@ -202,12 +199,11 @@ a:hover {
   }
 }
 
-/* GALLERY */
+/* GALLERY 4:5 */
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
-  object-position: center;
   border-radius: .5rem;
 }
 
@@ -221,7 +217,7 @@ a:hover {
   transform: translateY(0);
 }
 .gallery-item.in-view:hover {
-  transform: translateY(0) scale(1.03);
+  transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0,0,0,0.16);
 }
 
@@ -278,11 +274,9 @@ footer {
   padding-top: 4.5rem;
   padding-bottom: 4.5rem;
 }
-
 .min-vh-60 {
   min-height: 60vh;
 }
-
 .bg-light-section {
   background-color: rgb(var(--bg));
 }
@@ -313,13 +307,10 @@ footer {
   .service-card {
     opacity: 0;
     transform: translateX(40px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity .6s ease, transform .6s ease;
   }
   .service-card.from-left {
     transform: translateX(-40px);
-  }
-  .service-card.from-right {
-    transform: translateX(40px);
   }
   .service-card.in-view {
     opacity: 1;
@@ -327,7 +318,7 @@ footer {
   }
 }
 
-/* Kontakt – Kontakt nach Galerie nach unten schieben */
+/* --- Kontakt nach unten verschieben (Überlappungs-Fix) --- */
 #contact {
   margin-top: 200px;
 }
