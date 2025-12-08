@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  /* Fade-In Elements */
+  /* In-View Animations */
   const animated = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {

@@ -1,7 +1,6 @@
 /* ===========================
    WEBFONTS
    =========================== */
-
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter/Inter-Regular.woff2") format("woff2");
@@ -15,7 +14,6 @@
 /* ===========================
    BASE COLORS
    =========================== */
-
 :root {
   --bordeaux: 76 69 82;
   --gold: 225 214 189;
@@ -26,9 +24,9 @@
 }
 
 body {
+  margin: 0;
   background: rgb(var(--bg));
   color: rgb(var(--text));
-  margin: 0;
   font-family: "Inter", sans-serif;
 }
 
@@ -61,8 +59,8 @@ body {
   font-family: "Corinthia", cursive;
   font-size: 40px;
   font-weight: 400;
-  line-height: 38px;   
-  margin-bottom: 0px; 
+  line-height: 38px;
+  margin-bottom: 0;
 }
 
 .sticky-subtitle {
@@ -72,7 +70,7 @@ body {
 }
 
 /* ===========================
-   HERO SECTION
+   HERO
    =========================== */
 
 #hero {
@@ -82,10 +80,9 @@ body {
 .big-atelier {
   font-family: "Corinthia", cursive;
   font-size: 200px;
+  line-height: 180px;
   color: rgb(var(--bordeaux));
-  margin-top: 0;
   margin-bottom: 10px;
-  opacity: 1;
   transition: opacity .4s ease, transform .4s ease;
 }
 
@@ -95,13 +92,13 @@ body {
 }
 
 .hero-subtitle {
-  font-size: 20px;
+  font-size: 22px;
+  margin-bottom: 25px;
   color: rgb(var(--bordeaux));
-  margin-bottom: 30px;
 }
 
 /* ===========================
-   SERVICE CARDS
+   SERVICES
    =========================== */
 
 .card {
@@ -112,15 +109,15 @@ body {
 
 .card-img-top {
   width: 100%;
-  aspect-ratio: 4/3;
   object-fit: cover;
+  aspect-ratio: 4/3;
   border-radius: .5rem .5rem 0 0;
 }
 
 .service-card {
   opacity: 0;
   transform: translateY(40px);
-  transition: .6s;
+  transition: .6s ease;
 }
 
 .service-card.in-view {
@@ -159,6 +156,53 @@ body {
    =========================== */
 
 footer {
-  color: rgb(var(--muted));
   margin-top: 100px;
+  color: rgb(var(--muted));
+}
+
+/* ===========================
+   RESPONSIVE FIXES
+   =========================== */
+
+@media (max-width: 768px) {
+
+  .big-atelier {
+    font-size: 110px;
+    line-height: 95px;
+  }
+
+  #stickyHeader {
+    height: 65px;
+    padding-top: 4px;
+  }
+
+  .sticky-title {
+    font-size: 28px;
+    line-height: 26px;
+  }
+
+  .sticky-subtitle {
+    font-size: 12px;
+    margin-top: -4px;
+  }
+}
+
+@media (max-width: 460px) {
+
+  .big-atelier {
+    font-size: 80px;
+    line-height: 70px;
+  }
+
+  #stickyHeader {
+    height: 60px;
+  }
+
+  .sticky-title {
+    font-size: 24px;
+  }
+
+  .sticky-subtitle {
+    font-size: 11px;
+  }
 }
