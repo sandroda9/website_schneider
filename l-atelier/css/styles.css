@@ -59,7 +59,7 @@ body {
 
 .sticky-title {
   font-family: "Corinthia", cursive;
-  font-size: 22px;
+  font-size: 40px;
   font-weight: 400;
 }
 
@@ -78,7 +78,7 @@ body {
 
 .big-atelier {
   font-family: "Corinthia", cursive;
-  font-size: 110px;
+  font-size: 200px;
   color: rgb(var(--bordeaux));
   margin-top: 0;
   margin-bottom: 10px;
