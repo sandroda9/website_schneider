@@ -1,57 +1,38 @@
 /* ===========================
-   Webfonts
+   WEBFONTS
    =========================== */
-
-@font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter/Inter-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter/Inter-Regular.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("../fonts/inter/Inter-SemiBold.woff2") format("woff2");
-  font-weight: 600;
-  font-style: normal;
-  font-display: swap;
+  font-family: "Corinthia";
+  src: url("../fonts/Corinthia/Corinthia-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 
 /* ===========================
-   Farben & Grundlayout
+   COLORS & BASE
    =========================== */
-
 :root {
   --bordeaux: 76 69 82;
   --gold: 225 214 189;
   --bg: 245 242 238;
-  --card-bg: 255 252 248;
   --text: 42 42 42;
   --muted: 120 118 122;
-
-  --radius: .5rem;
+  --card-bg: 255 252 248;
 }
 
-html, body {
-  margin: 0;
-  background-color: rgb(var(--bg));
+body {
+  background: rgb(var(--bg));
   color: rgb(var(--text));
-  font-family: "Inter", system-ui, sans-serif;
-  scroll-behavior: smooth;
-  overflow-x: hidden;
+  margin: 0;
+  font-family: "Inter", sans-serif;
 }
 
 /* ===========================
-   Sticky Header (mit Fade)
+   STICKY HEADER (MINI VERSION)
    =========================== */
 
 #stickyHeader {
@@ -59,82 +40,75 @@ html, body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 48px;
-  background-color: rgb(var(--bg));
-  color: rgb(var(--bordeaux));
-  font-size: 22px;
-  font-weight: 600;
+  height: 75px;
+  background-color: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
   text-align: center;
-  line-height: 48px;
-  z-index: 2000;
   opacity: 0;
-  transform: translateY(-18px);
-  transition: opacity .45s ease, transform .45s ease;
-  box-shadow: none;
+  transform: translateY(-20px);
+  transition: opacity .4s ease, transform .4s ease;
+  z-index: 2000;
+  padding-top: 8px;
 }
 
 #stickyHeader.visible {
   opacity: 1;
   transform: translateY(0);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.sticky-title {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.sticky-subtitle {
+  font-size: 14px;
+  opacity: 0.9;
 }
 
 /* ===========================
-   Hero
+   HERO TITLE
    =========================== */
 
 #hero {
-  padding-top: 140px;
-  text-align: center;
+  padding-top: 60px; /* weniger Abstand */
 }
 
 .big-atelier {
-  font-size: 64px;
-  font-weight: 600;
+  font-family: "Corinthia", cursive;
+  font-size: 110px;
+  color: rgb(var(--bordeaux));
+  margin-bottom: 10px;
+  margin-top: 0;
   opacity: 0;
-  animation: fadeBig 1.2s ease forwards;
+  animation: fadeDown 1.2s ease forwards;
 }
 
-@keyframes fadeBig {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.hero-image {
-  width: 80%;
-  max-width: 700px;
-  border-radius: .5rem;
-  margin-top: 1.5rem;
-  opacity: 0;
-  animation: fadeImg 1.3s ease forwards;
-}
-
-@keyframes fadeImg {
+@keyframes fadeDown {
   0% { opacity: 0; transform: translateY(20px); }
   100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ===========================
-   Cards
+   SERVICES
    =========================== */
-
 .card {
   background: rgb(var(--card-bg));
-  border-radius: var(--radius);
-  border: 1px solid rgba(var(--muted), 0.12);
+  border-radius: .5rem;
+  border: 1px solid rgba(0,0,0,0.1);
 }
 
 .card-img-top {
   width: 100%;
+  border-radius: .5rem .5rem 0 0;
   aspect-ratio: 4/3;
   object-fit: cover;
-  border-radius: .5rem .5rem 0 0;
 }
 
 .service-card {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity .6s ease, transform .6s ease;
+  transition: .6s;
 }
 
 .service-card.in-view {
@@ -143,9 +117,8 @@ html, body {
 }
 
 /* ===========================
-   Galerie
+   GALLERY
    =========================== */
-
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 4/5;
@@ -153,58 +126,10 @@ html, body {
   border-radius: .5rem;
 }
 
-.gallery-item {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-
-.gallery-item.in-view {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.gallery-item.in-view:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
-}
-
 /* ===========================
-   Kontakt
+   FOOTER
    =========================== */
-
-#contact {
-  margin-top: 200px;
-}
-
-/* Buttons */
-.btn-primary {
-  background-color: rgb(var(--bordeaux));
-  border-color: rgb(var(--bordeaux));
-  color: rgb(var(--gold));
-}
-
-.btn-primary:hover {
-  background-color: rgb(var(--gold));
-  color: rgb(var(--bordeaux));
-}
-
-.btn-outline-secondary {
-  color: rgb(var(--bordeaux));
-  border-color: rgb(var(--bordeaux));
-}
-
-/* ===========================
-   Mobile
-   =========================== */
-
-@media (max-width: 992px) {
-  .big-atelier {
-    font-size: 48px;
-  }
-
-  .hero-image {
-    width: 100%;
-    max-width: 360px;
-  }
+footer {
+  color: rgb(var(--muted));
+  margin-top: 100px;
 }

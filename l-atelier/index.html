@@ -3,15 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>L' Atelier — Schneideratelier Flawil</title>
+  <title>L'Atelier — Schneideratelier Flawil</title>
 
   <!-- FONTS -->
-  <link rel="preload" href="fonts/inter/Inter-Light.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-
-  <!-- FAVICONS -->
-  <link rel="icon" href="favicon.ico">
+  <link rel="preload" href="fonts/Corinthia/Corinthia-Regular.ttf" as="font" type="font/ttf" crossorigin>
 
   <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,88 +18,86 @@
 
 <body>
 
-<!-- STICKY HEADER -->
-<div id="stickyHeader">L’Atelier</div>
+<!-- STICKY HEADER (minimiert) -->
+<div id="stickyHeader">
+  <div class="sticky-title">L’Atelier</div>
+  <div class="sticky-subtitle">Schneiderei · Herrenmode · Chemische Reinigung</div>
+</div>
 
 <!-- HERO -->
-<header id="hero" class="py-6">
+<header id="hero">
   <div class="container text-center">
-    <h1 class="big-atelier">L’ Atelier</h1>
 
-    <p class="lead mb-4">
-      Schneiderei · Herrenmode · Chemische Reinigung
-    </p>
+    <h1 class="big-atelier">L’Atelier</h1>
 
+    <!-- SERVICES moved here -->
+    <section id="services" class="py-5 mt-5">
+      <div class="container">
+        <div class="row g-4">
+
+          <div class="col-md-4">
+            <div class="card h-100 service-card from-right">
+              <img src="img/Atelier-Flawil-Schneider8.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Schneiderei</h5>
+                <p class="card-text">Perfekte Passform durch Massanfertigung.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 service-card from-left">
+              <img src="img/Atelier-Flawil-Schneider16.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Herrenmode</h5>
+                <p class="card-text">Individuelle Beratung, präzise abgestimmt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="card h-100 service-card from-left">
+              <img src="img/Atelier-Flawil-Schneider15.jpg" class="card-img-top">
+              <div class="card-body">
+                <h5 class="card-title">Chemische Reinigung</h5>
+                <p class="card-text">Professionelles Verfahren mit grösster Sorgfalt.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FIELD IMAGE NOW AFTER SERVICES -->
     <img src="img/IMG_Levi + Militya-min.jpg"
          class="img-fluid rounded shadow-sm hero-image"
          alt="Levi und Militya Hobil">
 
-    <p class="mt-4">
+    <p class="mt-4 hero-text">
       Buongiorno und härzlich Willkommä bei L'Atelier.<br><br>
       Ich freue mich, dass Sie den Weg zu mir gefunden haben.  
       Hier wird das traditionelle Handwerk mit Sorgfalt und Stolz ausgeführt.  
       Bei uns erhalten Ihre Kleidungsstücke einen besonderen Wert.
     </p>
+
   </div>
 </header>
-
-<!-- SERVICES -->
-<section id="services" class="py-5">
-  <div class="container">
-    <div class="row g-4">
-
-      <div class="col-md-4">
-        <div class="card h-100 service-card from-right">
-          <img src="img/Atelier-Flawil-Schneider8.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Schneiderei</h5>
-            <p class="card-text">Perfekte Passform durch Massanfertigung.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 service-card from-left">
-          <img src="img/Atelier-Flawil-Schneider16.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Herrenmode</h5>
-            <p class="card-text">Individuelle Beratung, präzise abgestimmt.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="card h-100 service-card from-left">
-          <img src="img/Atelier-Flawil-Schneider15.jpg" class="card-img-top">
-          <div class="card-body">
-            <h5 class="card-title">Chemische Reinigung</h5>
-            <p class="card-text">Professionelles Verfahren mit grösster Sorgfalt.</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <!-- GALLERY -->
 <section id="gallery" class="py-5 bg-light-section">
   <div class="container">
-
     <div class="text-center mb-4">
       <h2 class="section-title">Galerie</h2>
       <p class="section-sub">Einblicke ins Atelier</p>
     </div>
 
     <div class="row g-3 gallery-grid">
-
       <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider.jpg" class="img-fluid rounded gallery-item"></div>
       <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider14.jpg" class="img-fluid rounded gallery-item"></div>
       <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider11.jpg" class="img-fluid rounded gallery-item"></div>
       <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider17.jpg" class="img-fluid rounded gallery-item"></div>
-
     </div>
-
   </div>
 </section>
 
@@ -119,7 +113,7 @@
           <strong>L'Atelier Hobil</strong><br>
           Wilerstrasse 14, 9230 Flawil<br>
           Tel: 071 232 02 22<br>
-          E-Mail: <a href="mailto:latelierhobil@hotmail.com">latelierhobil@hotmail.com</a>
+          <a href="mailto:latelierhobil@hotmail.com">latelierhobil@hotmail.com</a>
         </p>
 
         <ul class="list-unstyled mt-3">
@@ -128,11 +122,6 @@
           <li>Samstag: 09:00–16:00</li>
           <li>Sonntag: Geschlossen</li>
         </ul>
-
-        <div class="mt-4">
-          <a class="btn btn-primary me-2" href="mailto:latelierhobil@hotmail.com">E-Mail</a>
-          <a class="btn btn-outline-secondary" href="tel:+41712320222">Anrufen</a>
-        </div>
       </div>
 
       <div class="col-lg-6">

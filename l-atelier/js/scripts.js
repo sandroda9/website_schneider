@@ -1,10 +1,10 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* Auto Jahr */
-  var year = document.getElementById("year");
+  /* YEAR UPDATE */
+  const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* Sticky Header */
+  /* Sticky Header Scroll Logic */
   const sticky = document.getElementById("stickyHeader");
 
   window.addEventListener("scroll", () => {
@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  /* Scroll animations */
-  var animatedElements = document.querySelectorAll(".service-card, .gallery-item");
+  /* Fade-in Services, Gallery */
+  const animated = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {
-    var observer = new IntersectionObserver(function (entries, obs) {
-      entries.forEach(function (entry) {
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
           obs.unobserve(entry.target);
@@ -28,6 +28,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, { threshold: 0.2 });
 
-    animatedElements.forEach(el => observer.observe(el));
+    animated.forEach(el => observer.observe(el));
   }
 });
