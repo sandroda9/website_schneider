@@ -1,34 +1,20 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* YEAR AUTO-UPDATE */
+  /* YEAR AUTO */
   var year = document.getElementById("year");
-  if (year) {
-    year.textContent = new Date().getFullYear();
-  }
+  if (year) year.textContent = new Date().getFullYear();
 
-  /* NAVBAR Mobile Auto-Close */
-  var navCollapse = document.getElementById("navCollapse");
-  var toggler = document.querySelector(".navbar-toggler");
+  /* Scroll Sticky Header */
+  const sticky = document.getElementById("stickyHeader");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 120) {
+      sticky.classList.add("visible");
+    } else {
+      sticky.classList.remove("visible");
+    }
+  });
 
-  if (navCollapse) {
-    var navLinks = navCollapse.querySelectorAll(".nav-link[href^='#'], .navbar-brand[href^='#']");
-
-    navLinks.forEach(function (link) {
-      link.addEventListener("click", function () {
-        if (toggler && window.getComputedStyle(toggler).display !== "none") {
-          if (typeof bootstrap !== "undefined") {
-            var instance = bootstrap.Collapse.getInstance(navCollapse);
-            if (!instance) {
-              instance = new bootstrap.Collapse(navCollapse, { toggle: false });
-            }
-            instance.hide();
-          }
-        }
-      });
-    });
-  }
-
-  /* SCROLL-EFFEKTE */
+  /* Fade-In Animation */
   var animatedElements = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {
@@ -41,34 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, { threshold: 0.2 });
 
-    animatedElements.forEach(function (el) {
-      observer.observe(el);
-    });
-
-  } else {
-    animatedElements.forEach(function (el) {
-      el.classList.add("in-view");
-    });
-  }
+    animatedElements.forEach(el => observer.observe(el));
+  } 
 });
-
-/* MAILTO FORM HANDLER */
-function sendMail(e) {
-  e.preventDefault();
-
-  var name = document.getElementById("name").value.trim();
-  var email = document.getElementById("email").value.trim();
-  var message = document.getElementById("message").value.trim();
-
-  if (!name || !email || !message) return false;
-
-  var subject = encodeURIComponent("Anfrage von " + name);
-  var body = encodeURIComponent(
-    message + "\n\nVon: " + name + "\nE-Mail: " + email
-  );
-
-  window.location.href =
-    "mailto:latelierhobil@hotmail.com?subject=" + subject + "&body=" + body;
-
-  return false;
-}

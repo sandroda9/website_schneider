@@ -10,84 +10,49 @@
   <link rel="preload" href="fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 
-  <link rel="preload" href="fonts/playfair/PlayfairDisplay-Medium.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" href="fonts/playfair/PlayfairDisplay-Bold.woff2" as="font" type="font/woff2" crossorigin>
-
   <!-- FAVICONS -->
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="img/LAtelier Logo4_32px.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="img/LAtelier Logo4_16px.png">
-  <link rel="apple-touch-icon" href="img/LAtelier Logo4_48px.png">
 
-  <!-- Lokales Bootstrap-CSS -->
+  <!-- Bootstrap -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
-  <!-- Dein Custom-CSS -->
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-
-    <a class="navbar-brand d-flex align-items-center" href="#hero">
-      <img src="img/logo2_150px.png" height="42" class="me-2" alt="Logo">
-    </a>
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse" id="navCollapse">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="#hero">Über uns</a></li>
-        <li class="nav-item"><a class="nav-link" href="#services">Dienstleistungen</a></li>
-        <li class="nav-item"><a class="nav-link" href="#gallery">Galerie</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Kontakt</a></li>
-      </ul>
-    </div>
-
-  </div>
-</nav>
+<!-- STICKY HEADER (wird erst sichtbar beim Scrollen) -->
+<div id="stickyHeader">L’Atelier</div>
 
 <!-- HERO -->
 <header id="hero" class="py-6">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-8 text-center">
+  <div class="container text-center">
+    <h1 class="big-atelier">L’ Atelier</h1>
 
-        <h1 class="display-4 headline">L' Atelier</h1>
-        <p class="lead mb-4">
-          Schneiderei · Herrenmode · Chemische Reinigung
-        </p>
+    <p class="lead mb-4">
+      Schneiderei · Herrenmode · Chemische Reinigung
+    </p>
 
-        <img src="img/IMG_Levi + Militya-min.jpg"
-             class="img-fluid rounded shadow-sm hero-image"
-             alt="Levi und Militya Hobil">
+    <img src="img/IMG_Levi + Militya-min.jpg"
+         class="img-fluid rounded shadow-sm hero-image"
+         alt="Levi und Militya Hobil">
 
-        <p class="mt-4">
-          Buongiorno und härzlich Willkommä bei L'Atelier.<br><br>
-          Ich freue mich, dass Sie den Weg zu mir gefunden haben. Mit dem Blick für massgenaue Herrenmode bringe ich eine Portion tessiner Modebewusstsein und Gastfreundschaft nach Flawil.  
-          Hier wird das traditionelle Handwerk mit Sorgfalt und Stolz ausgeführt.  
-          Bei uns erhalten Ihre Kleidungsstücke einen besonderen Wert.
-        </p>
+    <p class="mt-4">
+      Härzlich Willkommä und Buongiorno bei L'Atelier.<br><br>
+      Wir freuen uns, dass Sie den Weg zu uns gefunden haben. Mit dem Blick für massgenaue Herrenmode bringen wir eine Portion Modebewusstsein und Gastfreundschaft nach Flawil.  
+      Hier wird das traditionelle Handwerk mit Sorgfalt und Stolz ausgeführt.  
+      Bei uns erhalten Ihre Kleidungsstücke einen besonderen Wert.<br><br>
+      Levi und Militya Hobil
+    </p>
 
-      </div>
-    </div>
   </div>
 </header>
 
 <!-- SERVICES -->
 <section id="services" class="py-5">
   <div class="container">
-
-    <div class="text-center mb-5">
-      <h2 class="section-title">Unsere Dienstleistungen</h2>
-      <p class="section-sub">Traditionelles Schneiderhandwerk trifft modernen Service</p>
-    </div>
 
     <div class="row g-4">
 
@@ -136,30 +101,11 @@
 
     <div class="row g-3 gallery-grid">
 
-      <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider.jpg"
-             class="img-fluid rounded gallery-item"
-             alt="Atelier 1">
-      </div>
+      <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider.jpg" class="img-fluid rounded gallery-item"></div>
+      <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider14.jpg" class="img-fluid rounded gallery-item"></div>
+      <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider11.jpg" class="img-fluid rounded gallery-item"></div>
+      <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider17.jpg" class="img-fluid rounded gallery-item"></div>
 
-      <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider14.jpg"
-             class="img-fluid rounded gallery-item"
-             alt="Atelier 2">
-      </div>
-
-      <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider11.jpg"
-             class="img-fluid rounded gallery-item"
-             alt="Atelier 3">
-      </div>
-      
-      <div class="col-6 col-md-3">
-        <img src="img/Atelier-Flawil-Schneider17.jpg"
-             class="img-fluid rounded gallery-item"
-             alt="Atelier 4">
-      </div>
-      
     </div>
   </div>
 </section>
@@ -170,7 +116,7 @@
     <div class="row g-4">
 
       <div class="col-lg-6">
-        <h3 class="section-title">Kontakt und Öffnungszeiten</h3>
+        <h3>Kontakt und Öffnungszeiten</h3>
 
         <p class="mt-3">
           <strong>L'Atelier Hobil</strong><br>
@@ -197,14 +143,10 @@
       <div class="col-lg-6">
         <h5 class="mb-3">Nachricht senden</h5>
 
-        <!-- FORM WITH FORMSUBMIT -->
-        <form id="contactForm" action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
-
-          <!-- Spam-Schutz -->
+        <form action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
           <input type="hidden" name="_honey">
           <input type="hidden" name="_captcha" value="false">
 
-          <!-- Nachricht -->
           <div class="mb-3">
             <input name="name" class="form-control" placeholder="Name" required>
           </div>
@@ -227,7 +169,6 @@
   © <span id="year"></span> L'Atelier — Flawil
 </footer>
 
-<!-- Lokales Bootstrap-JS + dein Script -->
 <script src="js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
 
