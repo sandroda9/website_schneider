@@ -5,25 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>L' Atelier — Schneideratelier Flawil</title>
 
-  <!-- FONTS PRELOAD -->
+  <!-- FONTS -->
   <link rel="preload" href="fonts/inter/Inter-Light.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/inter/Inter-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
 
   <!-- FAVICONS -->
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" href="favicon.ico">
 
-  <!-- Bootstrap -->
+  <!-- BOOTSTRAP -->
   <link rel="stylesheet" href="css/bootstrap.min.css">
 
-  <!-- Custom CSS -->
+  <!-- CUSTOM CSS -->
   <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-<!-- STICKY HEADER (wird erst sichtbar beim Scrollen) -->
+<!-- STICKY HEADER -->
 <div id="stickyHeader">L’Atelier</div>
 
 <!-- HERO -->
@@ -40,25 +39,22 @@
          alt="Levi und Militya Hobil">
 
     <p class="mt-4">
-      Härzlich Willkommä und Buongiorno bei L'Atelier.<br><br>
-      Wir freuen uns, dass Sie den Weg zu uns gefunden haben. Mit dem Blick für massgenaue Herrenmode bringen wir eine Portion Modebewusstsein und Gastfreundschaft nach Flawil.  
+      Buongiorno und härzlich Willkommä bei L'Atelier.<br><br>
+      Ich freue mich, dass Sie den Weg zu mir gefunden haben.  
       Hier wird das traditionelle Handwerk mit Sorgfalt und Stolz ausgeführt.  
-      Bei uns erhalten Ihre Kleidungsstücke einen besonderen Wert.<br><br>
-      Levi und Militya Hobil
+      Bei uns erhalten Ihre Kleidungsstücke einen besonderen Wert.
     </p>
-
   </div>
 </header>
 
 <!-- SERVICES -->
 <section id="services" class="py-5">
   <div class="container">
-
     <div class="row g-4">
 
       <div class="col-md-4">
         <div class="card h-100 service-card from-right">
-          <img src="img/Atelier-Flawil-Schneider8.jpg" class="card-img-top" alt="Massarbeit & Beratung">
+          <img src="img/Atelier-Flawil-Schneider8.jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Schneiderei</h5>
             <p class="card-text">Perfekte Passform durch Massanfertigung.</p>
@@ -68,7 +64,7 @@
 
       <div class="col-md-4">
         <div class="card h-100 service-card from-left">
-          <img src="img/Atelier-Flawil-Schneider16.jpg" class="card-img-top" alt="Herrenmode – Modern & Klassisch">
+          <img src="img/Atelier-Flawil-Schneider16.jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Herrenmode</h5>
             <p class="card-text">Individuelle Beratung, präzise abgestimmt.</p>
@@ -78,7 +74,7 @@
 
       <div class="col-md-4">
         <div class="card h-100 service-card from-left">
-          <img src="img/Atelier-Flawil-Schneider15.jpg" class="card-img-top" alt="Wäscherei & chemische Reinigung">
+          <img src="img/Atelier-Flawil-Schneider15.jpg" class="card-img-top">
           <div class="card-body">
             <h5 class="card-title">Chemische Reinigung</h5>
             <p class="card-text">Professionelles Verfahren mit grösster Sorgfalt.</p>
@@ -107,6 +103,7 @@
       <div class="col-6 col-md-3"><img src="img/Atelier-Flawil-Schneider17.jpg" class="img-fluid rounded gallery-item"></div>
 
     </div>
+
   </div>
 </section>
 
@@ -120,9 +117,7 @@
 
         <p class="mt-3">
           <strong>L'Atelier Hobil</strong><br>
-          Levi und Militya Hobil<br>
-          Wilerstrasse 14<br>
-          9230 Flawil<br>
+          Wilerstrasse 14, 9230 Flawil<br>
           Tel: 071 232 02 22<br>
           E-Mail: <a href="mailto:latelierhobil@hotmail.com">latelierhobil@hotmail.com</a>
         </p>
@@ -141,21 +136,15 @@
       </div>
 
       <div class="col-lg-6">
-        <h5 class="mb-3">Nachricht senden</h5>
+        <h5>Nachricht senden</h5>
 
         <form action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
           <input type="hidden" name="_honey">
           <input type="hidden" name="_captcha" value="false">
 
-          <div class="mb-3">
-            <input name="name" class="form-control" placeholder="Name" required>
-          </div>
-          <div class="mb-3">
-            <input name="email" type="email" class="form-control" placeholder="E-Mail" required>
-          </div>
-          <div class="mb-3">
-            <textarea name="message" rows="4" class="form-control" placeholder="Nachricht" required></textarea>
-          </div>
+          <div class="mb-3"><input name="name" class="form-control" placeholder="Name" required></div>
+          <div class="mb-3"><input name="email" class="form-control" type="email" placeholder="E-Mail" required></div>
+          <div class="mb-3"><textarea name="message" rows="4" class="form-control" placeholder="Nachricht" required></textarea></div>
 
           <button class="btn btn-primary" type="submit">Senden</button>
         </form>

@@ -1,11 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* YEAR AUTO */
+  /* Auto Jahr */
   var year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* Scroll Sticky Header */
+  /* Sticky Header */
   const sticky = document.getElementById("stickyHeader");
+
   window.addEventListener("scroll", () => {
     if (window.scrollY > 120) {
       sticky.classList.add("visible");
@@ -14,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  /* Fade-In Animation */
+  /* Scroll animations */
   var animatedElements = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {
@@ -28,5 +29,5 @@ document.addEventListener("DOMContentLoaded", function () {
     }, { threshold: 0.2 });
 
     animatedElements.forEach(el => observer.observe(el));
-  } 
+  }
 });
