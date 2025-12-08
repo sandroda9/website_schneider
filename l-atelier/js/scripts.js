@@ -4,21 +4,31 @@ document.addEventListener("DOMContentLoaded", function () {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* Sticky Header */
+  /* Sticky Header & Fade-Out Title */
   const sticky = document.getElementById("stickyHeader");
   const bigTitle = document.querySelector(".big-atelier");
 
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 120) {
+
+    const scrollY = window.scrollY;
+
+    /* Fade & Slide Sticky Header */
+    if (scrollY > 120) {
       sticky.classList.add("visible");
       bigTitle.classList.add("fade-out");
     } else {
       sticky.classList.remove("visible");
       bigTitle.classList.remove("fade-out");
     }
+
+    /* PARALLAX EFFECT FOR TITLE */
+    const parallax = document.getElementById("parallaxTitle");
+    if (parallax) {
+      parallax.style.transform = `translateY(${scrollY * 0.15}px)`; 
+    }
   });
 
-  /* In-View Animations */
+  /* Fade-In Animations for Services & Gallery */
   const animated = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {
