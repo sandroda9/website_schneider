@@ -1,21 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-  /* YEAR UPDATE */
+  /* YEAR */
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  /* Sticky Header Scroll Logic */
+  /* Sticky Header */
   const sticky = document.getElementById("stickyHeader");
+  const bigTitle = document.querySelector(".big-atelier");
 
   window.addEventListener("scroll", () => {
     if (window.scrollY > 120) {
       sticky.classList.add("visible");
+      bigTitle.classList.add("fade-out");
     } else {
       sticky.classList.remove("visible");
+      bigTitle.classList.remove("fade-out");
     }
   });
 
-  /* Fade-in Services, Gallery */
+  /* Fade-In Elements */
   const animated = document.querySelectorAll(".service-card, .gallery-item");
 
   if ("IntersectionObserver" in window) {

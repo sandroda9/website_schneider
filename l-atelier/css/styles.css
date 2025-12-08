@@ -1,6 +1,7 @@
 /* ===========================
    WEBFONTS
    =========================== */
+
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter/Inter-Regular.woff2") format("woff2");
@@ -9,12 +10,12 @@
 @font-face {
   font-family: "Corinthia";
   src: url("../fonts/Corinthia/Corinthia-Regular.ttf") format("truetype");
-  font-weight: 400;
 }
 
 /* ===========================
-   COLORS & BASE
+   BASE COLORS
    =========================== */
+
 :root {
   --bordeaux: 76 69 82;
   --gold: 225 214 189;
@@ -32,13 +33,12 @@ body {
 }
 
 /* ===========================
-   STICKY HEADER (MINI VERSION)
+   STICKY HEADER
    =========================== */
 
 #stickyHeader {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100%;
   height: 75px;
   background-color: rgb(var(--bordeaux));
@@ -47,8 +47,9 @@ body {
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity .4s ease, transform .4s ease;
-  z-index: 2000;
   padding-top: 8px;
+  z-index: 2000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
 }
 
 #stickyHeader.visible {
@@ -57,52 +58,60 @@ body {
 }
 
 .sticky-title {
+  font-family: "Corinthia", cursive;
   font-size: 22px;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 .sticky-subtitle {
-  font-size: 14px;
+  font-size: 15px;
   opacity: 0.9;
 }
 
 /* ===========================
-   HERO TITLE
+   HERO SECTION
    =========================== */
 
 #hero {
-  padding-top: 60px; /* weniger Abstand */
+  padding-top: 40px;
 }
 
 .big-atelier {
   font-family: "Corinthia", cursive;
   font-size: 110px;
   color: rgb(var(--bordeaux));
-  margin-bottom: 10px;
   margin-top: 0;
-  opacity: 0;
-  animation: fadeDown 1.2s ease forwards;
+  margin-bottom: 10px;
+  opacity: 1;
+  transition: opacity .4s ease, transform .4s ease;
 }
 
-@keyframes fadeDown {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
+.big-atelier.fade-out {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  color: rgb(var(--bordeaux));
+  margin-bottom: 30px;
 }
 
 /* ===========================
-   SERVICES
+   SERVICE CARDS
    =========================== */
+
 .card {
   background: rgb(var(--card-bg));
   border-radius: .5rem;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.12);
 }
 
 .card-img-top {
   width: 100%;
-  border-radius: .5rem .5rem 0 0;
   aspect-ratio: 4/3;
   object-fit: cover;
+  border-radius: .5rem .5rem 0 0;
 }
 
 .service-card {
@@ -117,8 +126,24 @@ body {
 }
 
 /* ===========================
+   BUTTONS
+   =========================== */
+
+.btn-primary {
+  background-color: rgb(var(--bordeaux));
+  border-color: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
+}
+
+.btn-primary:hover {
+  background-color: rgb(var(--gold));
+  color: rgb(var(--bordeaux));
+}
+
+/* ===========================
    GALLERY
    =========================== */
+
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 4/5;
@@ -129,6 +154,7 @@ body {
 /* ===========================
    FOOTER
    =========================== */
+
 footer {
   color: rgb(var(--muted));
   margin-top: 100px;
