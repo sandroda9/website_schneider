@@ -46,7 +46,7 @@ body {
   transform: translateY(-25px);
   transition: opacity .45s ease, transform .45s ease, box-shadow .45s ease;
 
-  padding-top: 8px;
+  padding-top: 10px; /* minimal tiefer */
   z-index: 2000;
 
   box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -65,7 +65,7 @@ body {
 }
 
 .sticky-subtitle {
-  margin-top: -2px;
+  margin-top: 0px;
   font-size: 15px;
   opacity: 0.9;
 }
@@ -75,10 +75,11 @@ body {
    =========================== */
 
 #hero {
-  padding-top: 40px;
+  padding-top: 0;       /* kein Abstand mehr */
+  margin-top: 0;
+  width: 100%;          /* volle Breite */
 }
 
-/* BLOCK-Hintergrund für Titel + Subtitel */
 .hero-title-wrapper {
   display: inline-block;
   padding: 20px 35px;
@@ -86,7 +87,7 @@ body {
   border-radius: 10px;
 }
 
-/* NEUER Schreib-Effekt */
+/* Schreib-Effekt — schneller & ohne Cursor */
 .big-atelier {
   font-family: "Corinthia", cursive;
   font-size: 200px;
@@ -96,22 +97,14 @@ body {
 
   white-space: nowrap;
   overflow: hidden;
-  border-right: 3px solid rgb(var(--gold));
 
   width: 0;
-  animation: typing 3s steps(20, end) forwards, blinkCursor .8s infinite;
+  animation: typing 1.8s steps(20, end) forwards;
 }
 
-/* Entfernt: fade-out, transform, transition */
-
-/* typing animation */
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
-}
-
-@keyframes blinkCursor {
-  50% { border-color: transparent; }
 }
 
 .hero-subtitle {
@@ -142,7 +135,29 @@ body {
   transition: .6s ease;
 }
 
+.service-card.from-left {
+  transform: translateX(-40px);
+}
+
+.service-card.from-right {
+  transform: translateX(40px);
+}
+
 .service-card.in-view {
+  opacity: 1;
+  transform: translate(0,0);
+}
+
+/* ===========================
+   GALLERY — jetzt von unten!
+   =========================== */
+.gallery-item {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: .7s ease;
+}
+
+.gallery-item.in-view {
   opacity: 1;
   transform: translateY(0);
 }
@@ -153,7 +168,7 @@ body {
 .btn-primary {
   background-color: rgb(var(--bordeaux));
   border-color: rgb(var(--bordeaux));
-  color: rgb(var(--gold));
+  color: rgb(var(--gold)); /* geändert */
 }
 
 .btn-primary:hover {
@@ -170,22 +185,25 @@ a[href^="mailto"] {
 }
 
 /* ===========================
-   GALLERY
-   =========================== */
-.gallery-grid img {
-  width: 100%;
-  aspect-ratio: 4/5;
-  object-fit: cover;
-  border-radius: .5rem;
-}
-
-/* ===========================
    MOBILE FIXES
    =========================== */
 @media (max-width: 768px) {
 
   #hero {
-    padding-top: 120px; /* nach unten */
+    padding-top: 90px; /* leicht tiefer */
+  }
+
+  #stickyHeader {
+    padding-top: 12px; /* +2px */
+  }
+
+  .sticky-title {
+    font-size: 28px;
+    line-height: 28px;
+  }
+
+  .sticky-subtitle {
+    margin-top: -2px;
   }
 
   .big-atelier {
@@ -196,27 +214,26 @@ a[href^="mailto"] {
   .hero-subtitle {
     font-size: 14px;
   }
-
-  #stickyHeader {
-    height: 65px;
-    padding-top: 4px;
-  }
-
-  .sticky-title {
-    font-size: 28px;
-    line-height: 26px;
-  }
-
-  .sticky-subtitle {
-    font-size: 12px;
-    margin-top: -4px;
-  }
 }
 
 @media (max-width: 460px) {
 
   #hero {
-    padding-top: 130px; /* etwas weiter runter */
+    padding-top: 100px;
+  }
+
+  #stickyHeader {
+    padding-top: 12px; /* ebenfalls +2px */
+  }
+
+  .sticky-title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+
+  .sticky-subtitle {
+    margin-top: -2px;
+    font-size: 11px;
   }
 
   .big-atelier {
@@ -226,17 +243,5 @@ a[href^="mailto"] {
 
   .hero-subtitle {
     font-size: 12px;
-  }
-
-  #stickyHeader {
-    height: 60px;
-  }
-
-  .sticky-title {
-    font-size: 24px;
-  }
-
-  .sticky-subtitle {
-    font-size: 11px;
   }
 }
