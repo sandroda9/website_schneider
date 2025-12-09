@@ -46,7 +46,7 @@ body {
   transform: translateY(-25px);
   transition: opacity .45s ease, transform .45s ease, box-shadow .45s ease;
 
-  padding-top: 10px; /* minimal tiefer */
+  padding-top: 10px;
   z-index: 2000;
 
   box-shadow: 0 0 0 rgba(0,0,0,0);
@@ -75,9 +75,16 @@ body {
    =========================== */
 
 #hero {
-  padding-top: 0;       /* kein Abstand mehr */
+  padding-top: 0;
   margin-top: 0;
-  width: 100%;          /* volle Breite */
+  width: 100%;
+}
+
+/* FULL-WIDTH HERO: remove container padding */
+#hero .container {
+  max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .hero-title-wrapper {
@@ -149,7 +156,7 @@ body {
 }
 
 /* ===========================
-   GALLERY — jetzt von unten!
+   GALLERY — von unten
    =========================== */
 .gallery-item {
   opacity: 0;
@@ -168,7 +175,7 @@ body {
 .btn-primary {
   background-color: rgb(var(--bordeaux));
   border-color: rgb(var(--bordeaux));
-  color: rgb(var(--gold)); /* geändert */
+  color: rgb(var(--gold)); /* GOLD TEXT */
 }
 
 .btn-primary:hover {
@@ -190,7 +197,7 @@ a[href^="mailto"] {
 @media (max-width: 768px) {
 
   #hero {
-    padding-top: 90px; /* leicht tiefer */
+    padding-top: 90px;
   }
 
   #stickyHeader {
@@ -223,7 +230,7 @@ a[href^="mailto"] {
   }
 
   #stickyHeader {
-    padding-top: 12px; /* ebenfalls +2px */
+    padding-top: 12px; /* +2px */
   }
 
   .sticky-title {
