@@ -31,9 +31,8 @@ body {
 }
 
 /* ===========================
-   STICKY HEADER (FADE + SLIDE + SOFT SHADOW)
+   STICKY HEADER
    =========================== */
-
 #stickyHeader {
   position: fixed;
   top: 0;
@@ -56,7 +55,7 @@ body {
 #stickyHeader.visible {
   opacity: 1;
   transform: translateY(0);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.28); /* Soft shadow */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.28);
 }
 
 .sticky-title {
@@ -72,37 +71,58 @@ body {
 }
 
 /* ===========================
-   HERO + PARALLAX TITLE
+   HERO + TITLE
    =========================== */
 
 #hero {
   padding-top: 40px;
 }
 
+/* BLOCK-Hintergrund für Titel + Subtitel */
+.hero-title-wrapper {
+  display: inline-block;
+  padding: 20px 35px;
+  background: rgb(var(--bordeaux));
+  border-radius: 10px;
+}
+
+/* NEUER Schreib-Effekt */
 .big-atelier {
   font-family: "Corinthia", cursive;
   font-size: 200px;
   line-height: 180px;
-  color: rgb(var(--bordeaux));
-  transition: opacity .4s ease, transform .4s ease;
+
+  color: rgb(var(--gold));
+
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid rgb(var(--gold));
+
+  width: 0;
+  animation: typing 3s steps(20, end) forwards, blinkCursor .8s infinite;
 }
 
-/* fade out when sticky header appears */
-.big-atelier.fade-out {
-  opacity: 0;
-  transform: translateY(-20px);
+/* Entfernt: fade-out, transform, transition */
+
+/* typing animation */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
 }
 
 .hero-subtitle {
   font-size: 22px;
-  color: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
   margin-bottom: 25px;
 }
 
 /* ===========================
    SERVICES
    =========================== */
-
 .card {
   background: rgb(var(--card-bg));
   border-radius: .5rem;
@@ -130,7 +150,6 @@ body {
 /* ===========================
    BUTTONS
    =========================== */
-
 .btn-primary {
   background-color: rgb(var(--bordeaux));
   border-color: rgb(var(--bordeaux));
@@ -143,9 +162,16 @@ body {
 }
 
 /* ===========================
+   EMAIL LINK
+   =========================== */
+a[href^="mailto"] {
+  color: rgb(var(--bordeaux));
+  font-weight: 600;
+}
+
+/* ===========================
    GALLERY
    =========================== */
-
 .gallery-grid img {
   width: 100%;
   aspect-ratio: 4/5;
@@ -156,8 +182,11 @@ body {
 /* ===========================
    MOBILE FIXES
    =========================== */
-
 @media (max-width: 768px) {
+
+  #hero {
+    padding-top: 120px; /* nach unten */
+  }
 
   .big-atelier {
     font-size: 110px;
@@ -165,7 +194,7 @@ body {
   }
 
   .hero-subtitle {
-    font-size: 14px; /* so bleibt es EINZEILIG */
+    font-size: 14px;
   }
 
   #stickyHeader {
@@ -185,6 +214,10 @@ body {
 }
 
 @media (max-width: 460px) {
+
+  #hero {
+    padding-top: 130px; /* etwas weiter runter */
+  }
 
   .big-atelier {
     font-size: 80px;
