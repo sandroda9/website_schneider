@@ -71,27 +71,31 @@ body {
 }
 
 /* ===========================
-   HERO + TITLE
+   HERO FULL WIDTH + NO TOP GAP
    =========================== */
-
 #hero {
-  padding-top: 0;
-  margin-top: 0;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
   width: 100%;
 }
 
-/* FULL-WIDTH HERO: remove container padding */
+/* Entfernt Bootstrap Padding, um echte volle Breite zu erreichen */
 #hero .container {
   max-width: 100%;
   padding-left: 0;
   padding-right: 0;
 }
 
+/* ===========================
+   FULL-WIDTH TITLE BAR
+   =========================== */
 .hero-title-wrapper {
-  display: inline-block;
-  padding: 20px 35px;
+  display: block;
+  width: 100%;
+  padding: 25px 0;
   background: rgb(var(--bordeaux));
-  border-radius: 10px;
+  text-align: center;
+  border-radius: 0;
 }
 
 /* Schreib-Effekt — schneller & ohne Cursor */
@@ -99,14 +103,13 @@ body {
   font-family: "Corinthia", cursive;
   font-size: 200px;
   line-height: 180px;
-
   color: rgb(var(--gold));
 
   white-space: nowrap;
   overflow: hidden;
-
   width: 0;
-  animation: typing 1.8s steps(20, end) forwards;
+
+  animation: typing 1.5s steps(20, end) forwards;
 }
 
 @keyframes typing {
@@ -175,7 +178,7 @@ body {
 .btn-primary {
   background-color: rgb(var(--bordeaux));
   border-color: rgb(var(--bordeaux));
-  color: rgb(var(--gold)); /* GOLD TEXT */
+  color: rgb(var(--gold)); /* Gold Schrift */
 }
 
 .btn-primary:hover {
@@ -195,23 +198,8 @@ a[href^="mailto"] {
    MOBILE FIXES
    =========================== */
 @media (max-width: 768px) {
-
-  #hero {
-    padding-top: 90px;
-  }
-
-  #stickyHeader {
-    padding-top: 12px; /* +2px */
-  }
-
-  .sticky-title {
-    font-size: 28px;
-    line-height: 28px;
-  }
-
-  .sticky-subtitle {
-    margin-top: -2px;
-  }
+  .sticky-title { margin-top: 2px; }
+  .sticky-subtitle { margin-top: 0; }
 
   .big-atelier {
     font-size: 110px;
@@ -224,24 +212,8 @@ a[href^="mailto"] {
 }
 
 @media (max-width: 460px) {
-
-  #hero {
-    padding-top: 100px;
-  }
-
-  #stickyHeader {
-    padding-top: 12px; /* +2px */
-  }
-
-  .sticky-title {
-    font-size: 24px;
-    line-height: 26px;
-  }
-
-  .sticky-subtitle {
-    margin-top: -2px;
-    font-size: 11px;
-  }
+  .sticky-title { margin-top: 2px; }
+  .sticky-subtitle { margin-top: 0; }
 
   .big-atelier {
     font-size: 80px;
