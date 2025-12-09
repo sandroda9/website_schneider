@@ -46,10 +46,8 @@ body {
   transform: translateY(-25px);
   transition: opacity .45s ease, transform .45s ease, box-shadow .45s ease;
 
-  padding-top: 10px;
+  padding-top: 14px;   /* erhöht für mobile Fix */
   z-index: 2000;
-
-  box-shadow: 0 0 0 rgba(0,0,0,0);
 }
 
 #stickyHeader.visible {
@@ -61,11 +59,11 @@ body {
 .sticky-title {
   font-family: "Corinthia", cursive;
   font-size: 40px;
-  line-height: 38px;
+  line-height: 40px;
 }
 
 .sticky-subtitle {
-  margin-top: 0px;
+  margin-top: -2px;
   font-size: 15px;
   opacity: 0.9;
 }
@@ -79,7 +77,6 @@ body {
   width: 100%;
 }
 
-/* Entfernt Bootstrap Padding, um echte volle Breite zu erreichen */
 #hero .container {
   max-width: 100%;
   padding-left: 0;
@@ -90,15 +87,18 @@ body {
    FULL-WIDTH TITLE BAR
    =========================== */
 .hero-title-wrapper {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   padding: 25px 0;
   background: rgb(var(--bordeaux));
-  text-align: center;
-  border-radius: 0;
 }
 
-/* Schreib-Effekt — schneller & ohne Cursor */
+/* ===========================
+   VARIANTE A
+   SCHREIBEFFFEKT VON DER MITTE NACH AUSSEN
+   =========================== */
 .big-atelier {
   font-family: "Corinthia", cursive;
   font-size: 200px;
@@ -106,21 +106,24 @@ body {
   color: rgb(var(--gold));
 
   white-space: nowrap;
-  overflow: hidden;
-  width: 0;
 
-  animation: typing 1.5s steps(20, end) forwards;
+  /* MAGIC CENTER-TYPING EFFECT */
+  max-width: 0;
+  overflow: hidden;
+  margin: 0 auto;
+
+  animation: reveal-center 1.8s steps(20, end) forwards;
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+@keyframes reveal-center {
+  from { max-width: 0; }
+  to { max-width: 100%; }
 }
 
 .hero-subtitle {
   font-size: 22px;
   color: rgb(var(--gold));
-  margin-bottom: 25px;
+  margin-top: -10px;
 }
 
 /* ===========================
@@ -129,7 +132,7 @@ body {
 .card {
   background: rgb(var(--card-bg));
   border-radius: .5rem;
-  border: 1px solid rgba(0,0,0,0.12);
+  border: none;
 }
 
 .card-img-top {
@@ -173,17 +176,18 @@ body {
 }
 
 /* ===========================
-   BUTTONS
+   BUTTONS (NEU: OHNE RAHMEN)
    =========================== */
 .btn-primary {
   background-color: rgb(var(--bordeaux));
-  border-color: rgb(var(--bordeaux));
-  color: rgb(var(--gold)); /* Gold Schrift */
+  color: rgb(var(--gold));
+  border: none !important;
 }
 
 .btn-primary:hover {
   background-color: rgb(var(--gold));
   color: rgb(var(--bordeaux));
+  border: none !important;
 }
 
 /* ===========================
@@ -198,8 +202,20 @@ a[href^="mailto"] {
    MOBILE FIXES
    =========================== */
 @media (max-width: 768px) {
-  .sticky-title { margin-top: 2px; }
-  .sticky-subtitle { margin-top: 0; }
+
+  #stickyHeader {
+    height: 80px;
+    padding-top: 16px;
+  }
+
+  .sticky-title {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  .sticky-subtitle {
+    font-size: 12px;
+  }
 
   .big-atelier {
     font-size: 110px;
@@ -212,8 +228,20 @@ a[href^="mailto"] {
 }
 
 @media (max-width: 460px) {
-  .sticky-title { margin-top: 2px; }
-  .sticky-subtitle { margin-top: 0; }
+
+  #stickyHeader {
+    height: 85px;
+    padding-top: 18px;
+  }
+
+  .sticky-title {
+    font-size: 26px;
+    line-height: 28px;
+  }
+
+  .sticky-subtitle {
+    font-size: 11px;
+  }
 
   .big-atelier {
     font-size: 80px;
