@@ -278,6 +278,8 @@ a.btn-primary:active {
 @media (max-width: 460px) {
 
   #stickyHeader {
+    top: env(safe-area-inset-top);
+    padding-top: calc(14px + env(safe-area-inset-top));
     height: 85px;
     padding-top: 18px;
   }
