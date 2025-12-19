@@ -212,12 +212,14 @@ a[href^="mailto"] {
 }
 
 
-a.btn-primary:not(:hover):not(:active):not(:focus) {
+a.btn-primary:not(:hover):not(:focus) {
   color: rgb(var(--gold));
+  font-weight: 400;
 }
 
 a.btn-primary:visited {
   color: rgb(var(--bordeaux));
+  font-weight: 400;
 }
 /* ===========================
    MOBILE FIXES
