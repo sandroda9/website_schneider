@@ -221,6 +221,11 @@ a.btn-primary:visited {
   color: rgb(var(--bordeaux));
   font-weight: 400;
 }
+
+a.btn-primary:active {
+  background-color: rgb(var(--gold));
+  color: rgb(var(--bordeux));
+}
 /* ===========================
    MOBILE FIXES
    =========================== */
