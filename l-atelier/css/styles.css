@@ -169,8 +169,7 @@ body {
    über uns
    =========================== */
 .profile-image {
-  width: 50%;
-  max-width: 520px;
+  width: 70%;
   display: block;
   margin: 0 auto;
 }
@@ -247,7 +246,7 @@ a[href^="mailto"] {
     margin: 0 auto;
   }
   .profile-image {
-  width: 85%;
+  width: 95%;
   display: block;
   margin: 0 auto;
 }
