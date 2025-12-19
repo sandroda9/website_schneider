@@ -215,9 +215,21 @@ a[href^="mailto"] {
 a.btn-primary:not(:hover):not(:active):not(:focus) {
   color: rgb(var(--gold));
 }
+
+a.btn-primary:visited {
+  color: rgb(var(--bordeaux));
+}
 /* ===========================
    MOBILE FIXES
    =========================== */
+@media (min-width: 992px) {
+  .service-card.from-left,
+  .service-card.from-right {
+    transform: translateY(40px);
+  }
+}
+
+   
 @media (max-width: 768px) {
 
   #stickyHeader {
