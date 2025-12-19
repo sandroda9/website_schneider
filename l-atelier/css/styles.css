@@ -88,8 +88,10 @@ body {
    =========================== */
 .hero-title-wrapper {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   width: 100%;
   padding: 25px 0;
   background: rgb(var(--bordeaux));
@@ -225,6 +227,10 @@ a[href^="mailto"] {
   .hero-subtitle {
     font-size: 14px;
   }
+  .card-img-top {
+    aspect-ratio: auto;
+    height: 180px;
+  }
 }
 
 @media (max-width: 460px) {
@@ -250,5 +256,9 @@ a[href^="mailto"] {
 
   .hero-subtitle {
     font-size: 12px;
+  }
+  .card-img-top {
+    aspect-ratio: auto;
+    height: 180px;
   }
 }
