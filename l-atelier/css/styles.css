@@ -233,6 +233,8 @@ a[href^="mailto"] {
     width:85%;
     aspect-ratio: auto;
     height: 190px;
+    display: block;
+    margin: 0 auto;
   }
 }
 
