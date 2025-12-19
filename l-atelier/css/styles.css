@@ -169,7 +169,7 @@ body {
    über uns
    =========================== */
 .profile-image {
-  width: 70%;
+  width: 50%;
   display: block;
   margin: 0 auto;
 }
@@ -211,6 +211,10 @@ a[href^="mailto"] {
   font-weight: 600;
 }
 
+
+a.btn-primary:not(:hover):not(:active):not(:focus) {
+  color: rgb(var(--gold));
+}
 /* ===========================
    MOBILE FIXES
    =========================== */
