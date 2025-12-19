@@ -228,8 +228,9 @@ a[href^="mailto"] {
     font-size: 14px;
   }
   .card-img-top {
+    width:85%;
     aspect-ratio: auto;
-    height: 180px;
+    height: 190px;
   }
 }
 
@@ -259,6 +260,6 @@ a[href^="mailto"] {
   }
   .card-img-top {
     aspect-ratio: auto;
-    height: 180px;
+    height: 190px;
   }
 }
