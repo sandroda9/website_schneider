@@ -243,7 +243,7 @@ a[href^="mailto"] {
   .card-img-top {
     width: 95%;
     height: 190px;
-    margin: 0;
+    margin: 0 auto;
   }
 
   .profile-image {
