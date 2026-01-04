@@ -70,7 +70,7 @@ body {
 }
 
 /* ===========================
-   HERO FULL WIDTH + NO TOP GAP
+   HERO FULL WIDTH
    =========================== */
 #hero {
   padding-top: 0 !important;
@@ -114,7 +114,7 @@ body {
 }
 
 /* ===========================
-   SERVICES
+   SERVICES (OHNE ANIMATION)
    =========================== */
 .card {
   background: rgb(var(--card-bg));
@@ -129,39 +129,22 @@ body {
   border-radius: .5rem .5rem 0 0;
 }
 
-/* Animation (dein bestehendes Verhalten) */
+/* Service Cards – statisch */
 .service-card {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: .6s ease;
-
-  /* NEU: sorgt zusammen mit h-100 für gleich hohe Karten */
   height: 100%;
   display: flex;
   flex-direction: column;
 }
 
-.service-card.from-left {
-  transform: translateX(-40px);
-}
-
-.service-card.from-right {
-  transform: translateX(40px);
-}
-
-.service-card.in-view {
-  opacity: 1;
-  transform: translate(0,0);
-}
-
-/* NEU: Card-Body streckt sich -> harmonische gleiche Höhe */
 .service-card .card-body {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Allgemeine Abstände */
+/* ===========================
+   SECTION SPACING
+   =========================== */
 #services,
 #about,
 #gallery,
@@ -180,7 +163,7 @@ body {
 }
 
 /* ===========================
-   HERO TEXT (Buongiorno-Block)
+   HERO TEXT
    =========================== */
 .hero-text {
   padding-left: 25px;
@@ -188,7 +171,7 @@ body {
 }
 
 /* ===========================
-   GALLERY — von unten
+   GALLERY — MIT ANIMATION
    =========================== */
 .gallery-item {
   opacity: 0;
@@ -202,7 +185,7 @@ body {
 }
 
 /* ===========================
-   BUTTONS (OHNE RAHMEN)
+   BUTTONS
    =========================== */
 .btn-primary {
   background-color: rgb(var(--bordeaux));
@@ -213,17 +196,11 @@ body {
 .btn-primary:hover {
   background-color: rgb(var(--gold));
   color: rgb(var(--bordeaux));
-  border: none !important;
 }
 
 .btn-primary:focus-visible {
   outline: 2px solid rgb(var(--gold));
   outline-offset: 2px;
-}
-
-a.btn-primary:active {
-  background-color: rgb(var(--gold));
-  color: rgb(var(--bordeaux));
 }
 
 /* ===========================
@@ -235,16 +212,9 @@ a[href^="mailto"] {
 }
 
 /* ===========================
-   DESKTOP (>= 992px)
+   DESKTOP
    =========================== */
 @media (min-width: 992px) {
-
-  /* dein bestehendes Verhalten: Animation links/rechts auf Desktop wieder "von unten" */
-  .service-card.from-left,
-  .service-card.from-right {
-    transform: translateY(40px);
-  }
-
   #services .container,
   #gallery .container,
   #contact .container,
@@ -254,7 +224,6 @@ a[href^="mailto"] {
     margin-right: auto;
   }
 
-  /* NEU: Buongiorno-Textblock nur 50% breit */
   .hero-text {
     max-width: 50%;
     margin-left: auto;
@@ -263,39 +232,17 @@ a[href^="mailto"] {
 }
 
 /* ===========================
-   MOBILE FIXES
+   MOBILE
    =========================== */
 @media (max-width: 768px) {
-
-  #stickyHeader {
-    height: 80px;
-    padding-top: 16px;
-    padding-bottom: 5px;
-  }
-
-  .sticky-title {
-    font-size: 28px;
-    line-height: 30px;
-  }
-
-  .sticky-subtitle {
-    font-size: 12px;
-  }
-
   .big-atelier {
     font-size: 110px;
     line-height: 95px;
   }
 
-  .hero-subtitle {
-    font-size: 14px;
-  }
-
   .card-img-top {
     width: 85%;
-    aspect-ratio: auto;
     height: 190px;
-    display: block;
     margin: 0 auto;
   }
 
@@ -305,33 +252,8 @@ a[href^="mailto"] {
 }
 
 @media (max-width: 460px) {
-
-  #stickyHeader {
-    top: env(safe-area-inset-top);
-    padding-top: calc(14px + env(safe-area-inset-top));
-    height: 85px;
-  }
-
-  .sticky-title {
-    font-size: 26px;
-    line-height: 28px;
-  }
-
-  .sticky-subtitle {
-    font-size: 11px;
-  }
-
   .big-atelier {
     font-size: 80px;
     line-height: 70px;
-  }
-
-  .hero-subtitle {
-    font-size: 12px;
-  }
-
-  .card-img-top {
-    aspect-ratio: auto;
-    height: 190px;
   }
 }

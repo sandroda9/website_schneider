@@ -8,17 +8,15 @@ document.addEventListener("DOMContentLoaded", function () {
   const sticky = document.getElementById("stickyHeader");
 
   window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY > 120) {
+    if (window.scrollY > 120) {
       sticky.classList.add("visible");
     } else {
       sticky.classList.remove("visible");
     }
   });
 
-  /* Fade-In Animations for Services & Gallery */
-  const animated = document.querySelectorAll(".service-card, .gallery-item");
+  /* Fade-In Animation NUR für Galerie */
+  const animated = document.querySelectorAll(".gallery-item");
 
   if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver((entries, obs) => {
