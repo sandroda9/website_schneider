@@ -105,27 +105,16 @@ body {
    SCHREIBEFFFEKT VON DER MITTE NACH AUSSEN
    =========================== */
 .big-atelier {
-  padding-left: 25px;
-  padding-right: 25px;
+  /* padding-left: 25px; */
+  /* padding-right: 25px; */
   font-family: "Corinthia", cursive;
   font-size: 200px;
   line-height: 180px;
   color: rgb(var(--gold));
 
   white-space: nowrap;
-
-  /* MAGIC CENTER-TYPING EFFECT */
-  max-width: 0;
-  overflow: hidden;
-  margin: 0 auto;
-
-  animation: reveal-center 1.8s steps(20, end) forwards;
 }
 
-@keyframes reveal-center {
-  from { max-width: 0; }
-  to { max-width: 100%; }
-}
 
 .hero-subtitle {
   font-size: 22px;
@@ -235,7 +224,14 @@ a.btn-primary:active {
 @media (min-width: 992px) {
   .service-card.from-left,
   .service-card.from-right {
-    transform: translateY(40px);
+  transform: translateY(40px);
+  #services .container,
+  #gallery .container,
+  #contact .container,
+  footer {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
