@@ -21,6 +21,7 @@
   --text: 42 42 42;
   --muted: 120 118 122;
   --card-bg: 255 252 248;
+  --section-gap: 80px;
 }
 
 body {
@@ -95,11 +96,9 @@ body {
   width: 100%;
   padding: 25px 0;
   background: rgb(var(--bordeaux));
+  margin-bottom: var(--section-gap);
 }
 
-/* ===========================
-   VARIANTE A
-   =========================== */
 .big-atelier {
   font-family: "Corinthia", cursive;
   font-size: 200px;
@@ -160,6 +159,15 @@ body {
   flex: 1;
   display: flex;
   flex-direction: column;
+}
+
+/* Allgemeine Abstände */
+#services,
+#about,
+#gallery,
+#contact {
+  margin-top: 0 !important;
+  margin-bottom: var(--section-gap);
 }
 
 /* ===========================
