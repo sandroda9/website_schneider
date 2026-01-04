@@ -257,3 +257,22 @@ a[href^="mailto"] {
     line-height: 70px;
   }
 }
+
+/* ===========================
+   OPENING HOURS
+   =========================== */
+.opening-hours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.opening-hours span:first-child {
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.opening-hours span:last-child {
+  white-space: nowrap;
+  text-align: right;
+}
