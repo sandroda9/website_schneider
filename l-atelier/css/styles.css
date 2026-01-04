@@ -257,3 +257,8 @@ a[href^="mailto"] {
     line-height: 70px;
   }
 }
+
+/* Mailto-Links als Button korrekt einfärben */
+a.btn-primary[href^="mailto"] {
+  color: rgb(var(--gold));
+}
