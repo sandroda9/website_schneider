@@ -214,7 +214,7 @@ a[href^="mailto"] {
 /* ===========================
    DESKTOP
    =========================== */
-@media (min-width: 922px) {
+@media (min-width: 992px) {
   #services .container,
   #gallery .container,
   #contact .container,
@@ -234,7 +234,7 @@ a[href^="mailto"] {
 /* ===========================
    MOBILE
    =========================== */
-@media (max-width: 921px) {
+@media (max-width: 991px) {
   .big-atelier {
     font-size: 110px;
     line-height: 95px;
