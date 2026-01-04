@@ -46,7 +46,7 @@ body {
   transform: translateY(-25px);
   transition: opacity .45s ease, transform .45s ease, box-shadow .45s ease;
 
-  padding-top: 14px;   /* erhöht für mobile Fix */
+  padding-top: 14px;
   z-index: 2000;
 }
 
@@ -99,26 +99,20 @@ body {
 
 /* ===========================
    VARIANTE A
-   SCHREIBEFFFEKT VON DER MITTE NACH AUSSEN
    =========================== */
 .big-atelier {
-  /* padding-left: 25px; */
-  /* padding-right: 25px; */
   font-family: "Corinthia", cursive;
   font-size: 200px;
   line-height: 180px;
   color: rgb(var(--gold));
-
   white-space: nowrap;
 }
-
 
 .hero-subtitle {
   font-size: 22px;
   color: rgb(var(--gold));
   margin-top: -10px;
 }
-
 
 /* ===========================
    SERVICES
@@ -136,10 +130,16 @@ body {
   border-radius: .5rem .5rem 0 0;
 }
 
+/* Animation (dein bestehendes Verhalten) */
 .service-card {
   opacity: 0;
   transform: translateY(40px);
   transition: .6s ease;
+
+  /* NEU: sorgt zusammen mit h-100 für gleich hohe Karten */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card.from-left {
@@ -154,13 +154,29 @@ body {
   opacity: 1;
   transform: translate(0,0);
 }
+
+/* NEU: Card-Body streckt sich -> harmonische gleiche Höhe */
+.service-card .card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 /* ===========================
-   über uns
+   ÜBER UNS
    =========================== */
 .profile-image {
   width: 50%;
   display: block;
   margin: 0 auto;
+}
+
+/* ===========================
+   HERO TEXT (Buongiorno-Block)
+   =========================== */
+.hero-text {
+  padding-left: 25px;
+  padding-right: 25px;
 }
 
 /* ===========================
@@ -178,7 +194,7 @@ body {
 }
 
 /* ===========================
-   BUTTONS (NEU: OHNE RAHMEN)
+   BUTTONS (OHNE RAHMEN)
    =========================== */
 .btn-primary {
   background-color: rgb(var(--bordeaux));
@@ -191,9 +207,15 @@ body {
   color: rgb(var(--bordeaux));
   border: none !important;
 }
+
 .btn-primary:focus-visible {
   outline: 2px solid rgb(var(--gold));
   outline-offset: 2px;
+}
+
+a.btn-primary:active {
+  background-color: rgb(var(--gold));
+  color: rgb(var(--bordeaux));
 }
 
 /* ===========================
@@ -204,17 +226,15 @@ a[href^="mailto"] {
   font-weight: 600;
 }
 
-a.btn-primary:active {
-  background-color: rgb(var(--gold));
-  color: rgb(var(--bordeaux));
-}
 /* ===========================
-   MOBILE FIXES
+   DESKTOP (>= 992px)
    =========================== */
 @media (min-width: 992px) {
+
+  /* dein bestehendes Verhalten: Animation links/rechts auf Desktop wieder "von unten" */
   .service-card.from-left,
   .service-card.from-right {
-  transform: translateY(40px);
+    transform: translateY(40px);
   }
 
   #services .container,
@@ -225,15 +245,24 @@ a.btn-primary:active {
     margin-left: auto;
     margin-right: auto;
   }
+
+  /* NEU: Buongiorno-Textblock nur 50% breit */
+  .hero-text {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
-
-   
+/* ===========================
+   MOBILE FIXES
+   =========================== */
 @media (max-width: 768px) {
 
   #stickyHeader {
     height: 80px;
     padding-top: 16px;
+    padding-bottom: 5px;
   }
 
   .sticky-title {
@@ -253,16 +282,18 @@ a.btn-primary:active {
   .hero-subtitle {
     font-size: 14px;
   }
+
   .card-img-top {
-    width:85%;
+    width: 85%;
     aspect-ratio: auto;
     height: 190px;
     display: block;
     margin: 0 auto;
   }
+
   .profile-image {
-  width: 95%;
-}
+    width: 95%;
+  }
 }
 
 @media (max-width: 460px) {
@@ -290,6 +321,7 @@ a.btn-primary:active {
   .hero-subtitle {
     font-size: 12px;
   }
+
   .card-img-top {
     aspect-ratio: auto;
     height: 190px;
