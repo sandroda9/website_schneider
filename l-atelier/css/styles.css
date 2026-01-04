@@ -241,9 +241,9 @@ a[href^="mailto"] {
   }
 
   .card-img-top {
-    width: 85%;
+    width: 100%;
     height: 190px;
-    margin: 0 auto;
+    margin: 0;
   }
 
   .profile-image {
