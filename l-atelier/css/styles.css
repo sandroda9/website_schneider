@@ -262,17 +262,17 @@ a[href^="mailto"] {
    OPENING HOURS
    =========================== */
 .opening-hours li {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 170px 1fr;
+  column-gap: 16px;
 }
 
 .opening-hours span:first-child {
-  white-space: nowrap;
   font-weight: 500;
+  white-space: nowrap;
 }
 
 .opening-hours span:last-child {
   white-space: nowrap;
-  text-align: right;
 }
+
