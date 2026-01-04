@@ -258,7 +258,27 @@ a[href^="mailto"] {
   }
 }
 
-/* Mailto-Links als Button korrekt einfärben */
+/* ===========================
+   BUTTON FIXES (MAILTO + ACTIVE)
+   =========================== */
+
+/* Mailto-Button: gleiche Schrift wie andere Buttons */
 a.btn-primary[href^="mailto"] {
+  font-weight: 400;
   color: rgb(var(--gold));
+}
+
+/* Hover: Text korrekt umschalten */
+a.btn-primary[href^="mailto"]:hover {
+  color: rgb(var(--bordeaux));
+}
+
+/* Active / Focus: kein Bootstrap-Blau */
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary:focus-visible {
+  background-color: rgb(var(--gold));
+  color: rgb(var(--bordeaux));
+  box-shadow: none !important;
+  outline: none !important;
 }
