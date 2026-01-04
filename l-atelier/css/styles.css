@@ -214,7 +214,7 @@ a[href^="mailto"] {
 /* ===========================
    DESKTOP
    =========================== */
-@media (min-width: 992px) {
+@media (min-width: 769px) {
   #services .container,
   #gallery .container,
   #contact .container,
