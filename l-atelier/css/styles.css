@@ -282,3 +282,11 @@ a.btn-primary[href^="mailto"]:hover {
   box-shadow: none !important;
   outline: none !important;
 }
+
+/* Mailto-Button: Active/Fokus-Textfarbe korrekt */
+a.btn-primary[href^="mailto"]:active,
+a.btn-primary[href^="mailto"]:focus,
+a.btn-primary[href^="mailto"]:focus-visible {
+  color: rgb(var(--bordeaux));
+}
+
