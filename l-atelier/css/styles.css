@@ -305,7 +305,7 @@ a.btn-primary:active:focus-visible {
 /* Mail-Link im Text */
 a[href^="mailto"]:not(.btn) {
   color: rgb(var(--text));
-  font-weight: 200;
+  font-weight: 300;
   text-decoration: none;
 }
 
