@@ -302,8 +302,13 @@ a.btn-primary:active:focus-visible {
 }
 
 /* link email */
-a[href^="mailto"] {
+/* Mail-Link im Text */
+a[href^="mailto"]:not(.btn) {
   color: rgb(var(--text));
   font-weight: 600;
+  text-decoration: none;
 }
 
+a[href^="mailto"]:not(.btn):hover {
+  text-decoration: underline;
+}
