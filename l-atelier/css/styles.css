@@ -234,33 +234,35 @@ body {
     line-height: 95px;
   }
 
-  /* Über-uns Bild */
+  /* Profilbild: 95% aber max 700px, zentriert */
   .profile-image {
     width: 95%;
-    max-width: 690px;
-  }
-
-  /* Services: Spalten begrenzen */
-  #services .col-lg-4 {
-    max-width: 720px;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* Services: Card schmaler & zentriert */
+  /* Services: Spalte darf voll bleiben, Card steuert die Breite */
+  #services .col-lg-4 {
+    max-width: none;
+  }
+
+  /* Weisse Box: 95% aber max 700px, zentriert */
   #services .card.service-card {
     width: 95%;
+    max-width: 700px;
     margin-left: auto;
     margin-right: auto;
   }
 
-  /* Service-Bilder füllen die Card */
+  /* Service-Bild füllt die Box komplett */
   #services .card-img-top {
     width: 100%;
     height: 190px;
     margin: 0;
   }
 }
+
 
 @media (max-width: 460px) {
   .big-atelier {
