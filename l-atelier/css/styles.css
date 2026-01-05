@@ -300,3 +300,10 @@ a.btn-primary:active:focus-visible {
   box-shadow: none !important;
   outline: none !important;
 }
+
+/* link email */
+a[href^="mailto"] {
+  color: rgb(var(--text));
+  font-weight: 600;
+}
+
