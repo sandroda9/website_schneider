@@ -24,10 +24,10 @@
   --section-gap: 50px;
 }
 
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
-
 
 body {
   margin: 0;
@@ -47,11 +47,9 @@ body {
   background-color: rgb(var(--bordeaux));
   color: rgb(var(--gold));
   text-align: center;
-
   opacity: 0;
   transform: translateY(-25px);
-  transition: opacity .45s ease, transform .45s ease, box-shadow .45s ease;
-
+  transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.45s ease;
   padding-top: 14px;
   z-index: 2000;
 }
@@ -59,7 +57,7 @@ body {
 #stickyHeader.visible {
   opacity: 1;
   transform: translateY(0);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.28);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
 
 .sticky-title {
@@ -119,11 +117,11 @@ body {
 }
 
 /* ===========================
-   SERVICES (OHNE ANIMATION)
+   SERVICES
    =========================== */
 .card {
   background: rgb(var(--card-bg));
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: none;
 }
 
@@ -131,10 +129,9 @@ body {
   aspect-ratio: 4/3;
   width: 100%;
   object-fit: cover;
-  border-radius: .5rem .5rem 0 0;
+  border-radius: 0.5rem 0.5rem 0 0;
 }
 
-/* Service Cards – statisch */
 .service-card {
   height: 100%;
   display: flex;
@@ -176,12 +173,12 @@ body {
 }
 
 /* ===========================
-   GALLERY — MIT ANIMATION
+   GALLERY
    =========================== */
 .gallery-item {
   opacity: 0;
   transform: translateY(60px);
-  transition: .7s ease;
+  transition: 0.7s ease;
 }
 
 .gallery-item.in-view {
@@ -209,14 +206,6 @@ body {
 }
 
 /* ===========================
-   EMAIL LINK
-   =========================== */
-a[href^="mailto"] {
-  color: rgb(var(--bordeaux));
-  font-weight: 600;
-}
-
-/* ===========================
    DESKTOP
    =========================== */
 @media (min-width: 992px) {
@@ -237,7 +226,7 @@ a[href^="mailto"] {
 }
 
 /* ===========================
-   MOBILE
+   MOBILE / TABLET
    =========================== */
 @media (max-width: 991px) {
   .big-atelier {
@@ -245,22 +234,31 @@ a[href^="mailto"] {
     line-height: 95px;
   }
 
-  .card-img-top {
-    width: 95%;
-    height: 190px;
-    margin: 0 auto;
-  }
-
+  /* Über-uns Bild */
   .profile-image {
     width: 95%;
     max-width: 690px;
-
   }
 
+  /* Services: Spalten begrenzen */
   #services .col-lg-4 {
     max-width: 720px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  /* Services: Card schmaler & zentriert */
+  #services .card.service-card {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Service-Bilder füllen die Card */
+  #services .card-img-top {
+    width: 100%;
+    height: 190px;
+    margin: 0;
   }
 }
 
@@ -275,18 +273,18 @@ a[href^="mailto"] {
    BUTTON FIXES (MAILTO + ACTIVE)
    =========================== */
 
-/* Mailto-Button Grundzustand */
+/* Mailto Grundzustand */
 a.btn-primary[href^="mailto"] {
   font-weight: 400;
   color: rgb(var(--gold));
 }
 
-/* Hover: Gold -> Bordeaux */
+/* Hover */
 a.btn-primary:hover {
   color: rgb(var(--bordeaux));
 }
 
-/* Active / Focus / Gedrückt halten: IMMER Gold/Bordeaux */
+/* Active / Focus / Gedrückt halten */
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary:focus,
