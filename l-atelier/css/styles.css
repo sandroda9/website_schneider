@@ -254,6 +254,12 @@ a[href^="mailto"] {
   .profile-image {
     width: 95%;
   }
+  
+  #services .col-lg-4 {
+    max-width: 420px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 @media (max-width: 460px) {
