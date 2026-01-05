@@ -253,7 +253,7 @@ a[href^="mailto"] {
 
   .profile-image {
     width: 95%;
-    max-width: 600px;
+    max-width: 680px;
 
   }
 
@@ -275,31 +275,28 @@ a[href^="mailto"] {
    BUTTON FIXES (MAILTO + ACTIVE)
    =========================== */
 
-/* Mailto-Button: gleiche Schrift wie andere Buttons */
+/* Mailto-Button Grundzustand */
 a.btn-primary[href^="mailto"] {
   font-weight: 400;
   color: rgb(var(--gold));
 }
 
-/* Hover: Text korrekt umschalten */
-a.btn-primary[href^="mailto"]:hover {
+/* Hover: Gold -> Bordeaux */
+a.btn-primary:hover {
   color: rgb(var(--bordeaux));
 }
 
-/* Active / Focus: kein Bootstrap-Blau */
+/* Active / Focus / Gedrückt halten: IMMER Gold/Bordeaux */
 .btn-primary:active,
+.btn-primary.active,
 .btn-primary:focus,
-.btn-primary:focus-visible {
-  background-color: rgb(var(--gold));
-  color: rgb(var(--bordeaux));
+.btn-primary:focus-visible,
+a.btn-primary:active,
+a.btn-primary:active:focus,
+a.btn-primary:active:focus-visible {
+  background-color: rgb(var(--gold)) !important;
+  border-color: rgb(var(--gold)) !important;
+  color: rgb(var(--bordeaux)) !important;
   box-shadow: none !important;
   outline: none !important;
 }
-
-/* Mailto-Button: Active/Fokus-Textfarbe korrekt */
-a.btn-primary[href^="mailto"]:active,
-a.btn-primary[href^="mailto"]:focus,
-a.btn-primary[href^="mailto"]:focus-visible {
-  color: rgb(var(--bordeaux));
-}
-
