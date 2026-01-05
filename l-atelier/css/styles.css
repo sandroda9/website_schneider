@@ -277,6 +277,11 @@ body {
   .hero-subtitle {
     font-size: 13px;
   }
+
+  /* Abstand oberhalb der Services verkleinern */
+  .hero-title-wrapper {
+    margin-bottom: 20px;
+  }
 }
 
 /* ===========================
