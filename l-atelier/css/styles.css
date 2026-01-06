@@ -171,7 +171,7 @@ body {
 }
 
 .section-heading .heading-line {
-  width: 140px;                  /* etwas breiter als der Titel */
+  width: 180px;                  /* etwas breiter als der Titel */
   height: 1px;
   background-color: rgb(var(--bordeaux));
   opacity: 0.6;
