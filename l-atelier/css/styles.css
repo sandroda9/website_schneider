@@ -55,7 +55,9 @@ body {
 .sticky-title {
   font-family: "Corinthia", cursive;
   font-size: clamp(40px, 5.5vw, 78px);
-  line-height: 1.5;
+  line-height: 1;
+  position: relative;
+  top: 3px
 }
 
 .sticky-subtitle {
