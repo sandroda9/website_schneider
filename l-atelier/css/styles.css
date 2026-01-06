@@ -299,6 +299,29 @@ body {
     font-size: 36px;
     line-height: 30px;
   }
+
+  /* Nichts darf überstehen */
+  #services .card,
+  #gallery .col-6,
+  #gallery .col-md-3 {
+    overflow: hidden;
+  }
+
+  /* Bilder vorbereiten */
+  #services .card-img-top,
+  #gallery img {
+    transition: filter 0.25s ease;
+    will-change: filter;
+  }
+
+  /* Touch / Hover Effekt */
+  #services .card-img-top:active,
+  #services .card-img-top:hover,
+  #gallery img:active,
+  #gallery img:hover {
+    filter: brightness(0.9);
+  }
+
 }
 
 /* ===========================
