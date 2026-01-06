@@ -282,6 +282,11 @@ body {
   .hero-title-wrapper {
     margin-bottom: 5px;
   }
+
+  /* Sticky Header: Untertitel ausblenden */
+  #stickyHeader .sticky-subtitle {
+    display: none;
+  }
 }
 
 /* ===========================
