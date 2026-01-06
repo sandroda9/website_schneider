@@ -283,9 +283,21 @@ body {
     margin-bottom: 5px;
   }
 
+   /* Sticky Header kompakter auf Mobile */
+  #stickyHeader {
+    height: 55px;
+    padding-top: 10px;
+  }
+
   /* Sticky Header: Untertitel ausblenden */
   #stickyHeader .sticky-subtitle {
     display: none;
+  }
+
+    /* Titel im Sticky Header anpassen */
+  #stickyHeader .sticky-title {
+    font-size: 28px;
+    line-height: 30px;
   }
 }
 
