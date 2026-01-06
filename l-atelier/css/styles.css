@@ -312,9 +312,9 @@ a[href^="mailto"]:not(.btn):hover {
 
 /* Abstand zwischen Galerie und Kontakt verkleinern */
 #gallery{
-  padding-bottom: 1.5rem !important; /* war py-5 */
+  padding-bottom: 1rem !important; /* war py-5 */
 }
 
 #contact{
-  padding-top: 1.5rem !important; /* war pt-3, aber wir setzen sauber */
+  padding-top: 1rem !important; /* war pt-3, aber wir setzen sauber */
 }
