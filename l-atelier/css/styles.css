@@ -319,7 +319,7 @@ body {
   #services .card-img-top:hover,
   #gallery img:active,
   #gallery img:hover {
-    filter: brightness(0.9);
+    filter: brightness(0.85);
   }
 
 }
