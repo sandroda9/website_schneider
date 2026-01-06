@@ -1,33 +1,47 @@
-document.addEventListener("DOMContentLoaded", function () {
+// Footer-Jahr setzen
+(function () {
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+})();
 
-  /* YEAR */
-  const year = document.getElementById("year");
-  if (year) year.textContent = new Date().getFullYear();
+// Sticky Header ein/aus beim Scrollen
+(function () {
+  const stickyHeader = document.getElementById("stickyHeader");
+  if (!stickyHeader) return;
 
-  /* Sticky Header */
-  const sticky = document.getElementById("stickyHeader");
+  const showAfter = 120; // px Scroll, ab wann sichtbar
 
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 120) {
-      sticky.classList.add("visible");
-    } else {
-      sticky.classList.remove("visible");
-    }
-  });
+  const onScroll = () => {
+    if (window.scrollY > showAfter) stickyHeader.classList.add("visible");
+    else stickyHeader.classList.remove("visible");
+  };
 
-  /* Fade-In Animation NUR für Galerie */
-  const animated = document.querySelectorAll(".gallery-item");
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
 
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
+// Galerie-Items: in-view Animation (IntersectionObserver)
+(function () {
+  const items = document.querySelectorAll(".gallery-item");
+  if (!items.length) return;
+
+  if (!("IntersectionObserver" in window)) {
+    // Fallback: direkt anzeigen
+    items.forEach((el) => el.classList.add("in-view"));
+    return;
+  }
+
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("in-view");
-          obs.unobserve(entry.target);
+          io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.2 });
+    },
+    { threshold: 0.15 }
+  );
 
-    animated.forEach(el => observer.observe(el));
-  }
-});
+  items.forEach((el) => io.observe(el));
+})();

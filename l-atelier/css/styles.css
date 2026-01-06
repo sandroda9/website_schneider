@@ -1,19 +1,14 @@
-/* ===========================
-   WEBFONTS
-   =========================== */
+/* =========================== WEBFONTS =========================== */
 @font-face {
   font-family: "Inter";
   src: url("../fonts/inter/Inter-Regular.woff2") format("woff2");
 }
-
 @font-face {
   font-family: "Corinthia";
   src: url("../fonts/Corinthia/Corinthia-Regular.ttf") format("truetype");
 }
 
-/* ===========================
-   BASE COLORS
-   =========================== */
+/* =========================== BASE COLORS =========================== */
 :root {
   --bordeaux: 76 69 82;
   --gold: 225 214 189;
@@ -24,10 +19,7 @@
   --section-gap: 50px;
 }
 
-html,
-body {
-  overflow-x: hidden;
-}
+html, body { overflow-x: hidden; }
 
 body {
   margin: 0;
@@ -36,9 +28,7 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* ===========================
-   STICKY HEADER
-   =========================== */
+/* =========================== STICKY HEADER =========================== */
 #stickyHeader {
   position: fixed;
   top: 0;
@@ -72,9 +62,7 @@ body {
   opacity: 0.9;
 }
 
-/* ===========================
-   HERO FULL WIDTH
-   =========================== */
+/* =========================== HERO FULL WIDTH =========================== */
 #hero {
   padding-top: 0 !important;
   margin-top: 0 !important;
@@ -87,9 +75,7 @@ body {
   padding-right: 0;
 }
 
-/* ===========================
-   FULL-WIDTH TITLE BAR
-   =========================== */
+/* =========================== FULL-WIDTH TITLE BAR =========================== */
 .hero-title-wrapper {
   display: flex;
   flex-direction: column;
@@ -116,9 +102,7 @@ body {
   margin-top: -10px;
 }
 
-/* ===========================
-   SERVICES
-   =========================== */
+/* =========================== SERVICES =========================== */
 .card {
   background: rgb(var(--card-bg));
   border-radius: 0.5rem;
@@ -144,37 +128,26 @@ body {
   flex-direction: column;
 }
 
-/* ===========================
-   SECTION SPACING
-   =========================== */
-#services,
-#about,
-#gallery,
-#contact {
+/* =========================== SECTION SPACING =========================== */
+#services, #about, #gallery, #contact {
   margin-top: 0 !important;
   margin-bottom: var(--section-gap);
 }
 
-/* ===========================
-   ÜBER UNS
-   =========================== */
+/* =========================== ÜBER UNS =========================== */
 .profile-image {
   width: 50%;
   display: block;
   margin: 0 auto;
 }
 
-/* ===========================
-   HERO TEXT
-   =========================== */
+/* =========================== HERO TEXT =========================== */
 .hero-text {
   padding-left: 25px;
   padding-right: 25px;
 }
 
-/* ===========================
-   GALLERY
-   =========================== */
+/* =========================== GALLERY =========================== */
 .gallery-item {
   opacity: 0;
   transform: translateY(60px);
@@ -186,9 +159,7 @@ body {
   transform: translateY(0);
 }
 
-/* ===========================
-   BUTTONS
-   =========================== */
+/* =========================== BUTTONS =========================== */
 .btn-primary {
   background-color: rgb(var(--bordeaux));
   color: rgb(var(--gold));
@@ -205,14 +176,9 @@ body {
   outline-offset: 2px;
 }
 
-/* ===========================
-   DESKTOP
-   =========================== */
+/* =========================== DESKTOP =========================== */
 @media (min-width: 992px) {
-  #services .container,
-  #gallery .container,
-  #contact .container,
-  footer {
+  #services .container, #gallery .container, #contact .container, footer {
     max-width: 70%;
     margin-left: auto;
     margin-right: auto;
@@ -225,13 +191,9 @@ body {
   }
 }
 
-/* ===========================
-   MOBILE / TABLET
-   =========================== */
+/* =========================== MOBILE / TABLET =========================== */
 @media (max-width: 991px) {
-  .hero-subtitle {
-    font-size: 18px;
-  }
+  .hero-subtitle { font-size: 18px; }
 
   .big-atelier {
     font-size: 110px;
@@ -247,9 +209,7 @@ body {
   }
 
   /* Services: Spalte darf voll bleiben, Card steuert die Breite */
-  #services .col-lg-4 {
-    max-width: none;
-  }
+  #services .col-lg-4 { max-width: none; }
 
   /* Weisse Box: 95% aber max 700px, zentriert */
   #services .card.service-card {
@@ -267,21 +227,16 @@ body {
   }
 }
 
-
 @media (max-width: 460px) {
   .big-atelier {
     font-size: 80px;
     line-height: 70px;
   }
 
-  .hero-subtitle {
-    font-size: 13px;
-  }
+  .hero-subtitle { font-size: 13px; }
 
   /* Abstand oberhalb der Services verkleinern */
-  .hero-title-wrapper {
-    margin-bottom: 5px;
-  }
+  .hero-title-wrapper { margin-bottom: 5px; }
 
   /* Sticky Header kompakter auf Mobile */
   #stickyHeader {
@@ -290,9 +245,7 @@ body {
   }
 
   /* Sticky Header: Untertitel ausblenden */
-  #stickyHeader .sticky-subtitle {
-    display: none;
-  }
+  #stickyHeader .sticky-subtitle { display: none; }
 
   /* Titel im Sticky Header anpassen */
   #stickyHeader .sticky-title {
@@ -301,32 +254,22 @@ body {
   }
 
   /* Nichts darf überstehen */
-  #services .card,
-  #gallery .col-6,
-  #gallery .col-md-3 {
-    overflow: hidden;
-  }
+  #services .card, #gallery .col-6, #gallery .col-md-3 { overflow: hidden; }
 
   /* Bilder vorbereiten */
-  #services .card-img-top,
-  #gallery img {
+  #services .card-img-top, #gallery img {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     will-change: transform;
   }
 
   /* Touch-Effekt (gedrückt halten) */
-  #services .card-img-top:active,
-  #gallery img:active {
+  #services .card-img-top:active, #gallery img:active {
     transform: scale(1.03);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   }
 }
 
-
-/* ===========================
-   BUTTON FIXES (MAILTO + ACTIVE)
-   =========================== */
-
+/* =========================== BUTTON FIXES (MAILTO + ACTIVE) =========================== */
 /* Mailto Grundzustand */
 a.btn-primary[href^="mailto"] {
   font-weight: 400;
@@ -353,7 +296,6 @@ a.btn-primary:active:focus-visible {
   outline: none !important;
 }
 
-/* link email */
 /* Mail-Link im Text */
 a[href^="mailto"]:not(.btn) {
   color: rgb(var(--bordeaux));
