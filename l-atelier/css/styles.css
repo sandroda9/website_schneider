@@ -296,7 +296,7 @@ body {
 
     /* Titel im Sticky Header anpassen */
   #stickyHeader .sticky-title {
-    font-size: 28px;
+    font-size: 36px;
     line-height: 30px;
   }
 }
