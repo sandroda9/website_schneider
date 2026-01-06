@@ -137,16 +137,35 @@
       <div class="col-12">
         <h5>Nachricht senden</h5>
 
-        <form action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
-          <input type="hidden" name="_honey">
-          <input type="hidden" name="_captcha" value="false">
+       <form action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
+  <!-- Honeypot (muss ein normales Feld sein, das per CSS unsichtbar ist) -->
+  <input type="text" name="_honey" style="display:none">
 
-          <div class="mb-3"><input name="name" class="form-control" placeholder="Name" required></div>
-          <div class="mb-3"><input name="email" class="form-control" type="email" placeholder="E-Mail" required></div>
-          <div class="mb-3"><textarea name="message" rows="4" class="form-control" placeholder="Nachricht" required></textarea></div>
+  <!-- reCAPTCHA: Ich empfehle TRUE zu lassen (also diese Zeile weglassen).
+       Wenn du es unbedingt aus willst, kannst du sie drin lassen. -->
+  <input type="hidden" name="_captcha" value="false">
 
-          <button class="btn btn-primary" type="submit">Senden</button>
-        </form>
+  <!-- Optional aber sehr praktisch: Betreff -->
+  <input type="hidden" name="_subject" value="Neue Anfrage über latelier-flawil.ch">
+
+  <!-- Optional: wohin nach dem Senden (Thank-you Seite oder zurück zur Kontaktsektion) -->
+  <input type="hidden" name="_next" value="https://DEINE-DOMAIN.ch/#contact">
+
+  <div class="mb-3">
+    <input name="name" class="form-control" placeholder="Name" required>
+  </div>
+
+  <div class="mb-3">
+    <input name="email" class="form-control" type="email" placeholder="E-Mail" required>
+  </div>
+
+  <div class="mb-3">
+    <textarea name="message" rows="4" class="form-control" placeholder="Nachricht" required></textarea>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Senden</button>
+</form>
+
       </div>
 
     </div>
