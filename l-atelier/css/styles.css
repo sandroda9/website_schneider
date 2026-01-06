@@ -57,7 +57,7 @@ body {
   font-size: clamp(40px, 5.5vw, 78px);
   line-height: 1;
   position: relative;
-  top: 3px
+  top: 3px;
 }
 
 .sticky-subtitle {
@@ -308,4 +308,13 @@ a[href^="mailto"]:not(.btn) {
 
 a[href^="mailto"]:not(.btn):hover {
   text-decoration: underline;
+}
+
+/* Abstand zwischen Galerie und Kontakt verkleinern */
+#gallery{
+  padding-bottom: 1.5rem !important; /* war py-5 */
+}
+
+#contact{
+  padding-top: 1.5rem !important; /* war pt-3, aber wir setzen sauber */
 }
