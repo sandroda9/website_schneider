@@ -283,7 +283,7 @@ body {
     margin-bottom: 5px;
   }
 
-   /* Sticky Header kompakter auf Mobile */
+  /* Sticky Header kompakter auf Mobile */
   #stickyHeader {
     height: 55px;
     padding-top: 15px;
@@ -294,7 +294,7 @@ body {
     display: none;
   }
 
-    /* Titel im Sticky Header anpassen */
+  /* Titel im Sticky Header anpassen */
   #stickyHeader .sticky-title {
     font-size: 36px;
     line-height: 30px;
@@ -310,19 +310,18 @@ body {
   /* Bilder vorbereiten */
   #services .card-img-top,
   #gallery img {
-    transition: filter 0.25s ease;
-    will-change: filter;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    will-change: transform;
   }
 
-  /* Touch / Hover Effekt */
+  /* Touch-Effekt (gedrückt halten) */
   #services .card-img-top:active,
-  #services .card-img-top:hover,
-  #gallery img:active,
-  #gallery img:hover {
-    filter: brightness(0.85);
+  #gallery img:active {
+    transform: scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   }
-
 }
+
 
 /* ===========================
    BUTTON FIXES (MAILTO + ACTIVE)
