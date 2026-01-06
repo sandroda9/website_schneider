@@ -286,7 +286,7 @@ body {
    /* Sticky Header kompakter auf Mobile */
   #stickyHeader {
     height: 55px;
-    padding-top: 10px;
+    padding-top: 15px;
   }
 
   /* Sticky Header: Untertitel ausblenden */
