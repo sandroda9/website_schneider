@@ -163,22 +163,6 @@ body {
   transform: translateY(0);
 }
 
-/* Linie oberhalb vom Section-Titel */
-.section-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.section-heading .heading-line {
-  width: 250px;                  /* etwas breiter als der Titel */
-  height: 1px;
-  background-color: rgb(var(--bordeaux));
-  opacity: 0.6;
-  margin-bottom: 10px;
-}
-
-
 /* =========================== BUTTONS =========================== */
 .btn-primary {
   background-color: rgb(var(--bordeaux));
