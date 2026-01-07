@@ -318,3 +318,8 @@ a[href^="mailto"]:not(.btn):hover {
 #contact{
   padding-top: 1rem !important; /* war pt-3, aber wir setzen sauber */
 }
+
+/* Kontaktformular: rechten Block nach unten schieben */
+#contact .col-lg-6:last-child {
+  margin-top: 2.5rem;
+}
