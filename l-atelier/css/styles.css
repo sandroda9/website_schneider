@@ -238,6 +238,15 @@ html.js .gallery-item.in-view {
   }
 }
 
+@media (min-width: 768px) {
+  .profile-image {
+    width: 100%;
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 @media (max-width: 460px) {
   .big-atelier {
     font-size: 80px;
