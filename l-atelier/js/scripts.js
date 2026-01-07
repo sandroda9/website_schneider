@@ -1,3 +1,4 @@
+document.documentElement.classList.add("js");
 // Footer-Jahr setzen
 (function () {
   const yearEl = document.getElementById("year");

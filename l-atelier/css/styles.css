@@ -73,7 +73,7 @@ body {
   width: 100%;
 }
 
-#hero .container {
+#hero > .container {
   max-width: 100%;
   padding-left: 0;
   padding-right: 0;
@@ -152,13 +152,20 @@ body {
 }
 
 /* =========================== GALLERY =========================== */
+/* Default: Bilder sind sichtbar (wichtig, falls JS auf einem Gerät nicht läuft) */
 .gallery-item {
-  opacity: 0;
-  transform: translateY(60px);
-  transition: 0.7s ease;
+  opacity: 1;
+  transform: none;
 }
 
-.gallery-item.in-view {
+/* Animation nur aktivieren, wenn JS vorhanden ist */
+html.js .gallery-item {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+html.js .gallery-item.in-view {
   opacity: 1;
   transform: translateY(0);
 }
