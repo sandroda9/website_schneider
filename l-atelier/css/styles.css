@@ -321,5 +321,5 @@ a[href^="mailto"]:not(.btn):hover {
 
 /* Kontaktformular: rechten Block nach unten schieben */
 #contact .col-lg-6:last-child {
-  margin-top: 2.5rem;
+  margin-top: 2rem;
 }
