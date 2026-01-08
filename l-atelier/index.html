@@ -144,8 +144,8 @@
               Handwerk mit Sorgfalt und Stolz ausgeführt. Bei uns erhalten Ihre Kleidungsstücke einen besonderen Wert.
             </p>
 
-            <!-- Signatur: Referenz-Look -->
-            <div class="signature-title">Levi und Militya Hobil</div>
+            <!-- gleicher Look wie about-title -->
+            <h5 class="card-title about-title about-signature">Levi und Militya Hobil</h5>
           </div>
         </div>
       </section>
@@ -157,14 +157,15 @@
   <section id="dienstleistungen" class="py-5 services-list-section">
     <div class="container">
       <div class="text-center mb-4">
-        <h2 class="section-title section-title--gold">Dienstleistungen</h2>
+        <!-- gleich wie Über uns / Kontakt -->
+        <h2 class="section-title">Dienstleistungen</h2>
       </div>
 
       <div class="services-list-wrapper">
 
         <div class="service-box">
-          <!-- gleiche Schrift wie Signatur, aber gold -->
-          <div class="signature-title signature-title--gold">Änderungsschneiderei</div>
+          <!-- gleicher Look wie about-title, aber gold -->
+          <div class="service-title-like-about">Änderungsschneiderei</div>
           <ul class="service-bullets">
             <li>Hosen</li>
             <li>Blazer</li>
@@ -178,8 +179,8 @@
         </div>
 
         <div class="service-box service-box-wide">
-          <!-- gleiche Schrift wie Signatur, aber gold -->
-          <div class="signature-title signature-title--gold">Chemische Reinigung</div>
+          <!-- gleicher Look wie about-title, aber gold -->
+          <div class="service-title-like-about">Chemische Reinigung</div>
 
           <div class="two-col">
             <ul class="service-bullets">
@@ -331,9 +332,12 @@
     © <span id="year"></span> L'Atelier — Flawil
   </footer>
 
-  <!-- Scroll-to-top Button -->
+  <!-- Scroll-to-top Button (nur Mobile) -->
   <button id="toTopBtn" type="button" aria-label="Nach oben">
-    <span aria-hidden="true">↑</span>
+    <!-- SVG Pfeil nach oben -->
+    <svg class="toTopIcon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.6L19 12l-7-7z"></path>
+    </svg>
   </button>
 
   <script src="js/bootstrap.bundle.min.js"></script>

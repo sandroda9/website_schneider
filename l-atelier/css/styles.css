@@ -193,28 +193,14 @@ body {
   border-top-right-radius: 0 !important;
 }
 
-/* ===========================
-   EINHEITLICHER SCHRIFTLOOK (Signatur + Dienstleistungs-Titel)
-   =========================== */
-.signature-title {
-  font-weight: 600;
-  font-size: 1.25rem;
-  letter-spacing: 0;
+/* Signatur genau wie der Satz (about-title) */
+.about-signature {
   margin-top: 10px;
-}
-
-/* Variante für goldene Titel (Dienstleistungen) */
-.signature-title--gold {
-  color: rgb(var(--gold));
 }
 
 /* =========================== DIENSTLEISTUNGEN LISTE =========================== */
 .services-list-section {
   background: rgb(var(--bg));
-}
-
-.section-title--gold {
-  color: rgb(var(--gold));
 }
 
 .services-list-wrapper {
@@ -225,12 +211,22 @@ body {
   margin-inline: auto;
 }
 
+/* Boxen bordeaux, Schrift gold */
 .service-box {
   background: rgb(var(--bordeaux));
   color: rgb(var(--gold));
   border: 2px solid rgba(0,0,0,0.15);
   border-radius: 12px;
   padding: 18px 18px 10px;
+}
+
+/* Dienstleistungs-Titel: gleicher Look wie about-title, aber gold */
+.service-title-like-about {
+  font-size: 1.25rem;      /* h5 look */
+  font-weight: 500;        /* Bootstrap card-title ist oft 500 */
+  line-height: 1.2;
+  margin-bottom: 10px;
+  color: rgb(var(--gold));
 }
 
 /* Listen in gold */
@@ -411,18 +407,6 @@ a[href^="mailto"]:not(.btn):hover {
     font-size: 36px;
     line-height: 30px;
   }
-
-  #services .card,
-  #gallery .col-6,
-  #gallery .col-md-3 {
-    overflow: hidden;
-  }
-
-  #services .card-img-top,
-  #gallery img {
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    will-change: transform;
-  }
 }
 
 /* =========================== BUTTON FIXES (MAILTO + ACTIVE) =========================== */
@@ -482,7 +466,6 @@ a.btn-primary:active:focus-visible {
   margin-top: 6px;
 }
 
-/* Rechts: Titel auf gleicher Höhe + kein <br> spacing */
 .contact-right .contact-title{
   margin-bottom: 10px;
 }
@@ -503,7 +486,7 @@ a.btn-primary:active:focus-visible {
 @media (max-width: 767px) {
   #mobileNav {
     position: fixed;
-    top: 4px;    /* weiter nach oben */
+    top: 4px;
     right: 7px;
     height: 48px;
     width: 56px;
@@ -565,19 +548,18 @@ section[id] {
 }
 
 /* ===========================
-   Scroll-to-top Button
+   Scroll-to-top Button (nur Mobile)
    =========================== */
 #toTopBtn{
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 14px;
+  bottom: 38px; /* deutlich höher als vorher */
   width: 54px;
   height: 54px;
   border-radius: 999px;
   border: none;
   background: rgb(var(--bordeaux));
-  color: rgb(var(--gold));
   display: grid;
   place-items: center;
   box-shadow: 0 10px 22px rgba(0,0,0,0.22);
@@ -589,17 +571,21 @@ section[id] {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-#toTopBtn span{
-  font-size: 20px;
-  line-height: 1;
-  position: relative;
-  top: -1px;
+/* SVG gold */
+.toTopIcon{
+  fill: rgb(var(--gold));
 }
 
 #toTopBtn.show{
   opacity: 1;
   pointer-events: auto;
-  transform: translateX(-50%) translateY(0);
+}
+
+/* Nur Smartphone anzeigen */
+@media (min-width: 768px){
+  #toTopBtn{
+    display: none !important;
+  }
 }
 
 #toTopBtn:active{

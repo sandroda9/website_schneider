@@ -90,7 +90,7 @@
 
 
 // ===========================
-// Scroll-to-top Button: erscheint ab Seitenmitte
+// Scroll-to-top Button: erscheint ab Seitenmitte (nur Mobile sichtbar via CSS)
 // ===========================
 (function () {
   const btn = document.getElementById("toTopBtn");
