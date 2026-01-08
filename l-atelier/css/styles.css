@@ -28,7 +28,6 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-
 /* Offcanvas Farben */
 .offcanvas {
   background: rgb(var(--bordeaux));
@@ -62,6 +61,7 @@ body {
 }
 
 /* =========================== STICKY HEADER =========================== */
+/* Titel immer exakt zentriert – unabhängig vom Hamburger */
 #stickyHeader {
   position: fixed;
   top: 0;
@@ -73,10 +73,10 @@ body {
   opacity: 0;
   transform: translateY(-25px);
   transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.45s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 2000;
+
+  /* neu */
+  display: block;
 }
 
 #stickyHeader.visible {
@@ -89,8 +89,12 @@ body {
   font-family: "Corinthia", cursive;
   font-size: clamp(40px, 5.5vw, 78px);
   line-height: 1;
-  position: relative;
-  top: 3px;
+
+  /* neu: exakt zentriert */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 /* =========================== HERO FULL WIDTH =========================== */
@@ -172,6 +176,12 @@ body {
   margin: 0 auto;
 }
 
+/* Bild unten eckig (unten links/rechts keine Rundung) */
+.profile-image--join {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
 .about-card {
   width: 70%;
   margin-inline: auto;
@@ -181,11 +191,20 @@ body {
   margin-bottom: 0;
 }
 
-/* =========================== DIENSTLEISTUNGEN LISTE (wie Bild) =========================== */
-.services-list-section {
-  background: rgb(var(--bordeaux)); /* gleich wie Hero */
+/* Container direkt an Bild anschliessen + oben eckig */
+.about-card--join {
+  margin-top: 0 !important;
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
 }
 
+/* =========================== DIENSTLEISTUNGEN LISTE =========================== */
+/* Section beige */
+.services-list-section {
+  background: rgb(var(--bg));
+}
+
+/* Titel darf gold bleiben (passt auch auf beige) */
 .section-title--gold {
   color: rgb(var(--gold));
 }
@@ -198,25 +217,30 @@ body {
   margin-inline: auto;
 }
 
+/* Boxen bordeaux, Schrift gold */
 .service-box {
-  background: rgb(var(--card-bg));
+  background: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
   border: 2px solid rgba(0,0,0,0.15);
   border-radius: 12px;
   padding: 18px 18px 10px;
 }
 
+/* Titel wie Service-Karten (h5/card-title Stil) */
 .service-box-title {
-  font-weight: 700;
+  font-weight: 600;
+  font-size: 1.25rem;
   margin-bottom: 10px;
 }
 
+/* Listen in gold */
 .service-bullets {
   margin: 0;
   padding-left: 18px;
 }
-
 .service-bullets li {
   margin-bottom: 6px;
+  color: rgb(var(--gold));
 }
 
 .two-col {
@@ -442,7 +466,6 @@ a.btn-primary:active:focus-visible {
   margin-top: 2rem;
 }
 
-
 /* ===========================
    MOBILE NAV: NUR HANDY (nicht Tablet)
    =========================== */
@@ -454,8 +477,8 @@ a.btn-primary:active:focus-visible {
 @media (max-width: 767px) {
   #mobileNav {
     position: fixed;
-    top: 14px;
-    right: 14px;
+    top: 7px;     /* halbiert (war 14px) */
+    right: 7px;   /* halbiert (war 14px) */
     height: 48px;
     width: 56px;
     background: rgb(var(--bordeaux));
@@ -463,13 +486,12 @@ a.btn-primary:active:focus-visible {
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;               /* runde Ecken */
+    border-radius: 14px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.22);
   }
 
-   #stickyHeader {
-    padding-right: 70px; /* Platz für Hamburger */
-  }
+  /* WICHTIG: kein padding-right mehr, sonst verschiebt es */
+  /* #stickyHeader { padding-right: 70px; }  <-- entfernt */
 }
 
 .hamburger-btn {
@@ -507,30 +529,14 @@ a.btn-primary:active:focus-visible {
 .hamburger-lines::after  { top:  7px; }
 
 /* ===========================
-   Offcanvas Farben
-   =========================== */
-.offcanvas {
-  background: rgb(var(--bordeaux));
-  color: rgb(var(--gold));
-}
-
-.offcanvas-title {
-  color: rgb(var(--gold));
-  font-weight: 600;
-}
-
-/* ===========================
    Scroll-Offset: Header überdeckt Titel nicht mehr
    =========================== */
-/* Scrollziel bekommt Abstand nach oben */
 section[id] {
-  scroll-margin-top: 95px; /* passt für Sticky Header */
+  scroll-margin-top: 95px;
 }
 
-/* Auf sehr kleine Phones etwas weniger */
 @media (max-width: 460px) {
   section[id] {
     scroll-margin-top: 75px;
   }
 }
-
