@@ -28,64 +28,6 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-/* =========================== MOBILE NAV (Hamburger oben rechts) =========================== */
-#mobileNav {
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 55px;
-  width: 70px;
-  background: rgb(var(--bordeaux));
-  z-index: 2500;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
-}
-
-.hamburger-btn {
-  border: 0;
-  background: transparent;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.hamburger-lines {
-  display: inline-block;
-  width: 28px;
-  height: 18px;
-  position: relative;
-}
-
-.hamburger-lines::before,
-.hamburger-lines::after,
-.hamburger-lines {
-  background: transparent;
-}
-
-.hamburger-lines::before,
-.hamburger-lines::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 28px;
-  height: 2px;
-  background: rgb(var(--gold));
-  border-radius: 2px;
-  transition: transform 0.2s ease;
-}
-
-.hamburger-lines::before { top: 2px; }
-.hamburger-lines::after { bottom: 2px; }
-
-.hamburger-lines {
-  background: rgb(var(--gold));
-  height: 2px;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  border-radius: 2px;
-}
 
 /* Offcanvas Farben */
 .offcanvas {
@@ -499,3 +441,96 @@ a.btn-primary:active:focus-visible {
 #contact .col-lg-6:last-child {
   margin-top: 2rem;
 }
+
+
+/* ===========================
+   MOBILE NAV: NUR HANDY (nicht Tablet)
+   =========================== */
+#mobileNav {
+  display: none; /* default aus */
+}
+
+/* Nur Handy: bis 767px */
+@media (max-width: 767px) {
+  #mobileNav {
+    position: fixed;
+    top: 14px;
+    right: 14px;
+    height: 48px;
+    width: 56px;
+    background: rgb(var(--bordeaux));
+    z-index: 2500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;               /* runde Ecken */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.22);
+  }
+
+   #stickyHeader {
+    padding-right: 70px; /* Platz für Hamburger */
+  }
+}
+
+.hamburger-btn {
+  border: 0;
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.hamburger-lines {
+  width: 24px;
+  height: 2px;
+  background: rgb(var(--gold));
+  border-radius: 999px;
+  position: relative;
+  display: inline-block;
+}
+
+.hamburger-lines::before,
+.hamburger-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: rgb(var(--gold));
+  border-radius: 999px;
+}
+
+.hamburger-lines::before { top: -7px; }
+.hamburger-lines::after  { top:  7px; }
+
+/* ===========================
+   Offcanvas Farben
+   =========================== */
+.offcanvas {
+  background: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
+}
+
+.offcanvas-title {
+  color: rgb(var(--gold));
+  font-weight: 600;
+}
+
+/* ===========================
+   Scroll-Offset: Header überdeckt Titel nicht mehr
+   =========================== */
+/* Scrollziel bekommt Abstand nach oben */
+section[id] {
+  scroll-margin-top: 95px; /* passt für Sticky Header */
+}
+
+/* Auf sehr kleine Phones etwas weniger */
+@media (max-width: 460px) {
+  section[id] {
+    scroll-margin-top: 75px;
+  }
+}
+

@@ -67,20 +67,27 @@
 
 
 // ===========================
-// Smooth Scroll für interne Links (Menü)
+// Smooth Scroll + Offcanvas automatisch schliessen
 // ===========================
 (function () {
+  const offcanvasEl = document.getElementById("mobileMenu");
+  const bsOffcanvas = offcanvasEl ? bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl) : null;
+
   document.addEventListener("click", (e) => {
-    const a = e.target.closest('a[href^="#"]');
+    const a = e.target.closest('a.nav-link-scroll[href^="#"]');
     if (!a) return;
 
     const id = a.getAttribute("href");
-    if (!id || id === "#") return;
-
     const el = document.querySelector(id);
     if (!el) return;
 
     e.preventDefault();
+
+    // Menü schliessen (falls offen)
+    if (bsOffcanvas) bsOffcanvas.hide();
+
+    // Scrollen (scroll-margin-top regelt Header-Offset)
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 })();
+

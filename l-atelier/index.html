@@ -18,19 +18,19 @@
 
 <body>
 
-  <!-- MOBILE NAV (nur Mobile/Tablet) -->
-  <nav id="mobileNav" class="d-lg-none">
-    <button
-      class="hamburger-btn"
-      type="button"
-      data-bs-toggle="offcanvas"
-      data-bs-target="#mobileMenu"
-      aria-controls="mobileMenu"
-      aria-label="Menü öffnen"
-    >
-      <span class="hamburger-lines" aria-hidden="true"></span>
-    </button>
-  </nav>
+  <!-- MOBILE NAV (nur Handy) -->
+<nav id="mobileNav">
+  <button
+    class="hamburger-btn"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#mobileMenu"
+    aria-controls="mobileMenu"
+    aria-label="Menü öffnen"
+  >
+    <span class="hamburger-lines" aria-hidden="true"></span>
+  </button>
+</nav>
 
   <!-- Offcanvas Menü -->
   <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
@@ -40,10 +40,10 @@
     </div>
     <div class="offcanvas-body">
       <ul class="mobile-menu-list">
-        <li><a href="#about" data-bs-dismiss="offcanvas">Über uns</a></li>
-        <li><a href="#dienstleistungen" data-bs-dismiss="offcanvas">Dienstleistungen</a></li>
-        <li><a href="#gallery" data-bs-dismiss="offcanvas">Galerie</a></li>
-        <li><a href="#contact" data-bs-dismiss="offcanvas">Kontakt und Öffnungszeiten</a></li>
+        <li><a class="nav-link-scroll" href="#about" data-bs-dismiss="offcanvas">Über uns</a></li>
+        <li><a class="nav-link-scroll" href="#dienstleistungen" data-bs-dismiss="offcanvas">Dienstleistungen</a></li>
+        <li><a class="nav-link-scroll" href="#gallery" data-bs-dismiss="offcanvas">Galerie</a></li>
+        <li><a class="nav-link-scroll" href="#contact" data-bs-dismiss="offcanvas">Kontakt und Öffnungszeiten</a></li>
       </ul>
     </div>
   </div>
@@ -120,7 +120,9 @@
 
       <!-- ÜBER UNS -->
       <section id="about" class="pb-4">
-        <h2 class="section-title text-center mt-2 mb-3">Über uns</h2>
+        <div class="text-center mb-4">
+          <h2 class="section-title">Über uns</h2>
+        </div>
 
         <img
           src="img/IMG_Levi + Militya-min.jpg"
@@ -265,8 +267,8 @@
   <section id="contact" class="pt-3 pb-5 bg-light-section">
     <div class="container">
 
-      <div class="text-center mb-3">
-        <h3 class="mb-0">Kontakt und Öffnungszeiten</h3>
+      <div class="text-center mb-4">
+        <h2 class="section-title">Kontakt und Öffnungszeiten</h2>
       </div>
 
       <div class="row g-4 align-items-start">
