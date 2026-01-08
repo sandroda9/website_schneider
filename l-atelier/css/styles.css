@@ -20,7 +20,7 @@
   /* EINHEITLICHES SPACING + SCROLL OFFSET */
   --section-space: 50px;  /* Abstand innerhalb jeder Section (oben+unten) */
   --sticky-offset: 95px;  /* Sticky-Höhe Desktop/Tablet */
-  --sticky-gap: 5px;      /* Luft unter Sticky-Bar beim Scrollen */
+  --sticky-gap: 0px;      /* Luft unter Sticky-Bar beim Scrollen */
 }
 
 html, body { overflow-x: hidden; }
@@ -159,7 +159,7 @@ section .text-center.mb-4{
   margin-bottom: 1rem !important;
 }
 
-/* Scrollziel: Titel erscheint 5px unter Sticky Header */
+/* Scrollziel: Titel landet unter Sticky Header */
 section[id]{
   scroll-margin-top: calc(var(--sticky-offset) + var(--sticky-gap));
 }
@@ -270,27 +270,28 @@ section[id]{
   color: rgb(var(--gold));
 }
 
-/* UL Standard-Margins killen, sonst extra Abstand zwischen den 2 Listen */
-.two-col > ul {
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
-}
-
-.two-col {
+/* --- 2 Spalten Block: UL Margins killen, Abstand zwischen ULs steuern --- */
+.two-col{
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 6px;     /* exakt wie li-Abstand */
+  row-gap: 2px;     /* 1–2px Abstand zwischen den beiden Listen (mobile untereinander) */
   column-gap: 0;
+}
+
+.two-col > ul{
+  margin: 0 !important;     /* WICHTIG: sonst entsteht der "Extra-Abstand" */
+  padding-left: 18px;       /* gleiche Einrückung wie deine Listen */
 }
 
 /* ab md: zwei Spalten */
 @media (min-width: 768px) {
-  .two-col {
+  .two-col{
     grid-template-columns: 1fr 1fr;
     column-gap: 20px;
     row-gap: 0;
   }
 }
+
 
 /* =========================== HERO TEXT =========================== */
 .hero-text {
