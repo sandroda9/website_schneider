@@ -16,7 +16,11 @@
   --text: 42 42 42;
   --muted: 120 118 122;
   --card-bg: 255 252 248;
-  --section-gap: 50px;
+
+  /* EINHEITLICHES SPACING + SCROLL OFFSET */
+  --section-space: 50px;  /* Abstand innerhalb jeder Section (oben+unten) */
+  --sticky-offset: 95px;  /* Sticky-Höhe Desktop/Tablet */
+  --sticky-gap: 5px;      /* Luft unter Sticky-Bar beim Scrollen */
 }
 
 html, body { overflow-x: hidden; }
@@ -115,7 +119,7 @@ body {
   width: 100%;
   padding: 25px 0;
   background: rgb(var(--bordeaux));
-  margin-bottom: var(--section-gap);
+  margin-bottom: var(--section-space); /* statt section-gap */
 }
 
 .big-atelier {
@@ -130,6 +134,39 @@ body {
   font-size: 22px;
   color: rgb(var(--gold));
   margin-top: -10px;
+}
+
+/* ===========================
+   EINHEITLICHES SECTION SPACING
+   =========================== */
+#services,
+#about,
+#dienstleistungen,
+#gallery,
+#contact{
+  padding-top: var(--section-space);
+  padding-bottom: var(--section-space);
+  margin: 0 !important;
+}
+
+/* erste Section nach Hero soll direkt anschliessen */
+#services{
+  padding-top: 0;
+}
+
+/* Titel-Block überall gleich */
+section .text-center.mb-4{
+  margin-bottom: 1rem !important;
+}
+
+/* Scrollziel: Titel erscheint 5px unter Sticky Header */
+section[id]{
+  scroll-margin-top: calc(var(--sticky-offset) + var(--sticky-gap));
+}
+
+/* Sticky auf kleinen Phones ist tiefer -> offset kleiner */
+@media (max-width: 460px){
+  :root{ --sticky-offset: 75px; }
 }
 
 /* =========================== SERVICES =========================== */
@@ -158,12 +195,6 @@ body {
   flex-direction: column;
 }
 
-/* =========================== SECTION SPACING =========================== */
-#services, #about, #gallery, #contact {
-  margin-top: 0 !important;
-  margin-bottom: var(--section-gap);
-}
-
 /* =========================== ÜBER UNS =========================== */
 .profile-image {
   width: 70%;
@@ -186,7 +217,6 @@ body {
   margin-bottom: 0;
 }
 
-
 /* Container direkt an Bild anschliessen + oben eckig */
 .about-card--join {
   margin-top: 0 !important;
@@ -200,7 +230,7 @@ body {
 }
 
 /* =========================== DIENSTLEISTUNGEN LISTE =========================== */
-.services-list-section {
+.services-list-section{
   background: rgb(var(--bg));
 }
 
@@ -223,8 +253,8 @@ body {
 
 /* Dienstleistungs-Titel: gleicher Look wie about-title, aber gold */
 .service-title-like-about {
-  font-size: 1.25rem;      /* h5 look */
-  font-weight: 500;        /* Bootstrap card-title ist oft 500 */
+  font-size: 1.25rem;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 10px;
   color: rgb(var(--gold));
@@ -240,21 +270,20 @@ body {
   color: rgb(var(--gold));
 }
 
+/* UL Standard-Margins killen, sonst extra Abstand zwischen den 2 Listen */
 .two-col > ul {
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .two-col {
   display: grid;
   grid-template-columns: 1fr;
-
-  /* Wenn untereinander: nur kleiner Abstand wie normale Listeneinträge */
-  row-gap: 6px;
+  row-gap: 6px;     /* exakt wie li-Abstand */
   column-gap: 0;
 }
 
-/* ab md: zwei Spalten, kein vertikaler Abstand nötig, nur Spaltenabstand */
+/* ab md: zwei Spalten */
 @media (min-width: 768px) {
   .two-col {
     grid-template-columns: 1fr 1fr;
@@ -440,15 +469,6 @@ a.btn-primary:active:focus-visible {
   outline: none !important;
 }
 
-/* Abstand zwischen Galerie und Kontakt verkleinern */
-#gallery{
-  padding-bottom: 1rem !important;
-}
-
-#contact{
-  padding-top: 1rem !important;
-}
-
 /* ===========================
    CONTACT ALIGNMENTS
    =========================== */
@@ -477,11 +497,11 @@ a.btn-primary:active:focus-visible {
   margin-bottom: 10px;
 }
 
-/* Öffnungszeiten: Tabstop-Layout (Tag links, Zeit rechts) */
+/* Öffnungszeiten: Tabstop-Layout */
 .contact-hours li{
   display: grid;
-  grid-template-columns: 110px 1fr; /* "Tabstop" – Breite für den Tag */
-  column-gap: 14px;                /* Abstand zwischen Tag und Zeit */
+  grid-template-columns: 110px 1fr;
+  column-gap: 14px;
   padding: 2px 0;
 }
 
@@ -493,7 +513,8 @@ a.btn-primary:active:focus-visible {
 .contact-hours .time{
   text-align: left;
 }
-/* Senden Button 2px nach oben */
+
+/* Senden Button (wie gewünscht) */
 .contact-submit{
   position: relative;
   top: 14px;
@@ -503,13 +524,12 @@ a.btn-primary:active:focus-visible {
    MOBILE NAV: erscheint erst beim Scrollen (Mobile only)
    =========================== */
 #mobileNav {
-  display: none; /* default */
+  display: none;
 }
 
-/* Nur Handy */
 @media (max-width: 767px) {
   #mobileNav {
-    display: flex;              /* immer flex auf mobile */
+    display: flex;
     position: fixed;
     top: 4px;
     right: 7px;
@@ -522,21 +542,18 @@ a.btn-primary:active:focus-visible {
     border-radius: 14px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.22);
 
-    /* versteckt */
     opacity: 0;
     pointer-events: none;
     transform: translateY(-6px);
     transition: opacity 0.25s ease, transform 0.25s ease;
   }
 
-  /* Sichtbar nach Scroll */
   #mobileNav.visible {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
 }
-
 
 .hamburger-btn {
   border: 0;
@@ -573,26 +590,13 @@ a.btn-primary:active:focus-visible {
 .hamburger-lines::after  { top:  7px; }
 
 /* ===========================
-   Scroll-Offset
-   =========================== */
-section[id] {
-  scroll-margin-top: 95px;
-}
-
-@media (max-width: 460px) {
-  section[id] {
-    scroll-margin-top: 75px;
-  }
-}
-
-/* ===========================
    Scroll-to-top Button (nur Mobile)
    =========================== */
 #toTopBtn{
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 60px; /* deutlich höher als vorher */
+  bottom: 60px;
   width: 54px;
   height: 54px;
   border-radius: 999px;
@@ -609,7 +613,6 @@ section[id] {
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
-/* SVG gold */
 .toTopIcon{
   fill: rgb(var(--gold));
 }
@@ -619,7 +622,6 @@ section[id] {
   pointer-events: auto;
 }
 
-/* Nur Smartphone anzeigen */
 @media (min-width: 768px){
   #toTopBtn{
     display: none !important;
@@ -628,8 +630,4 @@ section[id] {
 
 #toTopBtn:active{
   transform: translateX(-50%) translateY(1px);
-}
-
-#dienstleistungen{
-  padding-top: 1.5rem; /* entspricht Bootstrap pb-4 */
 }
