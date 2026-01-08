@@ -28,6 +28,97 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* =========================== MOBILE NAV (Hamburger oben rechts) =========================== */
+#mobileNav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 55px;
+  width: 70px;
+  background: rgb(var(--bordeaux));
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.20);
+}
+
+.hamburger-btn {
+  border: 0;
+  background: transparent;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.hamburger-lines {
+  display: inline-block;
+  width: 28px;
+  height: 18px;
+  position: relative;
+}
+
+.hamburger-lines::before,
+.hamburger-lines::after,
+.hamburger-lines {
+  background: transparent;
+}
+
+.hamburger-lines::before,
+.hamburger-lines::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: rgb(var(--gold));
+  border-radius: 2px;
+  transition: transform 0.2s ease;
+}
+
+.hamburger-lines::before { top: 2px; }
+.hamburger-lines::after { bottom: 2px; }
+
+.hamburger-lines {
+  background: rgb(var(--gold));
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 2px;
+}
+
+/* Offcanvas Farben */
+.offcanvas {
+  background: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
+}
+
+.offcanvas-title {
+  color: rgb(var(--gold));
+  font-weight: 600;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-list li + li {
+  margin-top: 14px;
+}
+
+.mobile-menu-list a {
+  color: rgb(var(--gold));
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.mobile-menu-list a:hover {
+  text-decoration: underline;
+}
+
 /* =========================== STICKY HEADER =========================== */
 #stickyHeader {
   position: fixed;
@@ -58,12 +149,6 @@ body {
   line-height: 1;
   position: relative;
   top: 3px;
-}
-
-.sticky-subtitle {
-  margin-top: -2px;
-  font-size: 15px;
-  opacity: 0.9;
 }
 
 /* =========================== HERO FULL WIDTH =========================== */
@@ -145,6 +230,71 @@ body {
   margin: 0 auto;
 }
 
+.about-card {
+  width: 70%;
+  margin-inline: auto;
+}
+
+.about-title {
+  margin-bottom: 0;
+}
+
+/* =========================== DIENSTLEISTUNGEN LISTE (wie Bild) =========================== */
+.services-list-section {
+  background: rgb(var(--bordeaux)); /* gleich wie Hero */
+}
+
+.section-title--gold {
+  color: rgb(var(--gold));
+}
+
+.services-list-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  width: min(1200px, 100%);
+  margin-inline: auto;
+}
+
+.service-box {
+  background: rgb(var(--card-bg));
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 18px 18px 10px;
+}
+
+.service-box-title {
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.service-bullets {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.service-bullets li {
+  margin-bottom: 6px;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+/* ab md: zwei Boxen nebeneinander + in rechter Box 2 Spalten */
+@media (min-width: 768px) {
+  .services-list-wrapper {
+    grid-template-columns: 1fr 2fr;
+    align-items: start;
+  }
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+}
+
 /* =========================== HERO TEXT =========================== */
 .hero-text {
   padding-left: 25px;
@@ -152,13 +302,11 @@ body {
 }
 
 /* =========================== GALLERY =========================== */
-/* Default: Bilder sind sichtbar (wichtig, falls JS auf einem Gerät nicht läuft) */
 .gallery-item {
   opacity: 1;
   transform: none;
 }
 
-/* Animation nur aktivieren, wenn JS vorhanden ist */
 html.js .gallery-item {
   opacity: 0;
   transform: translateY(60px);
@@ -187,6 +335,16 @@ html.js .gallery-item.in-view {
   outline-offset: 2px;
 }
 
+/* Mail-Link im Text */
+a[href^="mailto"]:not(.btn) {
+  color: rgb(var(--bordeaux));
+  font-weight: 500;
+  text-decoration: none;
+}
+a[href^="mailto"]:not(.btn):hover {
+  text-decoration: underline;
+}
+
 /* =========================== DESKTOP =========================== */
 @media (min-width: 992px) {
   #services .container,
@@ -203,21 +361,30 @@ html.js .gallery-item.in-view {
     margin-inline: auto;
     display: block;
   }
+
+  .about-card {
+    width: calc(70% - 24px);
+  }
 }
 
-/* WIDESCREEN: ab hier deckeln */
-@media (min-width: 1400px) { /* ggf. 1600px, wenn du’s später willst */
+/* WIDESCREEN */
+@media (min-width: 1400px) {
   #services .container,
   #gallery .container,
   #contact .container,
   footer,
   .hero-text {
-    max-width: 1200px;   /* oder 1280px */
+    max-width: 1200px;
   }
 
   .profile-image{
-    width: 1200px;       /* oder 1280px */
-    max-width: calc(100% - 48px); /* Sicherheitsnetz */
+    width: 1200px;
+    max-width: calc(100% - 48px);
+  }
+
+  .about-card{
+    width: 1200px;
+    max-width: calc(100% - 48px);
   }
 }
 
@@ -238,10 +405,13 @@ html.js .gallery-item.in-view {
     margin-right: auto;
   }
 
-  /* Services: Spalte darf voll bleiben, Card steuert die Breite */
+  .about-card {
+    width: 95%;
+    max-width: 700px;
+  }
+
   #services .col-lg-4 { max-width: none; }
 
-  /* Weisse Box: 95% aber max 700px, zentriert */
   #services .card.service-card {
     width: 95%;
     max-width: 700px;
@@ -249,14 +419,12 @@ html.js .gallery-item.in-view {
     margin-right: auto;
   }
 
-  /* Service-Bild füllt die Box komplett */
   #services .card-img-top {
     width: 100%;
     height: 190px;
     margin: 0;
   }
 }
-
 
 @media (max-width: 460px) {
   .big-atelier {
@@ -268,35 +436,25 @@ html.js .gallery-item.in-view {
     font-size: 13px;
   }
 
-  /* Abstand oberhalb der Services verkleinern */
   .hero-title-wrapper {
     margin-bottom: 5px;
   }
 
-  /* Sticky Header kompakter auf Mobile */
   #stickyHeader {
     height: 55px;
   }
 
-  /* Sticky Header: Untertitel ausblenden */
-  #stickyHeader .sticky-subtitle {
-    display: none;
-  }
-
-  /* Titel im Sticky Header anpassen */
   #stickyHeader .sticky-title {
     font-size: 36px;
     line-height: 30px;
   }
 
-  /* Nichts darf überstehen */
   #services .card,
   #gallery .col-6,
   #gallery .col-md-3 {
     overflow: hidden;
   }
 
-  /* Bilder vorbereiten */
   #services .card-img-top,
   #gallery img {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -305,18 +463,15 @@ html.js .gallery-item.in-view {
 }
 
 /* =========================== BUTTON FIXES (MAILTO + ACTIVE) =========================== */
-/* Mailto Grundzustand */
 a.btn-primary[href^="mailto"] {
   font-weight: 400;
   color: rgb(var(--gold));
 }
 
-/* Hover */
 a.btn-primary:hover {
   color: rgb(var(--bordeaux));
 }
 
-/* Active / Focus / Gedrückt halten */
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary:focus,
@@ -331,24 +486,13 @@ a.btn-primary:active:focus-visible {
   outline: none !important;
 }
 
-/* Mail-Link im Text */
-a[href^="mailto"]:not(.btn) {
-  color: rgb(var(--bordeaux));
-  font-weight: 500;
-  text-decoration: none;
-}
-
-a[href^="mailto"]:not(.btn):hover {
-  text-decoration: underline;
-}
-
 /* Abstand zwischen Galerie und Kontakt verkleinern */
 #gallery{
-  padding-bottom: 1rem !important; /* war py-5 */
+  padding-bottom: 1rem !important;
 }
 
 #contact{
-  padding-top: 1rem !important; /* war pt-3, aber wir setzen sauber */
+  padding-top: 1rem !important;
 }
 
 /* Kontaktformular: rechten Block nach unten schieben */

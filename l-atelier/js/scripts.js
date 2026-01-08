@@ -33,15 +33,12 @@
   const items = document.querySelectorAll(".gallery-item");
   if (!items.length) return;
 
-  // JS-Klasse erst hier setzen (nicht global!)
   document.documentElement.classList.add("js");
 
-  // Safety-Net: falls Safari/Observer nicht triggert
   const safetyTimer = setTimeout(() => {
     items.forEach(el => el.classList.add("in-view"));
   }, 800);
 
-  // Kein IntersectionObserver → direkt anzeigen
   if (!("IntersectionObserver" in window)) {
     items.forEach(el => el.classList.add("in-view"));
     return;
@@ -61,10 +58,29 @@
 
   items.forEach(el => io.observe(el));
 
-  // Sobald etwas sichtbar wird → SafetyTimer stoppen
   items[0].addEventListener(
     "transitionend",
     () => clearTimeout(safetyTimer),
     { once: true }
   );
+})();
+
+
+// ===========================
+// Smooth Scroll für interne Links (Menü)
+// ===========================
+(function () {
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+
+    const id = a.getAttribute("href");
+    if (!id || id === "#") return;
+
+    const el = document.querySelector(id);
+    if (!el) return;
+
+    e.preventDefault();
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 })();
