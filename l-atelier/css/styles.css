@@ -470,6 +470,22 @@ a.btn-primary:active:focus-visible {
   margin-bottom: 10px;
 }
 
+/* Öffnungszeiten: Tabstop-Layout (Tag links, Zeit rechts) */
+.contact-hours li{
+  display: grid;
+  grid-template-columns: 110px 1fr; /* "Tabstop" – Breite für den Tag */
+  column-gap: 14px;                /* Abstand zwischen Tag und Zeit */
+  padding: 2px 0;
+}
+
+.contact-hours .day{
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.contact-hours .time{
+  text-align: left;
+}
 /* Senden Button 2px nach oben */
 .contact-submit{
   position: relative;
