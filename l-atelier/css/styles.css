@@ -288,32 +288,7 @@ html.js .gallery-item.in-view {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     will-change: transform;
   }
-
-  /* ===========================
-     Touch-Effekt (gedrückt halten)
-     =========================== */
-
-  /* Services: normales Scale */
-  #services .card-img-top:active {
-    transform: scale(1.03);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-  }
-
-  /* Galerie (JS aktiv): transform enthält translateY -> kombinieren */
-  html.js #gallery img.gallery-item.in-view:active {
-    transform: translateY(0) scale(1.03);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-  }
-
-  /* Galerie Fallback (JS aus) */
-  html:not(.js) #gallery img.gallery-item:active {
-    transform: scale(1.03);
-    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
-  }
 }
-
-
-
 
 /* =========================== BUTTON FIXES (MAILTO + ACTIVE) =========================== */
 /* Mailto Grundzustand */
