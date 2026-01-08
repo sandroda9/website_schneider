@@ -61,7 +61,6 @@ body {
 }
 
 /* =========================== STICKY HEADER =========================== */
-/* Titel immer exakt zentriert – unabhängig vom Hamburger */
 #stickyHeader {
   position: fixed;
   top: 0;
@@ -74,8 +73,6 @@ body {
   transform: translateY(-25px);
   transition: opacity 0.45s ease, transform 0.45s ease, box-shadow 0.45s ease;
   z-index: 2000;
-
-  /* neu */
   display: block;
 }
 
@@ -89,8 +86,6 @@ body {
   font-family: "Corinthia", cursive;
   font-size: clamp(40px, 5.5vw, 78px);
   line-height: 1;
-
-  /* neu: exakt zentriert */
   position: absolute;
   left: 50%;
   top: 50%;
@@ -176,7 +171,7 @@ body {
   margin: 0 auto;
 }
 
-/* Bild unten eckig (unten links/rechts keine Rundung) */
+/* Bild unten eckig */
 .profile-image--join {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
@@ -198,13 +193,26 @@ body {
   border-top-right-radius: 0 !important;
 }
 
+/* ===========================
+   EINHEITLICHER SCHRIFTLOOK (Signatur + Dienstleistungs-Titel)
+   =========================== */
+.signature-title {
+  font-weight: 600;
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  margin-top: 10px;
+}
+
+/* Variante für goldene Titel (Dienstleistungen) */
+.signature-title--gold {
+  color: rgb(var(--gold));
+}
+
 /* =========================== DIENSTLEISTUNGEN LISTE =========================== */
-/* Section beige */
 .services-list-section {
   background: rgb(var(--bg));
 }
 
-/* Titel darf gold bleiben (passt auch auf beige) */
 .section-title--gold {
   color: rgb(var(--gold));
 }
@@ -217,20 +225,12 @@ body {
   margin-inline: auto;
 }
 
-/* Boxen bordeaux, Schrift gold */
 .service-box {
   background: rgb(var(--bordeaux));
   color: rgb(var(--gold));
   border: 2px solid rgba(0,0,0,0.15);
   border-radius: 12px;
   padding: 18px 18px 10px;
-}
-
-/* Titel wie Service-Karten (h5/card-title Stil) */
-.service-box-title {
-  font-weight: 600;
-  font-size: 1.25rem;
-  margin-bottom: 10px;
 }
 
 /* Listen in gold */
@@ -249,7 +249,6 @@ body {
   gap: 10px;
 }
 
-/* ab md: zwei Boxen nebeneinander + in rechter Box 2 Spalten */
 @media (min-width: 768px) {
   .services-list-wrapper {
     grid-template-columns: 1fr 2fr;
@@ -333,7 +332,6 @@ a[href^="mailto"]:not(.btn):hover {
   }
 }
 
-/* WIDESCREEN */
 @media (min-width: 1400px) {
   #services .container,
   #gallery .container,
@@ -363,7 +361,6 @@ a[href^="mailto"]:not(.btn):hover {
     line-height: 95px;
   }
 
-  /* Profilbild: 95% aber max 700px, zentriert */
   .profile-image {
     width: 95%;
     max-width: 700px;
@@ -461,24 +458,53 @@ a.btn-primary:active:focus-visible {
   padding-top: 1rem !important;
 }
 
-/* Kontaktformular: rechten Block nach unten schieben */
-#contact .col-lg-6:last-child {
-  margin-top: 2rem;
+/* ===========================
+   CONTACT ALIGNMENTS
+   =========================== */
+.contact-title{
+  margin: 0;
+  padding: 0;
+}
+
+.contact-left .contact-info{
+  margin-top: 10px;
+}
+
+.contact-hours{
+  margin-top: 14px;
+  margin-bottom: 14px;
+}
+
+.contact-cta{
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+/* Rechts: Titel auf gleicher Höhe + kein <br> spacing */
+.contact-right .contact-title{
+  margin-bottom: 10px;
+}
+
+/* Senden Button 2px nach oben */
+.contact-submit{
+  position: relative;
+  top: -2px;
 }
 
 /* ===========================
-   MOBILE NAV: NUR HANDY (nicht Tablet)
+   MOBILE NAV: NUR HANDY
    =========================== */
 #mobileNav {
-  display: none; /* default aus */
+  display: none;
 }
 
-/* Nur Handy: bis 767px */
 @media (max-width: 767px) {
   #mobileNav {
     position: fixed;
-    top: 7px;     /* halbiert (war 14px) */
-    right: 7px;   /* halbiert (war 14px) */
+    top: 4px;    /* weiter nach oben */
+    right: 7px;
     height: 48px;
     width: 56px;
     background: rgb(var(--bordeaux));
@@ -489,9 +515,6 @@ a.btn-primary:active:focus-visible {
     border-radius: 14px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.22);
   }
-
-  /* WICHTIG: kein padding-right mehr, sonst verschiebt es */
-  /* #stickyHeader { padding-right: 70px; }  <-- entfernt */
 }
 
 .hamburger-btn {
@@ -529,7 +552,7 @@ a.btn-primary:active:focus-visible {
 .hamburger-lines::after  { top:  7px; }
 
 /* ===========================
-   Scroll-Offset: Header überdeckt Titel nicht mehr
+   Scroll-Offset
    =========================== */
 section[id] {
   scroll-margin-top: 95px;
@@ -539,4 +562,46 @@ section[id] {
   section[id] {
     scroll-margin-top: 75px;
   }
+}
+
+/* ===========================
+   Scroll-to-top Button
+   =========================== */
+#toTopBtn{
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 14px;
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  border: none;
+  background: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
+  display: grid;
+  place-items: center;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.22);
+  cursor: pointer;
+  z-index: 2600;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#toTopBtn span{
+  font-size: 20px;
+  line-height: 1;
+  position: relative;
+  top: -1px;
+}
+
+#toTopBtn.show{
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+#toTopBtn:active{
+  transform: translateX(-50%) translateY(1px);
 }

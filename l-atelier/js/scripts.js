@@ -14,7 +14,7 @@
   const stickyHeader = document.getElementById("stickyHeader");
   if (!stickyHeader) return;
 
-  const showAfter = 120; // px Scroll, ab wann sichtbar
+  const showAfter = 120;
 
   const onScroll = () => {
     if (window.scrollY > showAfter) stickyHeader.classList.add("visible");
@@ -83,11 +83,35 @@
 
     e.preventDefault();
 
-    // Menü schliessen (falls offen)
     if (bsOffcanvas) bsOffcanvas.hide();
-
-    // Scrollen (scroll-margin-top regelt Header-Offset)
     el.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 })();
 
+
+// ===========================
+// Scroll-to-top Button: erscheint ab Seitenmitte
+// ===========================
+(function () {
+  const btn = document.getElementById("toTopBtn");
+  if (!btn) return;
+
+  const onScroll = () => {
+    const doc = document.documentElement;
+    const scrollTop = window.scrollY || doc.scrollTop;
+    const maxScroll = (doc.scrollHeight - window.innerHeight) || 1;
+
+    // ab ca. 50% Scrollstrecke sichtbar
+    const reachedMiddle = scrollTop / maxScroll >= 0.5;
+
+    if (reachedMiddle) btn.classList.add("show");
+    else btn.classList.remove("show");
+  };
+
+  btn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();

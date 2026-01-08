@@ -144,7 +144,8 @@
               Handwerk mit Sorgfalt und Stolz ausgeführt. Bei uns erhalten Ihre Kleidungsstücke einen besonderen Wert.
             </p>
 
-            <h5 class="card-title about-title">Levi und Militya Hobil</h5>
+            <!-- Signatur: Referenz-Look -->
+            <div class="signature-title">Levi und Militya Hobil</div>
           </div>
         </div>
       </section>
@@ -155,14 +156,15 @@
   <!-- DIENSTLEISTUNGEN -->
   <section id="dienstleistungen" class="py-5 services-list-section">
     <div class="container">
-        <div class="text-center mb-4">
-          <h2 class="section-title">Über uns</h2>
-        </div>
+      <div class="text-center mb-4">
+        <h2 class="section-title section-title--gold">Dienstleistungen</h2>
+      </div>
 
       <div class="services-list-wrapper">
 
         <div class="service-box">
-          <div class="service-box-title">Änderungsschneiderei</div>
+          <!-- gleiche Schrift wie Signatur, aber gold -->
+          <div class="signature-title signature-title--gold">Änderungsschneiderei</div>
           <ul class="service-bullets">
             <li>Hosen</li>
             <li>Blazer</li>
@@ -176,7 +178,8 @@
         </div>
 
         <div class="service-box service-box-wide">
-          <div class="service-box-title">Chemische Reinigung</div>
+          <!-- gleiche Schrift wie Signatur, aber gold -->
+          <div class="signature-title signature-title--gold">Chemische Reinigung</div>
 
           <div class="two-col">
             <ul class="service-bullets">
@@ -269,15 +272,17 @@
 
       <div class="row g-4 align-items-start">
 
-        <div class="col-12 col-lg-6">
-          <p class="mt-3">
-            <h5>L'Atelier Hobil</h5><br>
-            Wilerstrasse 14, 9230 Flawil<br>
-            Tel: 071 232 02 22<br>
-            <a href="mailto:latelierhobil@hotmail.com">latelierhobil@hotmail.com</a>
-          </p>
+        <!-- LINKS -->
+        <div class="col-12 col-lg-6 contact-left">
+          <h5 class="contact-title">L'Atelier Hobil</h5>
 
-          <ul class="list-unstyled mt-3">
+          <div class="contact-info">
+            <div>Wilerstrasse 14, 9230 Flawil</div>
+            <div>Tel: 071 232 02 22</div>
+            <div><a href="mailto:latelierhobil@hotmail.com">latelierhobil@hotmail.com</a></div>
+          </div>
+
+          <ul class="list-unstyled contact-hours">
             <li>Montag: Geschlossen</li>
             <li>Dienstag: Geschlossen</li>
             <li>Mittwoch: 09:00–12:00, 13:30–18:30</li>
@@ -287,15 +292,17 @@
             <li>Sonntag: Geschlossen</li>
           </ul>
 
-          <a class="btn btn-primary mt-3" href="mailto:latelierhobil@hotmail.com">E-Mail</a>
-          <a class="btn btn-primary mt-3" href="tel:+41712320222">Anrufen</a>
+          <div class="contact-cta">
+            <a class="btn btn-primary" href="mailto:latelierhobil@hotmail.com">E-Mail</a>
+            <a class="btn btn-primary" href="tel:+41712320222">Anrufen</a>
+          </div>
         </div>
 
-        <div class="col-12 col-lg-6">
-          <br>
-          <h5 class="mt-3">Nachricht senden</h5>
+        <!-- RECHTS -->
+        <div class="col-12 col-lg-6 contact-right">
+          <h5 class="contact-title">Nachricht senden</h5>
 
-          <form action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
+          <form class="contact-form" action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
             <input type="text" name="_honey" style="display:none">
             <input type="hidden" name="_subject" value="Neue Anfrage über latelier-flawil.ch">
             <input type="hidden" name="_next" value="https://DEINE-DOMAIN.ch/#contact">
@@ -312,7 +319,7 @@
               <textarea name="message" rows="6" class="form-control" placeholder="Nachricht" required></textarea>
             </div>
 
-            <button class="btn btn-primary" type="submit">Senden</button>
+            <button class="btn btn-primary contact-submit" type="submit">Senden</button>
           </form>
         </div>
 
@@ -323,6 +330,11 @@
   <footer class="py-4 text-center">
     © <span id="year"></span> L'Atelier — Flawil
   </footer>
+
+  <!-- Scroll-to-top Button -->
+  <button id="toTopBtn" type="button" aria-label="Nach oben">
+    <span aria-hidden="true">↑</span>
+  </button>
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/scripts.js"></script>
