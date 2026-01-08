@@ -94,6 +94,9 @@ body {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+  text-decoration: none;
+  color: rgb(var(--gold));
+  cursor: pointer;
 }
 
 /* =========================== HERO FULL WIDTH =========================== */
