@@ -473,7 +473,7 @@ a.btn-primary:active:focus-visible {
 /* Senden Button 2px nach oben */
 .contact-submit{
   position: relative;
-  top: -2px;
+  top: 10px;
 }
 
 /* ===========================
@@ -590,4 +590,9 @@ section[id] {
 
 #toTopBtn:active{
   transform: translateX(-50%) translateY(1px);
+}
+
+/* Abstand Titel → Dienstleistungen-Boxen verkleinern */
+#dienstleistungen .text-center{
+  margin-bottom: 1rem !important;
 }
