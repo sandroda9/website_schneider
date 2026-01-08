@@ -336,3 +336,8 @@ a[href^="mailto"]:not(.btn):hover {
 #contact .col-lg-6:last-child {
   margin-top: 2rem;
 }
+
+html.js .gallery-item {
+  opacity: 1 !important;
+  transform: none !important;
+}
