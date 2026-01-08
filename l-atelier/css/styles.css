@@ -250,10 +250,14 @@ html.js .gallery-item.in-view {
     line-height: 70px;
   }
 
-  .hero-subtitle { font-size: 13px; }
+  .hero-subtitle {
+    font-size: 13px;
+  }
 
   /* Abstand oberhalb der Services verkleinern */
-  .hero-title-wrapper { margin-bottom: 5px; }
+  .hero-title-wrapper {
+    margin-bottom: 5px;
+  }
 
   /* Sticky Header kompakter auf Mobile */
   #stickyHeader {
@@ -261,7 +265,9 @@ html.js .gallery-item.in-view {
   }
 
   /* Sticky Header: Untertitel ausblenden */
-  #stickyHeader .sticky-subtitle { display: none; }
+  #stickyHeader .sticky-subtitle {
+    display: none;
+  }
 
   /* Titel im Sticky Header anpassen */
   #stickyHeader .sticky-title {
@@ -270,20 +276,44 @@ html.js .gallery-item.in-view {
   }
 
   /* Nichts darf überstehen */
-  #services .card, #gallery .col-6, #gallery .col-md-3 { overflow: hidden; }
+  #services .card,
+  #gallery .col-6,
+  #gallery .col-md-3 {
+    overflow: hidden;
+  }
 
   /* Bilder vorbereiten */
-  #services .card-img-top, #gallery img {
+  #services .card-img-top,
+  #gallery img {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
     will-change: transform;
   }
 
-  /* Touch-Effekt (gedrückt halten) */
-  #services .card-img-top:active, #gallery img:active {
+  /* ===========================
+     Touch-Effekt (gedrückt halten)
+     =========================== */
+
+  /* Services: normales Scale */
+  #services .card-img-top:active {
+    transform: scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Galerie (JS aktiv): transform enthält translateY -> kombinieren */
+  html.js #gallery img.gallery-item.in-view:active {
+    transform: translateY(0) scale(1.03);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
+  }
+
+  /* Galerie Fallback (JS aus) */
+  html:not(.js) #gallery img.gallery-item:active {
     transform: scale(1.03);
     box-shadow: 0 8px 22px rgba(0, 0, 0, 0.18);
   }
 }
+
+
+
 
 /* =========================== BUTTON FIXES (MAILTO + ACTIVE) =========================== */
 /* Mailto Grundzustand */
