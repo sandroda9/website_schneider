@@ -477,14 +477,16 @@ a.btn-primary:active:focus-visible {
 }
 
 /* ===========================
-   MOBILE NAV: NUR HANDY
+   MOBILE NAV: erscheint erst beim Scrollen (Mobile only)
    =========================== */
 #mobileNav {
-  display: none;
+  display: none; /* default */
 }
 
+/* Nur Handy */
 @media (max-width: 767px) {
   #mobileNav {
+    display: flex;              /* immer flex auf mobile */
     position: fixed;
     top: 4px;
     right: 7px;
@@ -492,13 +494,26 @@ a.btn-primary:active:focus-visible {
     width: 56px;
     background: rgb(var(--bordeaux));
     z-index: 2500;
-    display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 14px;
     box-shadow: 0 10px 20px rgba(0,0,0,0.22);
+
+    /* versteckt */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  /* Sichtbar nach Scroll */
+  #mobileNav.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
   }
 }
+
 
 .hamburger-btn {
   border: 0;

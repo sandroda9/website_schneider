@@ -101,7 +101,6 @@
     const scrollTop = window.scrollY || doc.scrollTop;
     const maxScroll = (doc.scrollHeight - window.innerHeight) || 1;
 
-    // ab ca. 50% Scrollstrecke sichtbar
     const reachedMiddle = scrollTop / maxScroll >= 0.5;
 
     if (reachedMiddle) btn.classList.add("show");
@@ -113,5 +112,31 @@
   });
 
   window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+})();
+
+
+// ===========================
+// Hamburger Button: erscheint erst beim Scrollen (Mobile)
+// ===========================
+(function () {
+  const mobileNav = document.getElementById("mobileNav");
+  if (!mobileNav) return;
+
+  const showAfter = 120; // px Scroll, ab wann sichtbar
+
+  const onScroll = () => {
+    // Nur auf Smartphone
+    if (window.innerWidth > 767) {
+      mobileNav.classList.remove("visible");
+      return;
+    }
+
+    if (window.scrollY > showAfter) mobileNav.classList.add("visible");
+    else mobileNav.classList.remove("visible");
+  };
+
+  window.addEventListener("scroll", onScroll, { passive: true });
+  window.addEventListener("resize", onScroll);
   onScroll();
 })();
