@@ -274,7 +274,7 @@ section[id]{
 .two-col{
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 2px;     /* 1–2px Abstand zwischen den beiden Listen (mobile untereinander) */
+  row-gap: 0px;     /* 1–2px Abstand zwischen den beiden Listen (mobile untereinander) */
   column-gap: 0;
 }
 
