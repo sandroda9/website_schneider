@@ -554,7 +554,7 @@ section[id] {
   position: fixed;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 38px; /* deutlich höher als vorher */
+  bottom: 60px; /* deutlich höher als vorher */
   width: 54px;
   height: 54px;
   border-radius: 999px;
