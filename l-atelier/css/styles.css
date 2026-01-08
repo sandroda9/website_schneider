@@ -193,6 +193,7 @@ body {
   margin-bottom: var(--section-gap);
 }
 
+
 /* Container direkt an Bild anschliessen + oben eckig */
 .about-card--join {
   margin-top: 0 !important;
@@ -249,17 +250,18 @@ body {
 .two-col {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+
+  /* Wenn untereinander: nur kleiner Abstand wie normale Listeneinträge */
+  row-gap: 6px;
+  column-gap: 0;
 }
 
+/* ab md: zwei Spalten, kein vertikaler Abstand nötig, nur Spaltenabstand */
 @media (min-width: 768px) {
-  .services-list-wrapper {
-    grid-template-columns: 1fr 2fr;
-    align-items: start;
-  }
   .two-col {
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 0;
   }
 }
 
@@ -630,7 +632,6 @@ section[id] {
   transform: translateX(-50%) translateY(1px);
 }
 
-/* Abstand Titel → Dienstleistungen-Boxen verkleinern */
-#dienstleistungen .text-center{
-  margin-bottom: 1rem !important;
+#dienstleistungen{
+  padding-top: 1.5rem; /* entspricht Bootstrap pb-4 */
 }
