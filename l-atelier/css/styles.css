@@ -189,16 +189,35 @@ html.js .gallery-item.in-view {
 
 /* =========================== DESKTOP =========================== */
 @media (min-width: 992px) {
-  #services .container, #gallery .container, #contact .container, footer {
-    max-width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
+  #services .container,
+  #gallery .container,
+  #contact .container,
+  footer,
   .hero-text {
     max-width: 70%;
-    margin-left: auto;
-    margin-right: auto;
+    margin-inline: auto;
+  }
+
+  .profile-image{
+    width: calc(70% - 24px);
+    margin-inline: auto;
+    display: block;
+  }
+}
+
+/* WIDESCREEN: ab hier deckeln */
+@media (min-width: 1400px) { /* ggf. 1600px, wenn du’s später willst */
+  #services .container,
+  #gallery .container,
+  #contact .container,
+  footer,
+  .hero-text {
+    max-width: 1200px;   /* oder 1280px */
+  }
+
+  .profile-image{
+    width: 1200px;       /* oder 1280px */
+    max-width: calc(100% - 48px); /* Sicherheitsnetz */
   }
 }
 
@@ -238,11 +257,6 @@ html.js .gallery-item.in-view {
   }
 }
 
-@media (min-width: 992px) {
-  .profile-image{
-    width: calc(70% - 24px);
-  }
-}
 
 @media (max-width: 460px) {
   .big-atelier {
