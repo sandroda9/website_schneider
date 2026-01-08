@@ -186,6 +186,13 @@ body {
   margin-bottom: 0;
 }
 
+/* Einheitlicher Abstand über Dienstleistungen */
+#dienstleistungen{
+  padding-top: 0;
+  margin-top: 0;
+  margin-bottom: var(--section-gap);
+}
+
 /* Container direkt an Bild anschliessen + oben eckig */
 .about-card--join {
   margin-top: 0 !important;
@@ -489,7 +496,7 @@ a.btn-primary:active:focus-visible {
 /* Senden Button 2px nach oben */
 .contact-submit{
   position: relative;
-  top: 10px;
+  top: 12px;
 }
 
 /* ===========================
