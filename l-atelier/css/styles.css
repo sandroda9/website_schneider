@@ -20,7 +20,7 @@
   /* EINHEITLICHES SPACING + SCROLL OFFSET */
   --section-space: 50px;  /* Abstand innerhalb jeder Section (oben+unten) */
   --sticky-offset: 95px;  /* Sticky-Höhe Desktop/Tablet */
-  --sticky-gap: 0px;      /* Luft unter Sticky-Bar beim Scrollen */
+  --sticky-gap: -20px;      /* Luft unter Sticky-Bar beim Scrollen */
 }
 
 html, body { overflow-x: hidden; }
