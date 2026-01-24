@@ -199,11 +199,13 @@ section[id]{
 }
 
 /* =========================== ÜBER UNS =========================== */
+
 .profile-image {
-  width: 70%;
+  /* width: 70%; */
   display: block;
   margin: 0 auto;
 }
+  
 
 /* Bild unten eckig */
 .profile-image--join {
@@ -212,9 +214,10 @@ section[id]{
 }
 
 .about-card {
-  width: 70%;
+ /* width: 70%; */
   margin-inline: auto;
 }
+  
 
 .about-title {
   margin-bottom: 0;
@@ -416,14 +419,16 @@ a[href^="mailto"]:not(.btn):hover {
   }
 
   .profile-image{
-    width: calc(70% - 24px);
+    /* width: calc(70% - 24px); */
     margin-inline: auto;
     display: block;
   }
-
+/*
   .about-card {
     width: calc(70% - 24px);
   }
+    */
+    
 }
 
 @media (min-width: 1400px) {
@@ -456,17 +461,17 @@ a[href^="mailto"]:not(.btn):hover {
   }
 
   .profile-image {
-    width: 95%;
-    max-width: 700px;
+    /* width: 95%;
+    max-width: 700px; */
     margin-left: auto;
     margin-right: auto;
   }
-
+/*
   .about-card {
     width: 95%;
     max-width: 700px;
   }
-
+*/
   #services .col-lg-4 { max-width: none; }
 
   #services .card.service-card {
