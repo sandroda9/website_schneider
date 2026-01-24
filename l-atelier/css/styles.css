@@ -172,6 +172,16 @@ section[id]{
   object-fit: cover;
   border-radius: 0.5rem 0.5rem 0 0;
 }
+
+/* Services: Titel zentrieren */
+#services .card-title{
+  text-align: center;
+}
+
+#services .card-text{
+  text-align: center;
+}
+
 @media (max-width: 991px){
   #services .card-img-top{
     height: 300px;
@@ -216,6 +226,19 @@ section[id]{
   border-top-right-radius: 0 !important;
 }
 .about-signature { margin-top: 10px; }
+
+/* Über uns: Text im Card-Body zentrieren */
+#about .about-card .card-body{
+  text-align: center;
+}
+
+/* Optional: Listen/andere Elemente bleiben normal, falls später mal nötig */
+#about .about-card .card-body ul,
+#about .about-card .card-body ol{
+  text-align: left;
+  margin-inline: auto;
+}
+
 
 /* ===========================
    DIENSTLEISTUNGEN: ACCORDION LOOK
