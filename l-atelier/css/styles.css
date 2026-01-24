@@ -174,7 +174,7 @@ section[id]{
 }
 @media (max-width: 991px){
   #services .card-img-top{
-    height: 180px;
+    height: 210px;
     aspect-ratio: auto;  /* wichtig, sonst fightet aspect-ratio gegen height */
   }
 }
