@@ -18,9 +18,13 @@
   --card-bg: 255 252 248;
 
   /* EINHEITLICHES SPACING + SCROLL OFFSET */
-  --section-space: 50px;  /* Abstand innerhalb jeder Section (oben+unten) */
-  --sticky-offset: 95px;  /* Sticky-Höhe Desktop/Tablet */
-  --sticky-gap: -20px;      /* Luft unter Sticky-Bar beim Scrollen */
+  --section-space: 50px;
+  --sticky-offset: 95px;
+  --sticky-gap: -20px;
+
+  /* EINHEITLICHE CONTENT-BREITE */
+  --content-max: 1200px;
+  --content-pad: 24px;
 }
 
 html, body { overflow-x: hidden; }
@@ -32,12 +36,17 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+/* Einheitlicher Content-Wrapper (ersetzt Container-Hacks) */
+.content-wrap{
+  width: min(var(--content-max), calc(100% - (var(--content-pad) * 2)));
+  margin-inline: auto;
+}
+
 /* Offcanvas Farben */
 .offcanvas {
   background: rgb(var(--bordeaux));
   color: rgb(var(--gold));
 }
-
 .offcanvas-title {
   color: rgb(var(--gold));
   font-weight: 600;
@@ -48,21 +57,14 @@ body {
   padding: 0;
   margin: 0;
 }
-
-.mobile-menu-list li + li {
-  margin-top: 14px;
-}
-
+.mobile-menu-list li + li { margin-top: 14px; }
 .mobile-menu-list a {
   color: rgb(var(--gold));
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
 }
-
-.mobile-menu-list a:hover {
-  text-decoration: underline;
-}
+.mobile-menu-list a:hover { text-decoration: underline; }
 
 /* =========================== STICKY HEADER =========================== */
 #stickyHeader {
@@ -79,13 +81,11 @@ body {
   z-index: 2000;
   display: block;
 }
-
 #stickyHeader.visible {
   opacity: 1;
   transform: translateY(0);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
 }
-
 .sticky-title {
   font-family: "Corinthia", cursive;
   font-size: clamp(40px, 5.5vw, 78px);
@@ -106,12 +106,6 @@ body {
   width: 100%;
 }
 
-#hero > .container {
-  max-width: 100%;
-  padding-left: 0;
-  padding-right: 0;
-}
-
 /* =========================== FULL-WIDTH TITLE BAR =========================== */
 .hero-title-wrapper {
   display: flex;
@@ -122,9 +116,8 @@ body {
   width: 100%;
   padding: 25px 0;
   background: rgb(var(--bordeaux));
-  margin-bottom: var(--section-space); /* statt section-gap */
+  margin-bottom: var(--section-space);
 }
-
 .big-atelier {
   font-family: "Corinthia", cursive;
   font-size: 200px;
@@ -132,7 +125,6 @@ body {
   color: rgb(var(--gold));
   white-space: nowrap;
 }
-
 .hero-subtitle {
   font-size: 22px;
   color: rgb(var(--gold));
@@ -153,14 +145,10 @@ body {
 }
 
 /* erste Section nach Hero soll direkt anschliessen */
-#services{
-  padding-top: 0;
-}
+#services{ padding-top: 0; }
 
 /* Titel-Block überall gleich */
-section .text-center.mb-4{
-  margin-bottom: 1rem !important;
-}
+section .text-center.mb-4{ margin-bottom: 1rem !important; }
 
 /* Scrollziel: Titel landet unter Sticky Header */
 section[id]{
@@ -178,20 +166,17 @@ section[id]{
   border-radius: 0.5rem;
   border: none;
 }
-
 .card-img-top {
   aspect-ratio: 4/3;
   width: 100%;
   object-fit: cover;
   border-radius: 0.5rem 0.5rem 0 0;
 }
-
 .service-card {
   height: 100%;
   display: flex;
   flex-direction: column;
 }
-
 .service-card .card-body {
   flex: 1;
   display: flex;
@@ -199,49 +184,31 @@ section[id]{
 }
 
 /* =========================== ÜBER UNS =========================== */
-
 .profile-image {
-  width: 70%;
+  width: 100%;            /* <— jetzt immer exakt Content-Breite */
   display: block;
   margin: 0 auto;
 }
-  
-
-/* Bild unten eckig */
 .profile-image--join {
   border-bottom-left-radius: 0 !important;
   border-bottom-right-radius: 0 !important;
 }
-
 .about-card {
-  width: 70%;
+  width: 100%;            /* <— jetzt immer exakt Content-Breite */
   margin-inline: auto;
 }
-  
-
-.about-title {
-  margin-bottom: 0;
-}
-
-/* Container direkt an Bild anschliessen + oben eckig */
+.about-title { margin-bottom: 0; }
 .about-card--join {
   margin-top: 0 !important;
   border-top-left-radius: 0 !important;
   border-top-right-radius: 0 !important;
 }
+.about-signature { margin-top: 10px; }
 
-/* Signatur genau wie der Satz (about-title) */
-.about-signature {
-  margin-top: 10px;
-}
 /* ===========================
    DIENSTLEISTUNGEN: ACCORDION LOOK
    =========================== */
-
-/* Bootstrap Accordion-Defaults killen */
-#dienstleistungen .accordion-item {
-  border: none;
-}
+#dienstleistungen .accordion-item { border: none; }
 
 #dienstleistungen .accordion-button {
   background: transparent;
@@ -250,7 +217,6 @@ section[id]{
   box-shadow: none;
 }
 
-/* Unser Box-Button im gleichen Stil wie service-title-like-about */
 #dienstleistungen .service-toggle{
   display: flex;
   align-items: center;
@@ -259,11 +225,10 @@ section[id]{
   font-weight: 500;
   line-height: 1.2;
   color: rgb(var(--gold));
-  padding: 18px 44px 10px 18px;  /* rechts Platz für Pfeil */
+  padding: 18px 44px 10px 18px;
   position: relative;
 }
 
-/* Pfeil-Icon (Bootstrap ::after) einfärben & positionieren */
 #dienstleistungen .service-toggle::after{
   position: absolute;
   right: 16px;
@@ -271,60 +236,40 @@ section[id]{
   filter: invert(93%) sepia(12%) saturate(350%) hue-rotate(10deg) brightness(105%) contrast(95%);
 }
 
-/* Fokus/Active sauber */
-#dienstleistungen .accordion-button:focus{
-  box-shadow: none;
-}
-
+#dienstleistungen .accordion-button:focus{ box-shadow: none; }
 #dienstleistungen .accordion-button:not(.collapsed){
   background: transparent;
   color: rgb(var(--gold));
 }
 
-/* Body-Padding passend zu deinen Boxen */
-#dienstleistungen .service-body{
-  padding: 0 18px 12px 18px;
-}
+#dienstleistungen .service-body{ padding: 0 18px 12px 18px; }
 
-/* Deine bestehende service-box bleibt die Box */
 #dienstleistungen .service-box{
   position: relative;
   background: rgb(var(--bordeaux));
   color: rgb(var(--gold));
   border: 2px solid rgba(0,0,0,0.15);
   border-radius: 12px;
-  padding: 0; /* wichtig: Button/Body übernehmen Padding */
+  padding: 0;
   overflow: hidden;
 }
 
+#dienstleistungen .accordion-body{ background: transparent; }
 
-#dienstleistungen .accordion-body{
-  background: transparent;
-}
-/* =========================== DIENSTLEISTUNGEN LISTE =========================== */
-.services-list-section{
-  background: rgb(var(--bg));
-}
-
+/* Dienstleistungen Wrapper: 100% der Content-Breite */
 .services-list-wrapper {
   display: grid;
   grid-template-columns: 1fr;
   gap: 18px;
-  width: min(1200px, 100%);
+  width: 100%;
   margin-inline: auto;
 }
 
-
-/* Dienstleistungs-Titel: gleicher Look wie about-title, aber gold */
-.service-title-like-about {
-  font-size: 1.25rem;
-  font-weight: 500;
-  line-height: 1.2;
-  margin-bottom: 10px;
-  color: rgb(var(--gold));
+.services-list-section{
+  background: rgb(var(--bg));
 }
 
-/* Listen in gold */
+/* Listen */
 .service-bullets {
   margin: 0;
   padding-left: 18px;
@@ -334,20 +279,17 @@ section[id]{
   color: rgb(var(--gold));
 }
 
-/* --- 2 Spalten Block: UL Margins killen, Abstand zwischen ULs steuern --- */
+/* 2-Spalten Liste */
 .two-col{
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 0px;     /* 1–2px Abstand zwischen den beiden Listen (mobile untereinander) */
+  row-gap: 0px;
   column-gap: 0;
 }
-
 .two-col > ul{
-  margin: 0 !important;     /* WICHTIG: sonst entsteht der "Extra-Abstand" */
-  padding-left: 18px;       /* gleiche Einrückung wie deine Listen */
+  margin: 0 !important;
+  padding-left: 18px;
 }
-
-/* ab md: zwei Spalten */
 @media (min-width: 768px) {
   .two-col{
     grid-template-columns: 1fr 1fr;
@@ -355,7 +297,6 @@ section[id]{
     row-gap: 0;
   }
 }
-
 
 /* =========================== HERO TEXT =========================== */
 .hero-text {
@@ -368,13 +309,11 @@ section[id]{
   opacity: 1;
   transform: none;
 }
-
 html.js .gallery-item {
   opacity: 0;
   transform: translateY(60px);
   transition: opacity 0.7s ease, transform 0.7s ease;
 }
-
 html.js .gallery-item.in-view {
   opacity: 1;
   transform: translateY(0);
@@ -386,12 +325,10 @@ html.js .gallery-item.in-view {
   color: rgb(var(--gold));
   border: none !important;
 }
-
 .btn-primary:hover {
   background-color: rgb(var(--gold));
   color: rgb(var(--bordeaux));
 }
-
 .btn-primary:focus-visible {
   outline: 2px solid rgb(var(--gold));
   outline-offset: 2px;
@@ -407,50 +344,6 @@ a[href^="mailto"]:not(.btn):hover {
   text-decoration: underline;
 }
 
-/* =========================== DESKTOP =========================== */
-@media (min-width: 992px) {
-  #services .container,
-  #gallery .container,
-  #contact .container,
-  footer,
-  .hero-text {
-    max-width: 70%;
-    margin-inline: auto;
-  }
-
-  .profile-image{
-    width: calc(70% - 24px);
-    margin-inline: auto;
-    display: block;
-  }
-
-  .about-card {
-    width: calc(70% - 24px);
-  }
-    
-    
-}
-
-@media (min-width: 1400px) {
-  #services .container,
-  #gallery .container,
-  #contact .container,
-  footer,
-  .hero-text {
-    max-width: 1200px;
-  }
-
-  .profile-image{
-    width: 1200px;
-    max-width: calc(100% - 48px);
-  }
-
-  .about-card{
-    width: 1200px;
-    max-width: calc(100% - 48px);
-  }
-}
-
 /* =========================== MOBILE / TABLET =========================== */
 @media (max-width: 991px) {
   .hero-subtitle { font-size: 18px; }
@@ -458,33 +351,6 @@ a[href^="mailto"]:not(.btn):hover {
   .big-atelier {
     font-size: 110px;
     line-height: 95px;
-  }
-
-  .profile-image {
-    width: 95%;
-    max-width: 700px; 
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .about-card {
-    width: 95%;
-    max-width: 700px;
-  }
-
-  #services .col-lg-4 { max-width: none; }
-
-  #services .card.service-card {
-    width: 95%;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  #services .card-img-top {
-    width: 100%;
-    height: 190px;
-    margin: 0;
   }
 }
 
@@ -494,17 +360,11 @@ a[href^="mailto"]:not(.btn):hover {
     line-height: 70px;
   }
 
-  .hero-subtitle {
-    font-size: 13px;
-  }
+  .hero-subtitle { font-size: 13px; }
 
-  .hero-title-wrapper {
-    margin-bottom: 5px;
-  }
+  .hero-title-wrapper { margin-bottom: 5px; }
 
-  #stickyHeader {
-    height: 55px;
-  }
+  #stickyHeader { height: 55px; }
 
   #stickyHeader .sticky-title {
     font-size: 36px;
@@ -517,10 +377,7 @@ a.btn-primary[href^="mailto"] {
   font-weight: 400;
   color: rgb(var(--gold));
 }
-
-a.btn-primary:hover {
-  color: rgb(var(--bordeaux));
-}
+a.btn-primary:hover { color: rgb(var(--bordeaux)); }
 
 .btn-primary:active,
 .btn-primary.active,
@@ -543,26 +400,18 @@ a.btn-primary:active:focus-visible {
   margin: 0;
   padding: 0;
 }
-
-.contact-left .contact-info{
-  margin-top: 10px;
-}
-
+.contact-left .contact-info{ margin-top: 10px; }
 .contact-hours{
   margin-top: 14px;
   margin-bottom: 14px;
 }
-
 .contact-cta{
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
   margin-top: 6px;
 }
-
-.contact-right .contact-title{
-  margin-bottom: 10px;
-}
+.contact-right .contact-title{ margin-bottom: 10px; }
 
 /* Öffnungszeiten: Tabstop-Layout */
 .contact-hours li{
@@ -571,17 +420,13 @@ a.btn-primary:active:focus-visible {
   column-gap: 14px;
   padding: 2px 0;
 }
-
 .contact-hours .day{
   font-weight: 500;
   white-space: nowrap;
 }
+.contact-hours .time{ text-align: left; }
 
-.contact-hours .time{
-  text-align: left;
-}
-
-/* Senden Button (wie gewünscht) */
+/* Senden Button */
 .contact-submit{
   position: relative;
   top: 14px;
@@ -590,9 +435,7 @@ a.btn-primary:active:focus-visible {
 /* ===========================
    MOBILE NAV: erscheint erst beim Scrollen (Mobile only)
    =========================== */
-#mobileNav {
-  display: none;
-}
+#mobileNav { display: none; }
 
 @media (max-width: 767px) {
   #mobileNav {
@@ -652,7 +495,6 @@ a.btn-primary:active:focus-visible {
   background: rgb(var(--gold));
   border-radius: 999px;
 }
-
 .hamburger-lines::before { top: -7px; }
 .hamburger-lines::after  { top:  7px; }
 
@@ -679,10 +521,7 @@ a.btn-primary:active:focus-visible {
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
 }
-
-.toTopIcon{
-  fill: rgb(var(--gold));
-}
+.toTopIcon{ fill: rgb(var(--gold)); }
 
 #toTopBtn.show{
   opacity: 1;
@@ -690,9 +529,7 @@ a.btn-primary:active:focus-visible {
 }
 
 @media (min-width: 768px){
-  #toTopBtn{
-    display: none !important;
-  }
+  #toTopBtn{ display: none !important; }
 }
 
 #toTopBtn:active{
