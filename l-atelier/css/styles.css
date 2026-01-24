@@ -231,7 +231,73 @@ section[id]{
 .about-signature {
   margin-top: 10px;
 }
+/* ===========================
+   DIENSTLEISTUNGEN: ACCORDION LOOK
+   =========================== */
 
+/* Bootstrap Accordion-Defaults killen */
+#dienstleistungen .accordion-item {
+  border: none;
+}
+
+#dienstleistungen .accordion-button {
+  background: transparent;
+  color: rgb(var(--gold));
+  padding: 0;
+  box-shadow: none;
+}
+
+/* Unser Box-Button im gleichen Stil wie service-title-like-about */
+#dienstleistungen .service-toggle{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgb(var(--gold));
+  padding: 18px 44px 10px 18px;  /* rechts Platz für Pfeil */
+  position: relative;
+}
+
+/* Pfeil-Icon (Bootstrap ::after) einfärben & positionieren */
+#dienstleistungen .service-toggle::after{
+  position: absolute;
+  right: 16px;
+  top: 22px;
+  filter: invert(93%) sepia(12%) saturate(350%) hue-rotate(10deg) brightness(105%) contrast(95%);
+}
+
+/* Fokus/Active sauber */
+#dienstleistungen .accordion-button:focus{
+  box-shadow: none;
+}
+
+#dienstleistungen .accordion-button:not(.collapsed){
+  background: transparent;
+  color: rgb(var(--gold));
+}
+
+/* Body-Padding passend zu deinen Boxen */
+#dienstleistungen .service-body{
+  padding: 0 18px 12px 18px;
+}
+
+/* Deine bestehende service-box bleibt die Box */
+#dienstleistungen .service-box{
+  position: relative;
+  background: rgb(var(--bordeaux));
+  color: rgb(var(--gold));
+  border: 2px solid rgba(0,0,0,0.15);
+  border-radius: 12px;
+  padding: 0; /* wichtig: Button/Body übernehmen Padding */
+  overflow: hidden;
+}
+
+
+#dienstleistungen .accordion-body{
+  background: transparent;
+}
 /* =========================== DIENSTLEISTUNGEN LISTE =========================== */
 .services-list-section{
   background: rgb(var(--bg));
@@ -245,14 +311,6 @@ section[id]{
   margin-inline: auto;
 }
 
-/* Boxen bordeaux, Schrift gold */
-.service-box {
-  background: rgb(var(--bordeaux));
-  color: rgb(var(--gold));
-  border: 2px solid rgba(0,0,0,0.15);
-  border-radius: 12px;
-  padding: 18px 18px 10px;
-}
 
 /* Dienstleistungs-Titel: gleicher Look wie about-title, aber gold */
 .service-title-like-about {

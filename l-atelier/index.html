@@ -153,65 +153,36 @@
     </div>
   </header>
 
-  <!-- DIENSTLEISTUNGEN -->
-  <section id="dienstleistungen" class="services-list-section">
-    <div class="container">
-      <div class="text-center mb-4">
-        <!-- gleich wie Über uns / Kontakt -->
-        <h2 class="section-title">Dienstleistungen</h2>
-      </div>
+<section id="dienstleistungen" class="services-list-section">
+  <div class="container">
+    <div class="text-center mb-4">
+      <h2 class="section-title">Dienstleistungen</h2>
+    </div>
 
-      <div class="services-list-wrapper">
+    <div class="services-list-wrapper accordion" id="servicesAccordion">
 
-        <div class="service-box">
-          <!-- gleicher Look wie about-title, aber gold -->
-          <div class="service-title-like-about">Änderungen, Reparaturen und Anpassungen an Textilien aller Art.</div>
-          <ul class="service-bullets">
-            <li>Hosen</li>
-            <li>Blazer</li>
-            <li>Hemden</li>
-            <li>Shirts</li>
-            <li>Blusen</li>
-            <li>Jacken / Mäntel</li>
-            <li>Kleid / Jupe</li>
-            <li>Abendkleider</li>
-            <li>und vieles mehr</li>
-          </ul>
-        </div>
+      <!-- 1 -->
+      <div class="accordion-item service-box">
+        <h3 class="accordion-header" id="svcHeading1">
+          <button
+            class="accordion-button collapsed service-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#svcCollapse1"
+            aria-expanded="false"
+            aria-controls="svcCollapse1"
+          >
+            Änderungen, Reparaturen und Anpassungen an Textilien aller Art.
+          </button>
+        </h3>
 
-
-<div class="service-box service-box-wide">
-          <!-- gleicher Look wie about-title, aber gold -->
-          <div class="service-title-like-about">Verkauf von Herrenanzügen mit zugehörigen Accessoires.</div>
-
-          <div class="two-col">
-            <ul class="service-bullets">
-              <li>Sakko</li>
-              <li>Hosen</li>
-              <li>Hemd</li>
-              <li>Unterhemd</li>
-              <li>Weste</li>
-            </ul>
-
-            <ul class="service-bullets">
-              <li>Gürtel</li>
-              <li>Krawatte</li>
-              <li>Einstecktuch</li>
-              <li>Manschettenknöpfe</li>
-              <li>und vieles mehr</li>
-            </ul>
-          </div>
-
-        </div>
-
-
-
-
-        <div class="service-box service-box-wide">
-          <!-- gleicher Look wie about-title, aber gold -->
-          <div class="service-title-like-about">Chemische Reinigung von Textilien aller Art.</div>
-
-          <div class="two-col">
+        <div
+          id="svcCollapse1"
+          class="accordion-collapse collapse"
+          aria-labelledby="svcHeading1"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body service-body">
             <ul class="service-bullets">
               <li>Hosen</li>
               <li>Blazer</li>
@@ -221,25 +192,108 @@
               <li>Jacken / Mäntel</li>
               <li>Kleid / Jupe</li>
               <li>Abendkleider</li>
-            </ul>
-
-            <ul class="service-bullets">
-              <li>Gilet / Krawatten</li>
-              <li>Hochzeitskleid</li>
-              <li>Skibekleidung</li>
-              <li>Matratzen</li>
-              <li>Kissen</li>
-              <li>Duvets</li>
-              <li>Wolldecken</li>
-              <li>Schlafsack</li>
+              <li>und vieles mehr</li>
             </ul>
           </div>
-
         </div>
-
       </div>
+
+      <!-- 2 -->
+      <div class="accordion-item service-box service-box-wide">
+        <h3 class="accordion-header" id="svcHeading2">
+          <button
+            class="accordion-button collapsed service-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#svcCollapse2"
+            aria-expanded="false"
+            aria-controls="svcCollapse2"
+          >
+            Verkauf von Herrenanzügen mit zugehörigen Accessoires.
+          </button>
+        </h3>
+
+        <div
+          id="svcCollapse2"
+          class="accordion-collapse collapse"
+          aria-labelledby="svcHeading2"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body service-body">
+            <div class="two-col">
+              <ul class="service-bullets">
+                <li>Sakko</li>
+                <li>Hosen</li>
+                <li>Hemd</li>
+                <li>Unterhemd</li>
+                <li>Weste</li>
+              </ul>
+
+              <ul class="service-bullets">
+                <li>Gürtel</li>
+                <li>Krawatte</li>
+                <li>Einstecktuch</li>
+                <li>Manschettenknöpfe</li>
+                <li>und vieles mehr</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="accordion-item service-box service-box-wide">
+        <h3 class="accordion-header" id="svcHeading3">
+          <button
+            class="accordion-button collapsed service-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#svcCollapse3"
+            aria-expanded="false"
+            aria-controls="svcCollapse3"
+          >
+            Chemische Reinigung von Textilien aller Art.
+          </button>
+        </h3>
+
+        <div
+          id="svcCollapse3"
+          class="accordion-collapse collapse"
+          aria-labelledby="svcHeading3"
+          data-bs-parent="#servicesAccordion"
+        >
+          <div class="accordion-body service-body">
+            <div class="two-col">
+              <ul class="service-bullets">
+                <li>Hosen</li>
+                <li>Blazer</li>
+                <li>Hemden</li>
+                <li>Shirts</li>
+                <li>Blusen</li>
+                <li>Jacken / Mäntel</li>
+                <li>Kleid / Jupe</li>
+                <li>Abendkleider</li>
+              </ul>
+
+              <ul class="service-bullets">
+                <li>Gilet / Krawatten</li>
+                <li>Hochzeitskleid</li>
+                <li>Skibekleidung</li>
+                <li>Matratzen</li>
+                <li>Kissen</li>
+                <li>Duvets</li>
+                <li>Wolldecken</li>
+                <li>Schlafsack</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
-  </section>
+  </div>
+</section>
+
 
   <!-- GALLERY -->
   <section id="gallery" class="bg-light-section">
