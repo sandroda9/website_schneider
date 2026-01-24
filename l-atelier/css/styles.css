@@ -199,6 +199,13 @@ section[id]{
 }
 
 /* =========================== ÜBER UNS =========================== */
+/* Über uns verhält sich wie Services */
+.profile-image,
+.about-card{
+  width: 100%;
+  max-width: 100%;
+  margin-inline: auto;
+}
 
 .profile-image {
   /* width: 70%; */
