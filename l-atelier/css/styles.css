@@ -172,6 +172,18 @@ section[id]{
   object-fit: cover;
   border-radius: 0.5rem 0.5rem 0 0;
 }
+/* Services Bilder: auf kleineren Screens weniger hoch */
+@media (max-width: 991px){
+  #services .card-img-top{
+    aspect-ratio: 16 / 9;   /* weniger hoch als 4/3 */
+  }
+}
+
+@media (max-width: 575px){
+  #services .card-img-top{
+    aspect-ratio: 2 / 1;    /* noch flacher fürs Handy */
+  }
+}
 .service-card {
   height: 100%;
   display: flex;
