@@ -181,7 +181,7 @@ section[id]{
 
 @media (max-width: 575px){
   #services .card-img-top{
-    height: 150px;
+    height: 180px;
   }
 }
 .service-card {
