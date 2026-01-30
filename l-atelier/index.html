@@ -384,8 +384,15 @@
 
           <form class="contact-form" action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
             <input type="text" name="_honey" style="display:none">
-            <input type="hidden" name="_subject" value="Neue Anfrage über latelier-flawil.ch">
-            <input type="hidden" name="_next" value="https://DEINE-DOMAIN.ch/#contact">
+
+            <input type="hidden" name="_subject" value="Neue Anfrage über latelier-hobil.ch">
+            <input type="hidden" name="_next" value="https://latelier-hobil.ch/">
+
+            <!-- Neu: schönes Tabellen-Layout in der Mail -->
+            <input type="hidden" name="_template" value="table">
+
+            <!-- Neu: "Antworten" geht direkt an die E-Mail des Absenders -->
+            <input type="hidden" name="_replyto" value="%email%">
 
             <div class="mb-3">
               <input name="name" class="form-control" placeholder="Name" required>
@@ -401,6 +408,7 @@
 
             <button class="btn btn-primary contact-submit" type="submit">Senden</button>
           </form>
+
         </div>
 
       </div>
