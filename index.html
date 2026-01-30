@@ -1,1 +1,432 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>L'Atelier — Schneideratelier Flawil</title>
 
+  <!-- FONTS -->
+  <link rel="preload" href="fonts/inter/Inter-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Corinthia/Corinthia-Regular.ttf" as="font" type="font/ttf" crossorigin>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+  <!-- MOBILE NAV (nur Handy) -->
+  <nav id="mobileNav">
+    <button
+      class="hamburger-btn"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#mobileMenu"
+      aria-controls="mobileMenu"
+      aria-label="Menü öffnen"
+    >
+      <span class="hamburger-lines" aria-hidden="true"></span>
+    </button>
+  </nav>
+
+  <!-- Offcanvas Menü -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="mobileMenuLabel">Menü</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Schliessen"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="mobile-menu-list">
+        <li><a class="nav-link-scroll" href="#about" data-bs-dismiss="offcanvas">Über uns</a></li>
+        <li><a class="nav-link-scroll" href="#dienstleistungen" data-bs-dismiss="offcanvas">Dienstleistungen</a></li>
+        <li><a class="nav-link-scroll" href="#gallery" data-bs-dismiss="offcanvas">Galerie</a></li>
+        <li><a class="nav-link-scroll" href="#contact" data-bs-dismiss="offcanvas">Kontakt und Öffnungszeiten</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- STICKY HEADER -->
+  <div id="stickyHeader">
+    <a href="#hero" class="sticky-title">L’Atelier</a>
+  </div>
+
+  <!-- HERO -->
+  <header id="hero">
+    <!-- volle Breite Title-Bar -->
+    <div class="hero-title-wrapper">
+      <h1 class="big-atelier">L’Atelier</h1>
+      <p class="hero-subtitle">Schneiderei · Herrenmode · Chemische Reinigung</p>
+    </div>
+
+    <!-- ab hier einheitliche Content-Breite -->
+    <div class="content-wrap">
+
+      <!-- SERVICES -->
+      <section id="services" class="py-5 mt-4">
+        <div class="row g-4 align-items-stretch">
+
+          <div class="col-lg-4">
+            <div class="card service-card from-right h-100">
+              <img
+                src="img/Atelier-Flawil-Schneider8.jpg"
+                class="card-img-top"
+                alt="Schneiderei in Flawil"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="card-body">
+                <h5 class="card-title">Änderungs&shy;schneiderei</h5>
+                <p class="card-text">Perfekte Passform für Damen und Herren.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card service-card from-left h-100">
+              <img
+                src="img/Atelier-Flawil-Schneider16.jpg"
+                class="card-img-top"
+                alt="Herrenmode und Anzüge"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="card-body">
+                <h5 class="card-title">Verkauf Herrenmode</h5>
+                <p class="card-text">Individuelle Beratung, präzise abgestimmt.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-4">
+            <div class="card service-card from-left h-100">
+              <img
+                src="img/Atelier-Flawil-Schneider15.jpg"
+                class="card-img-top"
+                alt="Chemische Reinigung"
+                loading="lazy"
+                decoding="async"
+              >
+              <div class="card-body">
+                <h5 class="card-title">Chemische Reinigung</h5>
+                <p class="card-text">Professionelles Reinigungsverfahren mit grösster Sorgfalt.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ÜBER UNS -->
+      <section id="about">
+        <div class="text-center mb-4">
+          <h2 class="section-title">Über uns</h2>
+        </div>
+
+        <img
+          src="img/IMG_Levi + Militya-min.jpg"
+          class="img-fluid rounded shadow-sm profile-image profile-image--join"
+          alt="Levi und Militya Hobil"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="about-card about-card--join card shadow-sm">
+          <div class="card-body hero-text">
+            <h5 class="card-title about-title">
+              Härzlich Willkommä und buongiorno bei L'Atelier.
+            </h5>
+
+            <p class="card-text mt-2">
+              Wir freuen uns, dass Sie den Weg zu uns gefunden haben. Mit dem Blick für massgenaue Mode
+              bringen wir eine Portion Modebewusstsein und Gastfreundschaft nach Flawil. Hier wird das traditionelle
+              Handwerk mit Sorgfalt und Stolz von einem gelernten Schneider aus dem Tessin ausgeführt. Bei uns erhalten Ihre geliebten Kleidungsstücke einen besonderen Wert und neue Frische.
+            </p>
+
+            <h5 class="card-title about-title about-signature">Levi und Militya Hobil</h5>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </header>
+
+  <!-- DIENSTLEISTUNGEN -->
+  <section id="dienstleistungen" class="services-list-section">
+    <div class="content-wrap">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Dienstleistungen</h2>
+      </div>
+
+      <div class="services-list-wrapper accordion" id="servicesAccordion">
+
+        <!-- 1 -->
+        <div class="accordion-item service-box">
+          <h3 class="accordion-header" id="svcHeading1">
+            <button
+              class="accordion-button collapsed service-toggle"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#svcCollapse1"
+              aria-expanded="false"
+              aria-controls="svcCollapse1"
+            >
+              Änderungen, Reparaturen und Anpassungen an Textilien aller Art.
+            </button>
+          </h3>
+
+          <div
+            id="svcCollapse1"
+            class="accordion-collapse collapse"
+            aria-labelledby="svcHeading1"
+            data-bs-parent="#servicesAccordion"
+          >
+            <div class="accordion-body service-body">
+              <ul class="service-bullets">
+                <li>Hosen</li>
+                <li>Blazer</li>
+                <li>Hemden</li>
+                <li>Shirts</li>
+                <li>Blusen</li>
+                <li>Jacken / Mäntel</li>
+                <li>Kleid / Jupe</li>
+                <li>Abendkleider</li>
+                <li>und vieles mehr</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="accordion-item service-box service-box-wide">
+          <h3 class="accordion-header" id="svcHeading2">
+            <button
+              class="accordion-button collapsed service-toggle"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#svcCollapse2"
+              aria-expanded="false"
+              aria-controls="svcCollapse2"
+            >
+              Verkauf von Herrenanzügen mit zugehörigen Accessoires.
+            </button>
+          </h3>
+
+          <div
+            id="svcCollapse2"
+            class="accordion-collapse collapse"
+            aria-labelledby="svcHeading2"
+            data-bs-parent="#servicesAccordion"
+          >
+            <div class="accordion-body service-body">
+              <div class="two-col">
+                <ul class="service-bullets">
+                  <li>Sakko</li>
+                  <li>Hosen</li>
+                  <li>Hemd</li>
+                </ul>
+
+                <ul class="service-bullets">
+                  <li>Krawatte</li>
+                  <li>Einstecktuch</li>
+                  <li>Socken</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="accordion-item service-box service-box-wide">
+          <h3 class="accordion-header" id="svcHeading3">
+            <button
+              class="accordion-button collapsed service-toggle"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#svcCollapse3"
+              aria-expanded="false"
+              aria-controls="svcCollapse3"
+            >
+              Chemische Reinigung von Textilien aller Art.
+            </button>
+          </h3>
+
+          <div
+            id="svcCollapse3"
+            class="accordion-collapse collapse"
+            aria-labelledby="svcHeading3"
+            data-bs-parent="#servicesAccordion"
+          >
+            <div class="accordion-body service-body">
+              <div class="two-col">
+                <ul class="service-bullets">
+                  <li>Hosen</li>
+                  <li>Blazer</li>
+                  <li>Hemden</li>
+                  <li>Shirts</li>
+                  <li>Blusen</li>
+                  <li>Jacken / Mäntel</li>
+                  <li>Kleid / Jupe</li>
+                  <li>Abendkleider</li>
+                </ul>
+
+                <ul class="service-bullets">
+                  <li>Gilet / Krawatten</li>
+                  <li>Hochzeitskleid</li>
+                  <li>Skibekleidung</li>
+                  <li>Matratzen</li>
+                  <li>Kissen / Duvets</li>
+                  <li>Wolldecken</li>
+                  <li>Schlafsack</li>
+                  <li>und vieles mehr</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="gallery" class="bg-light-section">
+    <div class="content-wrap">
+      <div class="text-center mb-4">
+        <h2 class="section-title">Galerie</h2>
+      </div>
+
+      <div class="row g-3 gallery-grid">
+        <div class="col-6 col-md-3">
+          <img
+            src="img/Atelier-Flawil-Schneider.jpg"
+            class="img-fluid rounded gallery-item"
+            alt="Aussenansicht Atelier in Flawil Hobil"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+
+        <div class="col-6 col-md-3">
+          <img
+            src="img/Atelier-Flawil-Schneider14.jpg"
+            class="img-fluid rounded gallery-item"
+            alt="Herrenmode: Anzüge im Atelier Flawil Hobil"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+
+        <div class="col-6 col-md-3">
+          <img
+            src="img/Atelier-Flawil-Schneider11.jpg"
+            class="img-fluid rounded gallery-item"
+            alt="Nähmaschine Atelier Flawil Hobil"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+
+        <div class="col-6 col-md-3">
+          <img
+            src="img/Atelier-Flawil-Schneider17.jpg"
+            class="img-fluid rounded gallery-item"
+            alt="Kaffeemaschine im Atelier"
+            loading="eager"
+            decoding="async"
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="bg-light-section">
+    <div class="content-wrap">
+
+      <div class="text-center mb-4">
+        <h2 class="section-title">Kontakt und Öffnungszeiten</h2>
+      </div>
+
+      <div class="row g-4 align-items-start">
+
+        <!-- LINKS -->
+        <div class="col-12 col-lg-6 contact-left">
+          <h5 class="contact-title">L'Atelier Hobil</h5>
+
+          <div class="contact-info">
+            <div>Wilerstrasse 14, 9230 Flawil</div>
+            <div>Tel: 071 232 02 22</div>
+            <div><a href="mailto:latelierhobil@hotmail.com">latelierhobil@hotmail.com</a></div>
+          </div>
+
+          <ul class="list-unstyled contact-hours">
+            <li><span class="day">Montag</span><span class="time">Geschlossen</span></li>
+            <li><span class="day">Dienstag</span><span class="time">Geschlossen</span></li>
+            <li><span class="day">Mittwoch</span><span class="time">09:00–12:00, 13:30–18:30</span></li>
+            <li><span class="day">Donnerstag</span><span class="time">09:00–12:00, 13:30–18:30</span></li>
+            <li><span class="day">Freitag</span><span class="time">09:00–12:00, 13:30–18:30</span></li>
+            <li><span class="day">Samstag</span><span class="time">09:00–14:00</span></li>
+            <li><span class="day">Sonntag</span><span class="time">Geschlossen</span></li>
+          </ul>
+
+          <div class="contact-cta">
+            <a class="btn btn-primary" href="mailto:latelierhobil@hotmail.com">E-Mail</a>
+            <a class="btn btn-primary" href="tel:+41712320222">Anrufen</a>
+          </div>
+        </div>
+
+        <!-- RECHTS -->
+        <div class="col-12 col-lg-6 contact-right">
+          <h5 class="contact-title">Nachricht senden</h5>
+
+          <form class="contact-form" action="https://formsubmit.co/latelierhobil@hotmail.com" method="POST">
+            <input type="text" name="_honey" style="display:none">
+
+            <input type="hidden" name="_subject" value="Neue Anfrage über latelier-hobil.ch">
+            <input type="hidden" name="_next" value="https://latelier-hobil.ch/">
+
+            <!-- Neu: schönes Tabellen-Layout in der Mail -->
+            <input type="hidden" name="_template" value="table">
+
+            <!-- Neu: "Antworten" geht direkt an die E-Mail des Absenders -->
+            <input type="hidden" name="_replyto" value="%email%">
+
+            <div class="mb-3">
+              <input name="name" class="form-control" placeholder="Name" required>
+            </div>
+
+            <div class="mb-3">
+              <input name="email" class="form-control" type="email" placeholder="E-Mail" required>
+            </div>
+
+            <div class="mb-3">
+              <textarea name="message" rows="6" class="form-control" placeholder="Nachricht" required></textarea>
+            </div>
+
+            <button class="btn btn-primary contact-submit" type="submit">Senden</button>
+          </form>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-4 text-center">
+    © <span id="year"></span> L'Atelier — Flawil
+  </footer>
+
+  <!-- Scroll-to-top Button (nur Mobile) -->
+  <button id="toTopBtn" type="button" aria-label="Nach oben">
+    <svg class="toTopIcon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.6L19 12l-7-7z"></path>
+    </svg>
+  </button>
+
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/scripts.js"></script>
+</body>
+</html>
