@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://latelier-hobil.ch/sitemap.xml
